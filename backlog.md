@@ -11,20 +11,25 @@ Everything still to do, newest ideas at the bottom of each section. When work st
 - [ ] **P2 · Owner** Size chart: measurements for each size (bust, length, etc.).
 - [ ] **P2 · Owner** Confirm the UPI ID stays off the website and is sent on WhatsApp only (D-003).
 - [ ] **P2 · Owner** A second photo for each product (back or close-up). It shows on hover and in the product gallery.
-- [ ] **P2 · Owner** Logo, if wanted. Until then, the site uses a text logo.
+- [ ] **P1 · Owner** Set the WhatsApp Business profile picture to `brand/logo/aara-profile-picture-1080.png` (and Instagram, once the account exists).
 - [ ] **P3 · Owner** A wider photo of AC-008 (the current one is very tall, so its sides are filled with a soft blur).
 - [ ] **P3 · Owner** Create an Instagram account, then add the link to the site.
 - [ ] **P3 · Owner** Buy a custom domain (for example `aaraculture.in`).
 
 ## To do — build
 - [ ] **P2 · Dev** Size chart table on the info page (once the owner sends measurements).
-- [ ] **P2 · Dev** Share preview image, so links look good when shared on WhatsApp/Instagram.
 - [ ] **P2 · Dev** Bag: add several items, then send them all in one WhatsApp message (no login, saved in the browser).
 - [ ] **P2 · Dev** When the first single kurti is added, use its photo as the Kurtis category picture in `js/config.js` (it's a drawn placeholder now).
-- [ ] **P2 · Dev** Real logo once the owner has one.
+- [ ] **P2 · Dev** Brand board with the chosen logo (logo, colours, fonts, icon, pattern, tag and packaging mock-ups), saved in `brand/`.
 - [ ] **P3 · Dev** Connect custom domain once bought.
 - [ ] **P3 · Dev** Google Business Profile listing.
 - [ ] **P3 · Dev** Optional Razorpay "Pay now" link if order volume grows (see D-002 / D-010).
+
+## Future: lifestyle brand (owner's long-term plan)
+Focus now is women's clothing only. Later, grow into a lifestyle brand with sub-brands sharing one logo system (see `business.md` → Long-term plan).
+- [ ] **P3 · Owner** Decide which sub-brand comes next: Men, Accessories, Footwear, Lifestyle (home), Beauty & Care, or Beyond.
+- [ ] **P3 · Dev** Sub-brand logos in the same style as the main logo. No human silhouettes (owner doesn't like the man/woman figures).
+- [ ] **P3 · Dev** Website structure for more than one sub-brand (for example a top menu: Women · Men · Accessories …).
 
 ## Done
 - [x] **Owner** Delivery area: all of India (D-011).
@@ -49,3 +54,9 @@ Everything still to do, newest ideas at the bottom of each section. When work st
 - [x] **Dev** Hide empty categories (D-016).
 - [x] **Dev** Size buttons and size filter (D-017, D-018).
 - [x] **Dev** `working` branch for all feature work (D-019).
+- [x] **Owner** Final brand colours chosen (D-020).
+- [x] **Dev** Owner's reference boards saved in `brand/references/`; 5 logo options redrawn as vector files in `brand/logo-options/` (D-021).
+- [x] **Owner** Logo picked: Palace arch, tagline "Wear Your Story." (D-022).
+- [x] **Dev** Logo everywhere: website header, menu, footer, browser icon, phone home-screen icon, profile picture file, print PNGs (D-022).
+- [x] **Dev** Website in the final brand colours (D-020, D-022).
+- [x] **Dev** Link preview image for WhatsApp / Instagram / Facebook (`images/share.jpg`).

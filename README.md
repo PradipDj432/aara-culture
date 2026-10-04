@@ -36,11 +36,18 @@ aara-culture/
 │   ├── home.js         Home page
 │   ├── shop.js         Shop page filters
 │   └── product.js      Product page, size picker, order button
-└── images/
-    ├── products/       Product photos (ac-001-1.jpg, ac-002-1.jpg, …)
-    ├── categories/     Placeholder tile for a category with no photo yet
-    ├── hero.jpg        Home page banner photo
-    └── favicon.svg     Browser tab icon
+├── images/
+│   ├── products/       Product photos (ac-001-1.jpg, ac-002-1.jpg, …)
+│   ├── categories/     Placeholder tile for a category with no photo yet
+│   ├── hero.jpg        Home page banner photo
+│   └── share.jpg       Link preview picture (WhatsApp / Instagram / Facebook)
+└── brand/              Brand guide: colours, fonts, logo files, owner's reference boards
+    ├── README.md       Read this first
+    ├── logo/           The logo (Palace arch): SVG and PNG files, icon, profile picture.
+    │                   The website loads its logo and browser icon from here.
+    ├── references/     The owner's brand boards
+    ├── logo-options/   The logo options that weren't chosen
+    └── tools/          Scripts and fonts that draw the logo files
 ```
 
 ## Run it on your computer
@@ -106,6 +113,11 @@ Edit `js/config.js`:
 - `highlights`: the three short points shown above the footer.
 - `policies.delivery`, `policies.payment`, `policies.returns`: the delivery, payment and return text. It shows on every product page and on the info page.
 - `CATEGORIES`: category names and their home page pictures. Each picture is one of the product photos (for example `"images/products/ac-006-1.jpg"`); if you delete that product, pick another photo. A category with no products is hidden by itself, and shows up again when you add a product to it.
+
+## Change the logo or the link preview
+- Logo files are made by scripts; see `brand/README.md` → "Change or redraw the logos".
+- The link preview (`images/share.jpg`) uses `images/hero.jpg` and the logo. After changing either, run `node brand/tools/export_png.js`.
+- The link preview address is in each page's `<head>` (`og:image`). If the website moves to its own domain, update it there.
 
 ## Change the home page banner
 Upload a portrait photo (about 1000 × 1250 pixels) to `images/`, then in `index.html` change `images/hero.jpg` to your photo's name.

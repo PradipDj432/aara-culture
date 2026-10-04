@@ -112,7 +112,7 @@ A log of choices made for Aara Culture and why. Add new decisions at the bottom 
 
 ## D-014 — "Minimal luxury" design
 - **Date:** 2026-10-04
-- **Status:** Accepted
+- **Status:** Accepted (colours replaced by D-020)
 - **Context:** The owner found the first design looked bad and asked for a modern, premium look.
 - **Decision:** Ivory and black colours, an elegant serif for headings (Cormorant Garamond) with a clean sans for text (Jost), small spaced-out capital labels, sharp corners, lots of white space and photo-first layouts. The "Order on WhatsApp" button is black instead of bright green. Placeholder pictures were redrawn as garments on hangers in muted tones.
 - **Alternatives considered:** "Indian heritage premium" (maroon and gold, pattern borders); "Soft modern" (blush colours, rounded cards).
@@ -157,4 +157,28 @@ A log of choices made for Aara Culture and why. Add new decisions at the bottom 
 - **Decision:** All feature work happens on one branch named `working`, made from `main`. When work is done: push `working`, open a pull request to `main`, and merge when the owner says so. The steps are in `CLAUDE.md`.
 - **Alternatives considered:** A new branch per feature; working directly on `main` (no review before going live).
 - **Consequences:** One easy-to-find branch. `working` must be brought up to date with `main` before each new piece of work.
+
+## D-020 — Final brand colours
+- **Date:** 2026-10-04
+- **Status:** Accepted
+- **Context:** The owner shared AI-made brand boards and chose the colour palette on them as final.
+- **Decision:** Maroon `#6E2639`, Ivory `#F8F1E7`, Antique Gold `#B88A44`, Muted Rose `#C98F91`, Charcoal `#292522`. Roles are in `brand/README.md`. Fonts stay Cormorant Garamond and Jost (the boards suggest Montserrat/Manrope for text; Jost is the same style and already on the site).
+- **Alternatives considered:** Ivory and black only (D-014); Midnight / Golden Sand / Rose Dusk (an earlier proposal the owner didn't pick).
+- **Consequences:** The website moves from ivory-and-black to these colours when the new logo goes live. Gold and rose are only for shapes and lines, not small text (too light on ivory).
+
+## D-021 — Logo comes from the owner's brand boards
+- **Date:** 2026-10-04
+- **Status:** Accepted (option 4, Palace arch, chosen: D-022)
+- **Context:** The owner didn't like the first two rounds of logo options and shared their own boards (`brand/references/`). They don't want human silhouettes.
+- **Decision:** Redraw the boards' logo ideas as clean vector files in the final colours: 1 Signature (lotus + flowing AARA, the boards' main logo), 2 Modern minimal, 3 AC monogram, 4 Palace arch, 5 Diamond floral. Recommended system: #1 as the main logo, #3 or the lotus icon for profile pictures and tags, #5 as a pattern.
+- **Alternatives considered:** The earlier options (spaced wordmark, signature italic, framed A, drape A, arch, lotus, paisley, AC crest), which the owner turned down; using the AI board images directly (blurry, misspellings, not editable).
+- **Consequences:** Logos are drawn by `brand/tools/make_logo_options.py`, so they can be changed and redrawn exactly. Once the owner picks, the logo and colours go on the website, browser icon and link preview.
+
+## D-022 — Palace arch logo, used everywhere
+- **Date:** 2026-10-04
+- **Status:** Accepted
+- **Context:** The owner picked option 4, the Palace arch (also the 4th concept on their own board `brand/references/05`), and asked to use it everywhere.
+- **Decision:** The arch logo with the tagline "Wear Your Story." (the tagline that came with this concept) is the main logo. A side-by-side version (small arch + AARA / CULTURE) is used in the website header and menu, because the full arch is too tall to read at header size. A square icon (arch, lotus, "A") is used for the browser tab, phone home screen and profile pictures. The website switches to the final colours (D-020): maroon buttons, announcement bar and footer; maroon headings; ivory background; gold for thin decorations only. A link preview image (`images/share.jpg`) shows a product photo with the logo when the website is shared.
+- **Alternatives considered:** The other four options (D-021); the full arch in the header (unreadable at that size).
+- **Consequences:** All logo files live in `brand/logo/` and are made by `brand/tools/make_logo.py` and `export_png.js`; the website loads them from there. To change the tagline, change it in `make_logo.py` and re-run both scripts.
 
