@@ -43,7 +43,7 @@ aara-culture/
 │   └── share.jpg       Link preview picture (WhatsApp / Instagram / Facebook)
 └── brand/              Brand guide: colours, fonts, logo files, owner's reference boards
     ├── README.md       Read this first
-    ├── logo/           The logo (Palace arch): SVG and PNG files, icon, profile picture.
+    ├── logo/           The logo (Bloom): SVG and PNG files, icon, profile picture.
     │                   The website loads its logo and browser icon from here.
     ├── references/     The owner's brand boards
     ├── logo-options/   The logo options that weren't chosen

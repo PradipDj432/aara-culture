@@ -28,8 +28,9 @@ These rules apply to anyone working on this repo, people or AI. Keep things simp
 - The WhatsApp number and shop rules live in one place, `js/config.js`. Don't hard-code them elsewhere.
 
 ## Brand
-- The brand guide is `brand/README.md`: final colours (D-020), fonts, logo files. Always spell it **Aara Culture**.
-- The logo is the Palace arch (D-022). Use the files in `brand/logo/`; don't retype the logo. Change it with `brand/tools/make_logo.py`, then `node brand/tools/export_png.js` for the PNG versions and `images/share.jpg`.
+- The brand guide is `brand/README.md`: final colours (D-020), fonts, logo files. Always spell it **Aara Culture**; in the logo the name is **AARA** (never "AC", never "Araa").
+- The logo is the owner's **Bloom** (D-023), traced from their own board. Use the files in `brand/logo/`; don't retype or redraw the logo. Change it with `brand/tools/make_logo.py`, then `node brand/tools/export_png.js` for the PNG versions and `images/share.jpg`.
+- Logo ideas come from the owner's own boards (`brand/references/`). Don't invent new logo designs unless asked.
 - No human silhouettes in any logo or icon (owner's preference).
 
 ## Design ("minimal luxury", D-014)

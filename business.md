@@ -13,8 +13,8 @@ What the business is, who it sells to, and how it sells. This file holds busines
 | Tagline | Kurtis, tops and sets for every day |
 | Orders | WhatsApp +91 63534 25567 |
 | Look | "Minimal luxury": elegant serif, photo-first (D-014) |
-| Logo | Palace arch with lotus (D-022). Files in `brand/logo/` |
-| Brand tagline | "Wear Your Story." |
+| Logo | The Bloom (rose petals) above **AARA**, with CULTURE (D-023). Files in `brand/logo/` |
+| Brand tagline | Not confirmed. A logo version with "Wear Your Story." exists |
 | Brand colours | Maroon `#6E2639`, Ivory `#F8F1E7`, Antique Gold `#B88A44`, Muted Rose `#C98F91`, Charcoal `#292522` (D-020) |
 | Brand guide | `brand/README.md` |
 
@@ -80,6 +80,7 @@ These are shown on the website. To change one, edit `js/config.js` (see `README.
 ## Still to decide
 Tracked in `backlog.md`. Don't put these on the website until the owner confirms them.
 
+- **Tagline:** "Wear Your Story.", another line from the boards, or none?
 - **Size list:** is S–XXL right, or should XS / 3XL be added?
 - **Size chart:** measurements for each size. The site says "coming soon" and sends customers to WhatsApp for size help.
 - **UPI ID off the website:** suggested (D-003), not yet confirmed by the owner.
