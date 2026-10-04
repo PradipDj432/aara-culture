@@ -72,7 +72,7 @@ A log of choices made for Aara Culture and why. Add new decisions at the bottom 
 
 ## D-009 — No Instagram link for now
 - **Date:** 2026-10-04
-- **Status:** Accepted
+- **Status:** Replaced by D-026
 - **Context:** The owner doesn't have an Instagram account for the business yet.
 - **Decision:** Don't show Instagram on the site. Add it when the account exists.
 - **Alternatives considered:** —
@@ -112,7 +112,7 @@ A log of choices made for Aara Culture and why. Add new decisions at the bottom 
 
 ## D-014 — "Minimal luxury" design
 - **Date:** 2026-10-04
-- **Status:** Accepted (colours replaced by D-020, fonts by D-024)
+- **Status:** Accepted (colours replaced by D-020, fonts by D-024, page layout by D-027; the style stays)
 - **Context:** The owner found the first design looked bad and asked for a modern, premium look.
 - **Decision:** Ivory and black colours, an elegant serif for headings (Cormorant Garamond) with a clean sans for text (Jost), small spaced-out capital labels, sharp corners, lots of white space and photo-first layouts. The "Order on WhatsApp" button is black instead of bright green. Placeholder pictures were redrawn as garments on hangers in muted tones.
 - **Alternatives considered:** "Indian heritage premium" (maroon and gold, pattern borders); "Soft modern" (blush colours, rounded cards).
@@ -206,3 +206,32 @@ A log of choices made for Aara Culture and why. Add new decisions at the bottom 
 - **Alternatives considered:** Keep the ivory floral co-ord photo (the previous banner).
 - **Consequences:** When the master image changes again, replace `images/hero.jpg` and re-run `export_png.js` so the link preview matches.
 
+## D-026 — Instagram: @aara_culture
+- **Date:** 2026-10-04
+- **Status:** Accepted
+- **Context:** The business now has an Instagram page, `aara_culture`. D-009 kept Instagram off the site until the account existed.
+- **Decision:** Link https://www.instagram.com/aara_culture/ from the website: the header on computers, the menu, the footer, a "Follow us on Instagram" strip on the home page and the contact section of the info page. The username is set once, in `js/config.js` (`instagram`).
+- **Alternatives considered:** Keep WhatsApp as the only contact (D-009); embed a live Instagram feed (needs an Instagram app connection and a paid or third-party widget).
+- **Consequences:** The home page strip shows product photos that open the Instagram page; it doesn't load real posts. The WhatsApp profile picture file can be used for Instagram too.
+
+## D-027 — New modern website layout
+- **Date:** 2026-10-04
+- **Status:** Accepted
+- **Context:** The owner didn't like the page layout and asked for a modern, premium, good-looking site, with the logo on the left, the menu on the right, a nicer WhatsApp button than the round icon, and a full-screen photo slider that starts with the olive kurti (D-025).
+- **Decision:** Same brand (logo, colours, fonts) and the same "minimal luxury" style (D-014), with a new layout on every page:
+  - **Header:** logo left, menu right. Computers (1100px and wider) show the links in a row plus the Instagram sign; phones and tablets show a ☰ button that opens the menu from the right.
+  - **Home:** a full-screen photo slider (one photo per phone screen, two on tablets, three side by side on computers), moving every 5 seconds, with swipe, dots and arrows. The header is see-through on the photos and turns ivory on scroll. Then a brand line under the Bloom, categories with their names on the photos, new arrivals, a photo with the brand quote, how to order, and an Instagram strip. Slider photos are listed in `js/config.js` → `HERO_SLIDES`.
+  - **Chat button:** a maroon "Chat with us" button with the WhatsApp sign replaces the round WhatsApp icon (hidden while the home slider fills the screen; the product page keeps its own order button).
+  - **Product page:** a "You may also like" row (same category first).
+  - **Info page:** a "Contact us" section with WhatsApp and Instagram.
+  - **Icons:** the official WhatsApp and Instagram signs from Simple Icons (CC0, free to use), in brand colours.
+- **Alternatives considered:** A split hero (photo on one side, title on the other), like before; a bottom bar on phones or a small round icon for WhatsApp.
+- **Consequences:** Portrait photos show three across on computers, so each is cropped at the sides; photos with the model in the centre work best. Photos with blurred side padding (AC-007, AC-008) are fine in the slider but not as single large pictures.
+
+## D-028 — One brand guide: `branding.md`
+- **Date:** 2026-10-04
+- **Status:** Accepted
+- **Context:** Logo, colours and fonts are final, and the owner asked for one file with everything about the brand.
+- **Decision:** `branding.md` in the project root is the brand guide: name, logo files, colours, fonts and type styles, photos, website look, social media, words, do and don't. `brand/README.md` now only explains the `brand/` folder (files, reference boards, earlier options, redraw scripts).
+- **Alternatives considered:** Keep the guide in `brand/README.md`.
+- **Consequences:** Brand changes are recorded in `branding.md` (and a decision here).

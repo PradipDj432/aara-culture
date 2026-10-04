@@ -6,15 +6,17 @@ Everything still to do, newest ideas at the bottom of each section. When work st
 **Owner:** `Owner` (business owner must provide or decide) · `Dev` (build work)
 
 ## To do — waiting on the business owner
+- [ ] **P1 · Owner** Look at the new layout (screenshots, then the live site after merging) and say what to change.
+- [ ] **P1 · Owner** Set the WhatsApp Business and Instagram (@aara_culture) profile pictures to `brand/logo/aara-profile-picture-1080.png`.
 - [ ] **P1 · Owner** Open the live site on a real phone and try one order on WhatsApp.
 - [ ] **P1 · Owner** Confirm the size list: S, M, L, XL, XXL, or also XS / 3XL? (D-018)
+- [ ] **P2 · Owner** Tagline: "Wear Your Story.", another line from the boards, or none.
 - [ ] **P2 · Owner** Size chart: measurements for each size (bust, length, etc.).
 - [ ] **P2 · Owner** Confirm the UPI ID stays off the website and is sent on WhatsApp only (D-003).
 - [ ] **P2 · Owner** A second photo for each product (back or close-up). It shows on hover and in the product gallery.
-- [ ] **P2 · Owner** Tagline: "Wear Your Story.", another line from the boards, or none.
-- [ ] **P1 · Owner** Set the WhatsApp Business profile picture to `brand/logo/aara-profile-picture-1080.png` (and Instagram, once the account exists).
+- [ ] **P3 · Owner** More wide or landscape photos (for example a group shot or the palace courtyard), for the home page slider on computers.
 - [ ] **P3 · Owner** A wider photo of AC-008 (the current one is very tall, so its sides are filled with a soft blur).
-- [ ] **P3 · Owner** Create an Instagram account, then add the link to the site.
+- [ ] **P3 · Owner** Small colour adjustments, if wanted later (colours are final for now, D-020).
 - [ ] **P3 · Owner** Buy a custom domain (for example `aaraculture.in`).
 
 ## To do — build
@@ -22,9 +24,9 @@ Everything still to do, newest ideas at the bottom of each section. When work st
 - [ ] **P2 · Dev** Bag: add several items, then send them all in one WhatsApp message (no login, saved in the browser).
 - [ ] **P2 · Dev** When the first single kurti is added, use its photo as the Kurtis category picture in `js/config.js` (it's a drawn placeholder now).
 - [ ] **P2 · Dev** Brand board with the final logo, colours and fonts (icon, pattern, hang tag, packaging, social post mock-ups), saved in `brand/`.
-- [ ] **P3 · Owner** Small colour adjustments, if wanted later (colours are final for now, D-020).
 - [ ] **P3 · Dev** Connect custom domain once bought.
 - [ ] **P3 · Dev** Google Business Profile listing.
+- [ ] **P3 · Dev** Show real Instagram posts in the home page strip (it shows product photos now; real posts need an Instagram connection, D-026).
 - [ ] **P3 · Dev** Optional Razorpay "Pay now" link if order volume grows (see D-002 / D-010).
 
 ## Future: lifestyle brand (owner's long-term plan)
@@ -66,4 +68,9 @@ Focus now is women's clothing only. Later, grow into a lifestyle brand with sub-
 - [x] **Dev** Bloom traced from the owner's image; new logo set in `brand/logo/`; website, icons, profile picture and link preview updated (D-023).
 - [x] **Owner** Fonts chosen: Cormorant Garamond + Montserrat + Allura (D-024).
 - [x] **Dev** Fonts and type styles applied to the website, logo tagline and brand guide (D-024).
-- [x] **Dev** Olive Green Short Kurti as the master image: home banner and link preview (D-025).
+- [x] **Dev** Olive Green Short Kurti as the master image: home banner and link preview (D-025, [PR #7](https://github.com/PradipDj432/aara-culture/pull/7)).
+- [x] **Dev** All `.md` files reviewed and brought up to date (after PR #7).
+- [x] **Owner** Instagram account: @aara_culture (D-026).
+- [x] **Dev** Instagram linked in the header, menu, footer, home page and info page (D-026).
+- [x] **Dev** New modern layout on every page: logo left and menu right, full-screen photo slider starting with the olive kurti, categories with names on photos, Instagram strip, "You may also like", "Chat with us" button (D-027).
+- [x] **Dev** `branding.md`: one brand guide with everything about the brand (D-028).

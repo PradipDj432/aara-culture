@@ -3,21 +3,23 @@
 What the business is, who it sells to, and how it sells. This file holds business facts only. Technical details go in `README.md`, choices go in `decisions.md`.
 
 ## In short
-**Aara Culture** is a women's ethnic-wear brand selling short kurtis, co-ord sets and kurti sets with dupatta. Customers browse the website and order on WhatsApp. Payment is by UPI, and orders ship all over India.
+**Aara Culture** is a women's ethnic-wear brand selling short kurtis, co-ord sets and kurti sets with dupatta. Customers browse the website and order on WhatsApp. Payment is by UPI, and orders ship all over India. The brand is also on Instagram, @aara_culture.
 
 | | |
 |---|---|
 | Brand | Aara Culture |
 | Website | https://pradipdj432.github.io/aara-culture/ |
 | Website headline | "Everyday elegance" |
-| Tagline | Kurtis, tops and sets for every day |
+| Short description | Kurtis, tops and sets for every day |
 | Orders | WhatsApp +91 63534 25567 |
-| Look | "Minimal luxury": elegant serif, photo-first (D-014) |
+| Instagram | [@aara_culture](https://www.instagram.com/aara_culture/) (D-026) |
+| Look | Modern "minimal luxury": full-screen photos, elegant serif, logo left and menu right (D-014, D-027) |
 | Logo | The Bloom (rose petals) above **AARA**, with CULTURE (D-023). Files in `brand/logo/` |
+| Master image | Olive Green Short Kurti (AC-003): first photo of the home page slider and the link preview (D-025) |
 | Brand tagline | Not confirmed. A logo version with "Wear Your Story." exists |
 | Brand colours | Maroon `#6E2639`, Ivory `#F8F1E7`, Antique Gold `#B88A44`, Muted Rose `#C98F91`, Charcoal `#292522` (D-020; may be adjusted a little later) |
 | Brand fonts | Cormorant Garamond (titles), Montserrat (text), Allura (taglines) (D-024) |
-| Brand guide | `brand/README.md` |
+| Brand guide | `branding.md` (everything about the brand in one file, D-028) |
 
 ## What we sell
 | Category | Description | Price | Fabric | Live products |
@@ -47,7 +49,7 @@ Today Aara Culture sells women's ethnic wear only, and the website focuses on th
 These are ideas, not launched products. Sub-brand logos must not use human silhouettes (owner's preference). Tracked in `backlog.md` → "Future: lifestyle brand".
 
 ## Who buys
-Women in India who find us through the website link (shared on WhatsApp, social media and word of mouth) and prefer to order by chat.
+Women in India who find us through Instagram or the website link (shared on WhatsApp, social media and word of mouth) and prefer to order by chat.
 
 ## How we sell
 The website is a **catalog**, not a full online shop. It has no checkout, no customer login and no payment gateway.
@@ -75,7 +77,7 @@ These are shown on the website. To change one, edit `js/config.js` (see `README.
 | Channel | Detail |
 |---|---|
 | WhatsApp (orders) | +91 63534 25567 |
-| Instagram | None yet |
+| Instagram | [@aara_culture](https://www.instagram.com/aara_culture/) (D-026) |
 | Website | https://pradipdj432.github.io/aara-culture/ |
 
 ## Still to decide
@@ -85,5 +87,4 @@ Tracked in `backlog.md`. Don't put these on the website until the owner confirms
 - **Size list:** is S–XXL right, or should XS / 3XL be added?
 - **Size chart:** measurements for each size. The site says "coming soon" and sends customers to WhatsApp for size help.
 - **UPI ID off the website:** suggested (D-003), not yet confirmed by the owner.
-- **Instagram:** no account yet.
 - **Own domain:** for example `aaraculture.in`, when the owner is ready.

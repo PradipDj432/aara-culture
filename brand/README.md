@@ -1,73 +1,15 @@
-# Aara Culture — Brand
+# Aara Culture — Brand files
 
-Everything about how Aara Culture looks: colours, fonts, logo options and the owner's reference boards. Use the same colours, fonts and logo files everywhere (website, tags, packaging, WhatsApp, Instagram).
+This folder holds the brand's files: the logo, the owner's reference boards, the logo options that weren't chosen, and the scripts and fonts that draw the logo.
 
-**Spelling:** always **Aara Culture**, and the name in the logo is always **AARA** (never "AC", never "Araa"). Some AI-made boards say "Araa" or "Cluture"; those are mistakes.
+**The brand guide is [`../branding.md`](../branding.md)**: name and spelling, logo (which file to use where), colours, fonts and type styles, photos, website look, social media and words. Read that first.
 
-## Colours (final, D-020)
-| Name | Hex | Use it for |
-|---|---|---|
-| Maroon | `#6E2639` | Logo wordmark, headings, buttons, dark backgrounds |
-| Ivory | `#F8F1E7` | Page and card backgrounds, text on maroon |
-| Antique Gold | `#B88A44` | Lotus, thin lines, small decorations |
-| Muted Rose | `#C98F91` | The Bloom's centre petal, soft accents and backgrounds |
-| Charcoal | `#292522` | Body text, "CULTURE" in the logo |
-
-The Bloom's outer leaves use **Deep Rose `#955457`**, taken from the owner's own Bloom design. Use it only inside the logo.
-
-Gold and rose are too light for small text on ivory. Use them for shapes and lines, and keep text maroon or charcoal.
-
-## Fonts (final, D-024)
-Three fonts, from the owner's board 5. Use **only these three**, everywhere: website, tags, packaging, posts, cards. All are free Google Fonts.
-
-| Font | Role | Examples |
-|---|---|---|
-| **Cormorant Garamond** | Titles | "Everyday elegance", page and product titles, "AARA" in the logo |
-| **Montserrat** | Text | Paragraphs, prices, buttons, small uppercase labels, "CULTURE" in the logo |
-| **Allura** (script) | Taglines | "Wear Your Story.", brand quotes, thank-you cards |
-
-### Type styles
-Every piece of text uses one of these styles. On the website they are CSS variables at the top of `css/style.css` (`--font-title`, `--font-text`, `--font-script`, `--size-*`, `--track-*`).
-
-| Style | Font | Weight | Size on the website | Extras | Used for |
-|---|---|---|---|---|---|
-| Display | Cormorant Garamond | Medium 500 | 46–92px | — | Home banner title |
-| Title 1 | Cormorant Garamond | Medium 500 | 40–64px | — | Page titles (Shop, How to order) |
-| Title 2 | Cormorant Garamond | Medium 500 | 30–46px | — | Section titles, product names on product pages |
-| Tagline | Allura | Regular | 32–56px | Maroon | Taglines, brand quotes |
-| Label | Montserrat | Medium 500 | 11px | UPPERCASE, letter spacing 0.22em | Menu, tabs, small headings, "WOMEN'S ETHNIC WEAR" |
-| Button | Montserrat | SemiBold 600 | 12px | UPPERCASE, letter spacing 0.2em | Buttons |
-| Text | Montserrat | Regular 400 | 15px (16px on computers) | Line height 1.7 | Paragraphs |
-| Small | Montserrat | Regular 400 | 13px | — | Product names on cards, notes, codes |
-| Price | Montserrat | SemiBold 600 | 13–18px | — | Prices |
-
-Rules:
-- Titles are maroon, text is charcoal (or the muted grey for less important text), labels are charcoal or muted grey.
-- Allura only for short lines (one sentence at most); never for prices, buttons or long text.
-- Italic Cormorant Garamond is allowed inside a title for one or two words ("Everyday *elegance*").
-- For print (tags, packaging, cards), use the same fonts and the same roles. Don't retype the logo; use the logo files.
-
-## The logo: Bloom (chosen, D-023)
-The owner's own **"03 Bloom"** symbol (board 3: a rose centre petal with four deep-rose leaves), traced exactly from their image, above **AARA** in maroon and **CULTURE** in charcoal. Files are in `logo/`, made by `tools/make_logo.py` and `tools/export_png.js`.
-
-| Use | File |
+| Folder | What's in it |
 |---|---|
-| Main logo on light backgrounds (packaging, tags, posts) | `logo/aara-logo-on-light.svg` · print: `logo/aara-logo-on-light-2000.png` |
-| Main logo on maroon / dark backgrounds | `logo/aara-logo-on-dark.svg` · print: `logo/aara-logo-on-dark-2000.png` |
-| With the tagline "Wear Your Story." | `logo/aara-logo-tagline-on-light.svg`, `…-on-dark.svg` |
-| Bloom + AARA only (no "CULTURE") | `logo/aara-logo-name-only-on-light.svg`, `…-on-dark.svg` |
-| Side-by-side version (website header, narrow spaces) | `logo/aara-logo-horizontal-on-light.svg`, `…-on-dark.svg` |
-| The Bloom on its own | `logo/aara-bloom.svg`, `logo/aara-bloom-on-dark.svg` |
-| Icon (browser tab, app icon) | `logo/aara-icon.svg` (ivory), `logo/aara-icon-on-dark.svg` (maroon), `logo/aara-icon-180.png`, `logo/aara-icon-512.png` |
-| **WhatsApp / Instagram profile picture** | `logo/aara-profile-picture-1080.png` |
-| Link preview (when the website is shared) | `../images/share.jpg` |
-
-Rules:
-- Use these files; don't retype the logo or change its colours.
-- Keep empty space around the logo, at least the height of "CULTURE" on every side.
-- On ivory, use the "on-light" files. On maroon or photos, use the "on-dark" files.
-- In small spaces (under about 120px tall), use the side-by-side version or the icon, not the full stacked logo.
-- On maroon, the Bloom's centre petal turns ivory and the leaves turn rose (the "on-dark" files already do this).
+| `logo/` | The logo (Bloom, D-023): SVG and PNG files, icons, profile picture. The website loads its logo and browser icon from here. Which file to use where: `branding.md` → "Logo" |
+| `references/` | The owner's own brand boards (see below) |
+| `logo-options/` | Earlier logo options that weren't chosen (see below) |
+| `tools/` | Scripts and fonts that draw the logo files (see "Change or redraw the logos") |
 
 ## Earlier logo options (not chosen, D-021, D-022)
 The Palace arch (D-022) was used on the website for a short time, then replaced by the Bloom.
@@ -92,12 +34,6 @@ All options on one page: `logo-options/00-preview-board.webp`.
 - `logo-options/13-bloom-original-vs-traced.webp`: the owner's Bloom next to the traced version (the one chosen, D-023).
 
 Whichever the owner picks is traced exactly into clean vector files, checked side by side with the original, then replaces the current logo.
-
-## Taglines from the boards
-- **"Wear Your Story."** (a tagline version of the Bloom logo exists; the owner hasn't confirmed a tagline)
-- "Rooted in Grace."
-- "Tradition, Beautifully Worn."
-- "More than fashion. A culture you wear."
 
 ## Reference images from the owner (`references/`)
 | File | What it is |

@@ -13,36 +13,41 @@ The catalog website for **Aara Culture**, a women's clothing brand (kurtis, tops
 | `backlog.md` | Everything still to do, with priority |
 | `progress.md` | Current status and a dated work log |
 | `CLAUDE.md` | Rules for keeping these docs and the code up to date |
+| `branding.md` | Brand guide: name, logo files, colours, fonts and type styles, photos, website look, social media, words |
+| `brand/README.md` | What's in the `brand/` folder and how to redraw the logo |
 
 ## How it works
 - A static website: plain **HTML, CSS and JavaScript**. No framework and no build step (D-007).
 - Hosted free on **GitHub Pages** at `pradipdj432.github.io/aara-culture` (D-006).
 - Every product comes from one file, **`products.json`**. The pages read it in the browser and draw the product cards.
+- **Brand:** logo files come from `brand/logo/` (D-023). Colours, fonts and type styles are CSS variables at the top of `css/style.css` (D-020, D-024). Fonts load from Google Fonts in each page's `<head>`.
+- **Instagram** (@aara_culture) is linked in the header, menu, footer, home page and info page (D-026).
 - The **"Order on WhatsApp"** button opens `https://wa.me/916353425567?text=<message>` with the product name, code, size, price and a link to the product (D-001, D-008).
 
 ## Folder layout
 ```
 aara-culture/
-├── index.html          Home: banner, categories, new arrivals, how to order
+├── branding.md         Brand guide: logo, colours, fonts, photos, website look, social media
+├── index.html          Home: photo slider, categories, new arrivals, how to order, Instagram
 ├── shop.html           All products, with category and size filters
-├── product.html        One product (product.html?id=AC-001): photos, sizes, WhatsApp button
-├── info.html           How to order, payment, delivery, returns, size help
+├── product.html        One product (product.html?id=AC-001): photos, sizes, WhatsApp button, "You may also like"
+├── info.html           How to order, payment, delivery, returns, size help, contact
 ├── products.json       The product list (edit this to add products)
 ├── .nojekyll           Tells GitHub Pages to serve the files as they are
 ├── css/style.css       All styles (mobile first)
 ├── js/
-│   ├── config.js       Store settings: WhatsApp number, shop rules, categories
-│   ├── common.js       Used on every page: header, footer, product cards, WhatsApp links
-│   ├── home.js         Home page
+│   ├── config.js       Store settings: WhatsApp, Instagram, shop rules, categories, slider photos
+│   ├── common.js       Used on every page: header, menu, footer, "Chat with us" button, product cards
+│   ├── home.js         Home page: photo slider, categories, new arrivals, Instagram strip
 │   ├── shop.js         Shop page filters
 │   └── product.js      Product page, size picker, order button
 ├── images/
 │   ├── products/       Product photos (ac-001-1.jpg, ac-002-1.jpg, …)
 │   ├── categories/     Placeholder tile for a category with no photo yet
-│   ├── hero.jpg        Home page banner photo
+│   ├── hero.jpg        Master image: first photo of the home page slider
 │   └── share.jpg       Link preview picture (WhatsApp / Instagram / Facebook)
-└── brand/              Brand guide: colours, fonts, logo files, owner's reference boards
-    ├── README.md       Read this first
+└── brand/              Brand files: logo files, owner's reference boards, drawing scripts
+    ├── README.md       What's in this folder
     ├── logo/           The logo (Bloom): SVG and PNG files, icon, profile picture.
     │                   The website loads its logo and browser icon from here.
     ├── references/     The owner's brand boards
@@ -109,18 +114,23 @@ Click **Commit changes**. The live site updates in about a minute.
 ## Change store details
 Edit `js/config.js`:
 - `whatsappNumber` / `whatsappDisplay`: the order number (country code + number, no `+` or spaces in `whatsappNumber`).
-- `announcement`: the text in the thin black bar at the top of every page.
+- `instagram`: the Instagram username, without the `@` (now `aara_culture`).
+- `announcement`: the text in the thin maroon bar at the top of every page.
 - `highlights`: the three short points shown above the footer.
 - `policies.delivery`, `policies.payment`, `policies.returns`: the delivery, payment and return text. It shows on every product page and on the info page.
+- `HERO_SLIDES`: the photos in the full-screen slider at the top of the home page, in order. Each one has an `image` (the photo file) and a `product` (the product code the photo opens). The first one is the master image. Tall portrait photos with the model in the centre look best.
 - `CATEGORIES`: category names and their home page pictures. Each picture is one of the product photos (for example `"images/products/ac-006-1.jpg"`); if you delete that product, pick another photo. A category with no products is hidden by itself, and shows up again when you add a product to it.
 
 ## Change the logo or the link preview
+- Which logo file to use where: `branding.md` → "Logo".
 - Logo files are made by scripts; see `brand/README.md` → "Change or redraw the logos".
 - The link preview (`images/share.jpg`) uses `images/hero.jpg` and the logo. After changing either, run `node brand/tools/export_png.js`.
 - The link preview address is in each page's `<head>` (`og:image`). If the website moves to its own domain, update it there.
 
-## Change the home page banner
-The banner is `images/hero.jpg` (now the Olive Green Short Kurti, D-025). To change it, replace that file with a portrait photo of about 1000 × 1250 pixels (or upload a new one and change `images/hero.jpg` in `index.html`). Then run `node brand/tools/export_png.js` so the link preview uses the same photo.
+## Change the home page slider
+The slider photos are listed in `js/config.js` → `HERO_SLIDES` (D-027). To add, remove or reorder photos, edit that list. One photo fills a phone screen; computers show three side by side.
+
+The first photo is the master image, `images/hero.jpg` (now the Olive Green Short Kurti, D-025). To change it, replace that file with a portrait photo of about 1000 × 1250 pixels, then run `node brand/tools/export_png.js` so the link preview uses the same photo. If you point the first slide at a different file instead, also change the `preload` line in `index.html`'s `<head>` so it loads first.
 
 ## Photo tips for the premium look
 - Keep each photo under about 250 KB. Big phone or AI photos (1–2 MB) make the site slow on mobile data; ask Claude to compress them, or use a free tool like squoosh.app (JPEG, quality 80, width 1000).
