@@ -17,15 +17,35 @@ The Bloom's outer leaves use **Deep Rose `#955457`**, taken from the owner's own
 
 Gold and rose are too light for small text on ivory. Use them for shapes and lines, and keep text maroon or charcoal.
 
-## Fonts
-| Font | Use it for |
-|---|---|
-| **Cormorant Garamond** (SemiBold in the logo) | Logo, headings |
-| **Cormorant Garamond Italic** | Taglines ("Rooted in Grace.") |
-| **Jost** | Labels, buttons, body text on the website |
-| **Montserrat** (Medium) | "CULTURE" in the logo, as named on the owner's board |
+## Fonts (final, D-024)
+Three fonts, from the owner's board 5. Use **only these three**, everywhere: website, tags, packaging, posts, cards. All are free Google Fonts.
 
-The owner's boards suggest Montserrat or Manrope for body text. Jost is the same clean geometric style and is already on the website, so we keep Jost. Don't retype the logo with fonts: use the logo files below, so the letters and sizes stay exactly the same everywhere.
+| Font | Role | Examples |
+|---|---|---|
+| **Cormorant Garamond** | Titles | "Everyday elegance", page and product titles, "AARA" in the logo |
+| **Montserrat** | Text | Paragraphs, prices, buttons, small uppercase labels, "CULTURE" in the logo |
+| **Allura** (script) | Taglines | "Wear Your Story.", brand quotes, thank-you cards |
+
+### Type styles
+Every piece of text uses one of these styles. On the website they are CSS variables at the top of `css/style.css` (`--font-title`, `--font-text`, `--font-script`, `--size-*`, `--track-*`).
+
+| Style | Font | Weight | Size on the website | Extras | Used for |
+|---|---|---|---|---|---|
+| Display | Cormorant Garamond | Medium 500 | 46–92px | — | Home banner title |
+| Title 1 | Cormorant Garamond | Medium 500 | 40–64px | — | Page titles (Shop, How to order) |
+| Title 2 | Cormorant Garamond | Medium 500 | 30–46px | — | Section titles, product names on product pages |
+| Tagline | Allura | Regular | 32–56px | Maroon | Taglines, brand quotes |
+| Label | Montserrat | Medium 500 | 11px | UPPERCASE, letter spacing 0.22em | Menu, tabs, small headings, "WOMEN'S ETHNIC WEAR" |
+| Button | Montserrat | SemiBold 600 | 12px | UPPERCASE, letter spacing 0.2em | Buttons |
+| Text | Montserrat | Regular 400 | 15px (16px on computers) | Line height 1.7 | Paragraphs |
+| Small | Montserrat | Regular 400 | 13px | — | Product names on cards, notes, codes |
+| Price | Montserrat | SemiBold 600 | 13–18px | — | Prices |
+
+Rules:
+- Titles are maroon, text is charcoal (or the muted grey for less important text), labels are charcoal or muted grey.
+- Allura only for short lines (one sentence at most); never for prices, buttons or long text.
+- Italic Cormorant Garamond is allowed inside a title for one or two words ("Everyday *elegance*").
+- For print (tags, packaging, cards), use the same fonts and the same roles. Don't retype the logo; use the logo files.
 
 ## The logo: Bloom (chosen, D-023)
 The owner's own **"03 Bloom"** symbol (board 3: a rose centre petal with four deep-rose leaves), traced exactly from their image, above **AARA** in maroon and **CULTURE** in charcoal. Files are in `logo/`, made by `tools/make_logo.py` and `tools/export_png.js`.
@@ -106,4 +126,4 @@ python3 brand/tools/make_logo_options.py   # the other options -> logo-options/
 - `tools/make_logo_options.py`: draws every option and icon into `logo-options/`.
 - `tools/logo_lib.py`: turns text into shapes using the fonts in `tools/fonts/`, so the SVG files look the same on any device without the fonts installed.
 - `tools/preview-board.html`: the preview page used for `00-preview-board.webp`.
-- Fonts: Cormorant Garamond, Jost and Montserrat, all free under the SIL Open Font License (`tools/fonts/OFL-*.txt`).
+- Fonts: Cormorant Garamond, Montserrat and Allura (the brand fonts), plus Jost (used only by the old logo options), all free under the SIL Open Font License (`tools/fonts/OFL-*.txt`).

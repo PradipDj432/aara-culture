@@ -112,7 +112,7 @@ A log of choices made for Aara Culture and why. Add new decisions at the bottom 
 
 ## D-014 — "Minimal luxury" design
 - **Date:** 2026-10-04
-- **Status:** Accepted (colours replaced by D-020)
+- **Status:** Accepted (colours replaced by D-020, fonts by D-024)
 - **Context:** The owner found the first design looked bad and asked for a modern, premium look.
 - **Decision:** Ivory and black colours, an elegant serif for headings (Cormorant Garamond) with a clean sans for text (Jost), small spaced-out capital labels, sharp corners, lots of white space and photo-first layouts. The "Order on WhatsApp" button is black instead of bright green. Placeholder pictures were redrawn as garments on hangers in muted tones.
 - **Alternatives considered:** "Indian heritage premium" (maroon and gold, pattern borders); "Soft modern" (blush colours, rounded cards).
@@ -160,7 +160,7 @@ A log of choices made for Aara Culture and why. Add new decisions at the bottom 
 
 ## D-020 — Final brand colours
 - **Date:** 2026-10-04
-- **Status:** Accepted
+- **Status:** Accepted (the font part is replaced by D-024)
 - **Context:** The owner shared AI-made brand boards and chose the colour palette on them as final.
 - **Decision:** Maroon `#6E2639`, Ivory `#F8F1E7`, Antique Gold `#B88A44`, Muted Rose `#C98F91`, Charcoal `#292522`. Roles are in `brand/README.md`. Fonts stay Cormorant Garamond and Jost (the boards suggest Montserrat/Manrope for text; Jost is the same style and already on the site).
 - **Alternatives considered:** Ivory and black only (D-014); Midnight / Golden Sand / Rose Dusk (an earlier proposal the owner didn't pick).
@@ -189,4 +189,20 @@ A log of choices made for Aara Culture and why. Add new decisions at the bottom 
 - **Decision:** Trace the Bloom straight from the owner's image into vector petals (`brand/tools/trace_bloom.py`), keeping its two tones: Muted Rose centre and the board's Deep Rose `#955457` leaves. Under it: **AARA** in Cormorant Garamond SemiBold (maroon) and **CULTURE** in Montserrat Medium (charcoal), the fonts named on the owner's boards. The main logo has no tagline; a version with "Wear Your Story." exists. The logo goes in the same places as D-022: header and menu (side-by-side version), footer (on maroon), browser and home-screen icon (Bloom on ivory), profile picture, print PNGs and the link preview.
 - **Alternatives considered:** Keep the Palace arch; redraw the Bloom by hand (wouldn't match the owner's design exactly); use the board image directly (blurry, not editable).
 - **Consequences:** The logo now matches the owner's own design. Deep Rose is used only inside the logo. Any new logo version must come from `make_logo.py` so it stays identical.
+
+## D-024 — Brand fonts: Cormorant Garamond, Montserrat, Allura
+- **Date:** 2026-10-04
+- **Status:** Accepted
+- **Context:** Logo and colours are final. The owner wants 2–3 font styles used the same way everywhere, so logo, colours and fonts all line up. The logo used Montserrat for "CULTURE" but the website used Jost for text, so they didn't match.
+- **Decision:** Option 1 from the owner's board 5: **Cormorant Garamond** for titles, **Montserrat** for text, labels, prices and buttons, **Allura** (script) for taglines and brand quotes. Fixed type styles (Display, Title 1, Title 2, Tagline, Label, Button, Text, Small, Price) are listed in `brand/README.md` and set as CSS variables in `css/style.css`. The logo's tagline version now uses Allura too.
+- **Alternatives considered:** Cormorant + Manrope (board 6); Cormorant + Jost (the website before).
+- **Consequences:** Website, logo and print all use the same three fonts. Montserrat is wider than Jost, so the phone announcement bar uses slightly tighter spacing to stay on one line. Allura is only for short lines.
+
+## D-025 — Olive Green Short Kurti is the master image
+- **Date:** 2026-10-04
+- **Status:** Accepted
+- **Context:** The owner wants the Olive Green Short Kurti (AC-003) photo as the main brand image instead of the ivory floral co-ord set.
+- **Decision:** Use it for the home page banner (`images/hero.jpg`, cut to 4:5 from the owner's original full-size upload) and for the link preview (`images/share.jpg`, rebuilt with `node brand/tools/export_png.js`).
+- **Alternatives considered:** Keep the ivory floral co-ord photo (the previous banner).
+- **Consequences:** When the master image changes again, replace `images/hero.jpg` and re-run `export_png.js` so the link preview matches.
 
