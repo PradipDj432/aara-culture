@@ -9,7 +9,7 @@ Where the project stands right now, what's done, what's next, and a dated log. U
 | **Live site** | https://pradipdj432.github.io/aara-culture/ |
 | **Design** | "Minimal luxury": ivory and black, elegant serif headings, photo-first (D-014) |
 | **Work branch** | `working` (made from `main`; see `CLAUDE.md` → Git workflow) |
-| **Brand** | Palace arch logo and final colours, used on the website (D-020, D-022). Guide: `brand/README.md`. |
+| **Brand** | Bloom logo (from the owner's own board) and final colours, used on the website (D-020, D-023). Guide: `brand/README.md`. |
 | **Blocked on** | Nothing. |
 
 ## Done so far
@@ -65,3 +65,6 @@ The full list, with priorities, is in `backlog.md`.
 - Owner picked logo option 4, the Palace arch (D-022). Made the final logo set in `brand/logo/`: full logo with "Wear Your Story.", a version without tagline, a side-by-side version for the header, a square icon, a 1080px profile picture and 2000px print PNGs.
 - Website switched to the final brand colours (maroon, ivory, gold, rose, charcoal) with the logo in the header, menu and footer, a new browser and phone home-screen icon, and a link preview image (`images/share.jpg`) for WhatsApp / Instagram / Facebook shares.
 - Tested at 390px and 1440px: no horizontal scrolling, no broken images, no script errors. Filters, size picker and WhatsApp message work.
+- Owner still doesn't like the Palace arch as redrawn (it had a plain pointed arch and different letters from their board's scalloped arch). Colours are fine. They asked for options taken only from their own boards. Cut the 6 full logos and both symbol boards out of their images into `brand/logo-options/10–12-*.webp`. Waiting for a pick.
+- Owner picked symbol "03 Bloom" from their board 3, with the name AARA (not AC, not Araa) (D-023). Traced the Bloom straight from their image into clean vector petals (`brand/tools/trace_bloom.py`), keeping its two rose tones, and checked it side by side with the original. New logo set in `brand/logo/`: main logo, on maroon, with tagline, name only, side-by-side header version, Bloom alone, icons, 1080px profile picture, print PNGs, link preview.
+- Website now shows the Bloom logo in the header, menu and footer, with the Bloom as the browser and home-screen icon. Tested at 390px and 1440px: no horizontal scrolling, no broken images, no script errors.

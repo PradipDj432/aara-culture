@@ -176,9 +176,17 @@ A log of choices made for Aara Culture and why. Add new decisions at the bottom 
 
 ## D-022 — Palace arch logo, used everywhere
 - **Date:** 2026-10-04
-- **Status:** Accepted
+- **Status:** Replaced by D-023 (logo only; the colours and where the logo is used stay)
 - **Context:** The owner picked option 4, the Palace arch (also the 4th concept on their own board `brand/references/05`), and asked to use it everywhere.
 - **Decision:** The arch logo with the tagline "Wear Your Story." (the tagline that came with this concept) is the main logo. A side-by-side version (small arch + AARA / CULTURE) is used in the website header and menu, because the full arch is too tall to read at header size. A square icon (arch, lotus, "A") is used for the browser tab, phone home screen and profile pictures. The website switches to the final colours (D-020): maroon buttons, announcement bar and footer; maroon headings; ivory background; gold for thin decorations only. A link preview image (`images/share.jpg`) shows a product photo with the logo when the website is shared.
 - **Alternatives considered:** The other four options (D-021); the full arch in the header (unreadable at that size).
 - **Consequences:** All logo files live in `brand/logo/` and are made by `brand/tools/make_logo.py` and `export_png.js`; the website loads them from there. To change the tagline, change it in `make_logo.py` and re-run both scripts.
+
+## D-023 — Bloom logo, traced from the owner's own board
+- **Date:** 2026-10-04
+- **Status:** Accepted
+- **Context:** The owner didn't like the redrawn Palace arch (it didn't look like their board) and asked for options taken only from their own boards. They picked symbol **"03 Bloom"** from `brand/references/03-icon-16-symbols.webp`, and said the name must read **AARA** (not "AC", not "Araa"). Colours stay (D-020).
+- **Decision:** Trace the Bloom straight from the owner's image into vector petals (`brand/tools/trace_bloom.py`), keeping its two tones: Muted Rose centre and the board's Deep Rose `#955457` leaves. Under it: **AARA** in Cormorant Garamond SemiBold (maroon) and **CULTURE** in Montserrat Medium (charcoal), the fonts named on the owner's boards. The main logo has no tagline; a version with "Wear Your Story." exists. The logo goes in the same places as D-022: header and menu (side-by-side version), footer (on maroon), browser and home-screen icon (Bloom on ivory), profile picture, print PNGs and the link preview.
+- **Alternatives considered:** Keep the Palace arch; redraw the Bloom by hand (wouldn't match the owner's design exactly); use the board image directly (blurry, not editable).
+- **Consequences:** The logo now matches the owner's own design. Deep Rose is used only inside the logo. Any new logo version must come from `make_logo.py` so it stays identical.
 

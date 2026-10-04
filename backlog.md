@@ -11,6 +11,7 @@ Everything still to do, newest ideas at the bottom of each section. When work st
 - [ ] **P2 · Owner** Size chart: measurements for each size (bust, length, etc.).
 - [ ] **P2 · Owner** Confirm the UPI ID stays off the website and is sent on WhatsApp only (D-003).
 - [ ] **P2 · Owner** A second photo for each product (back or close-up). It shows on hover and in the product gallery.
+- [ ] **P2 · Owner** Tagline: "Wear Your Story.", another line from the boards, or none.
 - [ ] **P1 · Owner** Set the WhatsApp Business profile picture to `brand/logo/aara-profile-picture-1080.png` (and Instagram, once the account exists).
 - [ ] **P3 · Owner** A wider photo of AC-008 (the current one is very tall, so its sides are filled with a soft blur).
 - [ ] **P3 · Owner** Create an Instagram account, then add the link to the site.
@@ -60,3 +61,5 @@ Focus now is women's clothing only. Later, grow into a lifestyle brand with sub-
 - [x] **Dev** Logo everywhere: website header, menu, footer, browser icon, phone home-screen icon, profile picture file, print PNGs (D-022).
 - [x] **Dev** Website in the final brand colours (D-020, D-022).
 - [x] **Dev** Link preview image for WhatsApp / Instagram / Facebook (`images/share.jpg`).
+- [x] **Owner** Logo re-picked from their own boards: "03 Bloom", name AARA (D-023).
+- [x] **Dev** Bloom traced from the owner's image; new logo set in `brand/logo/`; website, icons, profile picture and link preview updated (D-023).
