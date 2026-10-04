@@ -26,6 +26,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   document.title = product.name + " | " + STORE.name;
   const sizes = sortSizes(product.sizes || []);
+  // Products without a size list are still orderable; the size is agreed on WhatsApp.
+  const hasSizes = sizes.length > 0;
   let selectedSize = sizes.length === 1 ? sizes[0] : "";
 
   const images = product.images || [];
@@ -53,14 +55,18 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         <div class="size-picker">
           <div class="size-head">
-            <p class="label" id="size-label">Select size</p>
+            <p class="label" id="size-label">${hasSizes ? "Select size" : "Size"}</p>
             <a href="info.html#size-chart">Size help</a>
           </div>
-          <div class="sizes" role="group" aria-labelledby="size-label">
-            ${sizes
-              .map((s) => `<button type="button" class="size-option" data-size="${escapeHtml(s)}" aria-pressed="${s === selectedSize}">${escapeHtml(s)}</button>`)
-              .join("")}
-          </div>
+          ${
+            hasSizes
+              ? `<div class="sizes" role="group" aria-labelledby="size-label">
+                  ${sizes
+                    .map((s) => `<button type="button" class="size-option" data-size="${escapeHtml(s)}" aria-pressed="${s === selectedSize}">${escapeHtml(s)}</button>`)
+                    .join("")}
+                </div>`
+              : `<p class="size-note">Ask us for the available sizes on WhatsApp when you order.</p>`
+          }
         </div>
 
         <div class="order-bar">
@@ -103,7 +109,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       orderButton.textContent = "Sold out";
       return;
     }
-    if (!selectedSize) {
+    if (hasSizes && !selectedSize) {
       orderButton.removeAttribute("href");
       orderButton.setAttribute("aria-disabled", "true");
       orderButton.textContent = "Select a size";
@@ -112,7 +118,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const message = [
       `Hi ${STORE.name}, I want to order:`,
       `${product.name} (${product.id})`,
-      `Size: ${selectedSize}`,
+      `Size: ${selectedSize || "please share the available sizes"}`,
       `Price: ${formatPrice(product.price)}`,
       location.href,
     ].join("\n");
@@ -121,7 +127,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     orderButton.innerHTML = WHATSAPP_ICON + " Order on WhatsApp";
   }
 
-  container.querySelector(".sizes").addEventListener("click", (event) => {
+  container.querySelector(".size-picker").addEventListener("click", (event) => {
     const button = event.target.closest(".size-option");
     if (!button) return;
     selectedSize = button.dataset.size;

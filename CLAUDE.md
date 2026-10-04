@@ -26,3 +26,4 @@ These rules apply to anyone working on this repo, people or AI. Keep things simp
 - Mobile first: check every page at phone width (390px) with no horizontal scrolling.
 - The owner edits `products.json` by hand on GitHub. Keep its format simple and show an example in `README.md` whenever the format changes.
 - Text from `products.json` goes through `escapeHtml()` before it's put into the page.
+- Product photos: 3:4 JPEG, about 1000px wide, under ~250 KB, named `ac-XXX-N.jpg` (D-015).

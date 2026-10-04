@@ -35,10 +35,9 @@ aara-culture/
 │   ├── shop.js         Shop page filters
 │   └── product.js      Product page, size picker, order button
 └── images/
-    ├── products/       Real product photos go here
-    ├── samples/        Placeholder photos for the sample products (delete at launch)
-    ├── categories/     Category tiles on the home page
-    ├── hero.svg        Home page banner picture
+    ├── products/       Product photos (ac-001-1.jpg, ac-002-1.jpg, …)
+    ├── categories/     Placeholder tile for a category with no photo yet
+    ├── hero.jpg        Home page banner photo
     └── favicon.svg     Browser tab icon
 ```
 
@@ -64,30 +63,29 @@ Open `products.json` → pencil icon (✏️). Copy this block and paste it **at
 
 ```json
   {
-    "id": "AC-007",
+    "id": "AC-009",
     "name": "Lemon Yellow Cotton Kurti",
     "category": "kurtis",
     "price": 849,
     "sizes": ["S", "M", "L", "XL"],
     "fabric": "Cotton",
     "description": "Straight kurti with white embroidery on the neck.",
-    "images": ["images/products/ac-007-1.jpg", "images/products/ac-007-2.jpg"],
+    "images": ["images/products/ac-009-1.jpg", "images/products/ac-009-2.jpg"],
     "inStock": true
   },
 ```
 
 | Field | What to write |
 |---|---|
-| `id` | A new code, never used before: `AC-007`, `AC-008`, … |
+| `id` | A new code, never used before: `AC-009`, `AC-010`, … |
 | `name` | Product name customers see |
 | `category` | One of `kurtis`, `tops`, `2-piece`, `3-piece` |
 | `price` | Price in rupees, just the number (no ₹, no commas) |
-| `sizes` | Sizes in quotes, separated by commas: `["S", "M", "L"]`. One size? `["Free size"]` |
+| `sizes` | Sizes in quotes, separated by commas: `["S", "M", "L"]`. One size? `["Free size"]`. Not sure yet? Leave it empty, `[]`: the customer is asked to check sizes on WhatsApp |
 | `fabric` | For example `"Cotton"` or `"Rayon kurti, chiffon dupatta"` |
 | `description` | One or two short sentences |
 | `images` | Photo paths from step 1. The first photo is the one shown in the shop |
 | `inStock` | `true` = can order, `false` = shows "Sold out" |
-| `sample` | Only on the sample products. Don't add it to real products |
 
 Click **Commit changes**. The live site updates in about a minute.
 
@@ -97,7 +95,7 @@ Click **Commit changes**. The live site updates in about a minute.
 - **Sold out:** change `"inStock": true` to `"inStock": false`. Back in stock: change it back.
 - **Change a price:** edit the `"price"` number.
 - **Remove a product:** delete its whole block, from `{` to `},`.
-- **Remove the samples:** delete the 6 blocks that have `"sample": true`, and the `images/samples/` folder.
+- **Add sizes later:** change `"sizes": []` to, for example, `"sizes": ["S", "M", "L", "XL"]`. Size buttons and the shop's size filter appear by themselves.
 
 ## Change store details
 Edit `js/config.js`:
@@ -105,12 +103,13 @@ Edit `js/config.js`:
 - `announcement`: the text in the thin black bar at the top of every page.
 - `highlights`: the three short points shown above the footer.
 - `policies.delivery`, `policies.payment`, `policies.returns`: the delivery, payment and return text. It shows on every product page and on the info page.
-- `CATEGORIES`: category names and their home page pictures. To use a real photo, upload it to `images/` and change `image` (for example `"images/category-kurtis.jpg"`).
+- `CATEGORIES`: category names and their home page pictures. Each picture is one of the product photos (for example `"images/products/ac-006-1.jpg"`); if you delete that product, pick another photo. A category with no products is hidden by itself, and shows up again when you add a product to it.
 
 ## Change the home page banner
-Upload a portrait photo (about 1000 × 1250 pixels) to `images/`, then in `index.html` change `images/hero.svg` to your photo's name.
+Upload a portrait photo (about 1000 × 1250 pixels) to `images/`, then in `index.html` change `images/hero.jpg` to your photo's name.
 
 ## Photo tips for the premium look
+- Keep each photo under about 300 KB. Big phone or AI photos (1–2 MB) make the site slow on mobile data; ask Claude to compress them, or use a free tool like squoosh.app (JPEG, quality 80, width 1000).
 - Portrait (3:4), plain light background (white, cream or light grey wall), daylight, no clutter.
 - Same background and framing for every product, so the shop looks tidy.
 - First photo: the full outfit from the front. Second photo: a close-up or the back. It shows when a customer hovers on a computer.

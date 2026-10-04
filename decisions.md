@@ -104,7 +104,7 @@ A log of choices made for Aara Culture and why. Add new decisions at the bottom 
 
 ## D-013 — Launch with sample products and drawn placeholder photos
 - **Date:** 2026-10-04
-- **Status:** Accepted
+- **Status:** Replaced by D-015
 - **Context:** No real product photos are ready yet, but the owner wants to see the site working.
 - **Decision:** Add 6 sample products (`"sample": true`) with simple drawn outfit images in `images/samples/`. Each shows a "Sample" badge.
 - **Alternatives considered:** Wait for real products before building; use stock photos (copyright risk).
@@ -117,4 +117,28 @@ A log of choices made for Aara Culture and why. Add new decisions at the bottom 
 - **Decision:** Ivory and black colours, an elegant serif for headings (Cormorant Garamond) with a clean sans for text (Jost), small spaced-out capital labels, sharp corners, lots of white space and photo-first layouts. The "Order on WhatsApp" button is black instead of bright green. Placeholder pictures were redrawn as garments on hangers in muted tones.
 - **Alternatives considered:** "Indian heritage premium" (maroon and gold, pattern borders); "Soft modern" (blush colours, rounded cards).
 - **Consequences:** Real photos now matter most. Portrait photos (3:4) on plain, light backgrounds suit the design best.
+
+## D-015 — Real products replace the samples; photos are compressed
+- **Date:** 2026-10-04
+- **Status:** Accepted
+- **Context:** The owner uploaded 9 photos (1.5–2 MB each). Two of them showed the same outfit; one of those had a misspelt brand overlay ("Aara Cluture").
+- **Decision:** 8 products (AC-001 to AC-008) with the owner's photos. Each photo is a 3:4 JPEG of about 100–200 KB, named `ac-XXX-1.jpg`. Very tall photos get soft blurred sides instead of being cropped, so heads and feet stay in frame. The photo with the misspelt overlay is not used. The 6 samples and their pictures are removed. Product names and descriptions were written from the photos; prices and fabrics come from the owner.
+- **Alternatives considered:** Use the photos at full size (slow on phones); crop tall photos (cut off heads or feet).
+- **Consequences:** Pages load fast on mobile data. New photos should be compressed the same way.
+
+## D-016 — Hide categories that have no products
+- **Date:** 2026-10-04
+- **Status:** Accepted
+- **Context:** None of the first 8 products is a single long kurti, so the "Kurtis" category would be empty.
+- **Decision:** Any category with no products is left out of the home page, shop filter, menu and footer. It comes back by itself when a product is added to it.
+- **Alternatives considered:** Show an empty category; delete the category from the settings.
+- **Consequences:** No dead ends for customers, and nothing to remember to switch on later.
+
+## D-017 — Products can be listed before their sizes are known
+- **Date:** 2026-10-04
+- **Status:** Accepted
+- **Context:** The owner gave prices and fabrics but not sizes yet. Sizes must not be guessed.
+- **Decision:** `"sizes": []` is allowed. Those products have no size buttons; the order button works straight away and the WhatsApp message asks the shop for the available sizes. The shop's size filter is hidden while no product lists sizes.
+- **Alternatives considered:** Wait for sizes before showing the products; guess common sizes.
+- **Consequences:** The site can go live now. Once sizes are added to `products.json`, size buttons and the size filter appear by themselves.
 
