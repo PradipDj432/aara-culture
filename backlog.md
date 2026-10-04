@@ -6,7 +6,7 @@ Everything still to do, newest ideas at the bottom of each section. When work st
 **Owner:** `Owner` (business owner must provide or decide) · `Dev` (build work)
 
 ## To do — waiting on the business owner
-- [ ] **P1 · Owner** Look at the new layout (screenshots, then the live site after merging) and say what to change.
+- [ ] **P1 · Owner** Look at the new layout on the live site (phone and computer) and say what to change.
 - [ ] **P1 · Owner** Set the WhatsApp Business and Instagram (@aara_culture) profile pictures to `brand/logo/aara-profile-picture-1080.png`.
 - [ ] **P1 · Owner** Open the live site on a real phone and try one order on WhatsApp.
 - [ ] **P1 · Owner** Confirm the size list: S, M, L, XL, XXL, or also XS / 3XL? (D-018)
@@ -74,3 +74,4 @@ Focus now is women's clothing only. Later, grow into a lifestyle brand with sub-
 - [x] **Dev** Instagram linked in the header, menu, footer, home page and info page (D-026).
 - [x] **Dev** New modern layout on every page: logo left and menu right, full-screen photo slider starting with the olive kurti, categories with names on photos, Instagram strip, "You may also like", "Chat with us" button (D-027).
 - [x] **Dev** `branding.md`: one brand guide with everything about the brand (D-028).
+- [x] **Dev** New layout, `branding.md` and Instagram live ([PR #8](https://github.com/PradipDj432/aara-culture/pull/8)).

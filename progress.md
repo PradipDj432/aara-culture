@@ -5,12 +5,12 @@ Where the project stands right now, what's done, what's next, and a dated log. U
 ## Where we are
 | | |
 |---|---|
-| **Phase** | Live. 8 real products, final brand (logo, colours, fonts, master image). New modern layout ready on `working`, waiting for the owner to merge. |
+| **Phase** | Live. 8 real products, final brand (logo, colours, fonts, master image), new modern layout. |
 | **Live site** | https://pradipdj432.github.io/aara-culture/ |
 | **Brand** | Bloom logo with **AARA** (D-023) · colours maroon, ivory, gold, rose, charcoal (D-020) · fonts Cormorant Garamond, Montserrat, Allura (D-024) · master image Olive Green Short Kurti (D-025) · Instagram @aara_culture (D-026). Guide: `branding.md` |
 | **Design** | Modern "minimal luxury" (D-014): logo left and menu right, full-screen photo slider, names on photos, "Chat with us" button (D-027) |
 | **Work branch** | `working` (made from `main`; see `CLAUDE.md` → Git workflow) |
-| **Blocked on** | The owner's OK to merge the new layout (pull request #8). |
+| **Blocked on** | Nothing. Next steps mostly need the owner (see below). |
 
 ## Done so far
 - **Business set-up:** catalog website with WhatsApp ordering, UPI payment, delivery all over India for ₹50, no returns (D-001, D-010 to D-012).
@@ -22,7 +22,7 @@ Where the project stands right now, what's done, what's next, and a dated log. U
 - **Docs and rules:** `branding.md` (the brand guide, D-028), `business.md`, `decisions.md`, `backlog.md`, `progress.md`, `README.md`, `CLAUDE.md`, `brand/README.md`; one `working` branch for all work (D-019).
 
 ## Next
-1. **Owner:** look at the new layout and say "merge" (or what to change).
+1. **Owner:** look at the new layout on the live site and say what to change.
 2. **Owner:** set the WhatsApp and Instagram profile pictures to `brand/logo/aara-profile-picture-1080.png`.
 3. **Owner:** open the live site on a real phone and try one order on WhatsApp.
 4. **Owner:** confirm the size list. "All sizes" is set as S, M, L, XL, XXL; say if XS or 3XL should be added (D-018).
@@ -81,3 +81,4 @@ The full list, with priorities, is in `backlog.md`.
 - Instagram @aara_culture added to the site: header on computers, menu, footer, a "Follow us on Instagram" strip on the home page, and a new "Contact us" section on the info page (D-026).
 - New layout on every page (D-027): logo left and menu right (menu opens from the right on phones); full-screen photo slider on the home page (1 photo per phone screen, 3 side by side on computers, moves every 5 seconds, swipe, dots and arrows) with a see-through header; brand line under the Bloom; categories with names on the photos; photo with the brand quote; how-to-order steps; Instagram strip; new footer with Instagram and WhatsApp; "You may also like" on product pages; maroon "Chat with us" button instead of the round WhatsApp icon; official WhatsApp and Instagram signs (Simple Icons, CC0).
 - Tested at 390px and 1440px with the brand fonts: no horizontal scrolling, no broken images, no script errors. Checked the slider (swipe, arrows, dots, moves by itself, pauses on hover), the see-through header, the menu, the chat button, shop filters, size picker, WhatsApp order message, Instagram links and the unknown-product page.
+- Merged the new layout, `branding.md` and Instagram ([PR #8](https://github.com/PradipDj432/aara-culture/pull/8)); live.
