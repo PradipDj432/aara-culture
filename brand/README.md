@@ -24,7 +24,26 @@ Gold and rose are too light for small text on ivory. Use them for shapes and lin
 
 The owner's boards suggest Montserrat or Manrope for body text. Jost is the same clean geometric style and is already on the website, so we keep Jost. Don't retype the logo with fonts: use the logo files below, so the letters and sizes stay exactly the same everywhere.
 
-## Logo options (waiting for the owner to pick, D-021)
+## The logo: Palace arch (chosen, D-022)
+A gold Indian palace arch with a lotus, **AARA** in maroon, **CULTURE** in charcoal, and the tagline **"Wear Your Story."** Files are in `logo/`, made by `tools/make_logo.py` and `tools/export_png.js`.
+
+| Use | File |
+|---|---|
+| Main logo on light backgrounds (packaging, tags, posts) | `logo/aara-logo-on-light.svg` · print: `logo/aara-logo-on-light-2000.png` |
+| Main logo on maroon / dark backgrounds | `logo/aara-logo-on-dark.svg` · print: `logo/aara-logo-on-dark-2000.png` |
+| Without the tagline | `logo/aara-logo-no-tagline-on-light.svg`, `…-on-dark.svg` |
+| Side-by-side version (website header, narrow spaces) | `logo/aara-logo-horizontal-on-light.svg`, `…-on-dark.svg` |
+| Icon (browser tab, app icon) | `logo/aara-icon.svg` (maroon), `logo/aara-icon-on-light.svg` (ivory), `logo/aara-icon-180.png`, `logo/aara-icon-512.png` |
+| **WhatsApp / Instagram profile picture** | `logo/aara-profile-picture-1080.png` |
+| Link preview (when the website is shared) | `../images/share.jpg` |
+
+Rules:
+- Use these files; don't retype the logo or change its colours.
+- Keep empty space around the logo, at least the height of "CULTURE" on every side.
+- On ivory, use the "on-light" files. On maroon or photos, use the "on-dark" files.
+- In small spaces (under about 120px tall), use the side-by-side version or the icon, not the full arch.
+
+## Other logo options (not chosen, D-021)
 Redrawn from the owner's boards (`references/05` and `06`) as clean vector files. Each comes in a light version (on ivory) and a dark version (on maroon).
 
 | # | Name | Files | Best for |
@@ -39,10 +58,10 @@ Profile and app icons (on maroon): `icon-ac.svg`, `icon-lotus.svg`, `icon-floral
 
 All options on one page: `logo-options/00-preview-board.webp`.
 
-## Taglines seen on the boards (owner to pick)
-- "Rooted in Grace." (on most boards)
+## Taglines from the boards
+- **"Wear Your Story."** (in use, part of the chosen arch logo)
+- "Rooted in Grace."
 - "Tradition, Beautifully Worn."
-- "Wear Your Story."
 - "More than fashion. A culture you wear."
 
 ## Reference images from the owner (`references/`)
@@ -56,13 +75,17 @@ All options on one page: `logo-options/00-preview-board.webp`.
 | `06-brand-board-final-colours.webp` | Brand board with the **final colours** and the main logo direction |
 
 ## Change or redraw the logos
-The logo files are drawn by a script, so they can be tweaked and redrawn exactly:
+The logo files are drawn by scripts, so they can be tweaked and redrawn exactly:
 
 ```bash
 pip install fonttools
-python3 brand/tools/make_logo_options.py
+python3 brand/tools/make_logo.py      # the chosen logo -> logo/
+node brand/tools/export_png.js        # PNG / JPG versions + images/share.jpg (needs Node + Playwright)
+python3 brand/tools/make_logo_options.py   # the other options -> logo-options/
 ```
 
+- `tools/make_logo.py`: draws the chosen logo, the side-by-side version and the icon into `logo/`. The tagline is set at the top of this file.
+- `tools/export_png.js`: makes the PNG/JPG versions and the website's link preview image.
 - `tools/make_logo_options.py`: draws every option and icon into `logo-options/`.
 - `tools/logo_lib.py`: turns text into shapes using the fonts in `tools/fonts/`, so the SVG files look the same on any device without the fonts installed.
 - `tools/preview-board.html`: the preview page used for `00-preview-board.webp`.

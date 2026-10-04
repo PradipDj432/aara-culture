@@ -112,16 +112,21 @@ def floral(word, sub, gold, tag="Rooted in Grace."):
     t, _ = text_path(ITALIC, 500, tag, 28, 300, 372, 0.04)
     return floral_mark(word, word, gold, 300, 140, 1.12) + F(a, word) + F(t, sub)
 
-OPTIONS = [("1", signature, 600, 410), ("2", minimal, 600, 380), ("3", monogram, 600, 400), ("4", arch, 600, 450), ("5", floral, 600, 400)]
-for num, fn, w, h in OPTIONS:
-    open(f"{OUT}/opt{num}-light.svg", "w").write(svg(w, h, fn(MAROON, CHARCOAL, GOLD), IVORY))
-    open(f"{OUT}/opt{num}-dark.svg", "w").write(svg(w, h, fn(IVORY, IVORY, GOLD), MAROON))
+def main():
+    OPTIONS = [("1", signature, 600, 410), ("2", minimal, 600, 380), ("3", monogram, 600, 400), ("4", arch, 600, 450), ("5", floral, 600, 400)]
+    for num, fn, w, h in OPTIONS:
+        open(f"{OUT}/opt{num}-light.svg", "w").write(svg(w, h, fn(MAROON, CHARCOAL, GOLD), IVORY))
+        open(f"{OUT}/opt{num}-dark.svg", "w").write(svg(w, h, fn(IVORY, IVORY, GOLD), MAROON))
 
-# Icons (profile picture / app / browser tab): 200 x 200
-def icon(body): return svg(200, 200, body, MAROON)
-open(f"{OUT}/icon-ac.svg", "w").write(icon(f'<g transform="translate(-50 0) scale(0.5)">{monogram(IVORY, IVORY, GOLD, ring_text=False)}</g>'))
-open(f"{OUT}/icon-lotus.svg", "w").write(icon(lotus(30, 52, 1.17, GOLD, 3)))
-open(f"{OUT}/icon-floral.svg", "w").write(icon(floral_mark(IVORY, IVORY, GOLD, 100, 100, 0.78)))
-a, _ = text_path(SERIF, 600, "A", 120, 100, 150)
-open(f"{OUT}/icon-a.svg", "w").write(icon(lotus(70, 22, 0.5, GOLD, 2.2) + F(a, IVORY)))
-print(sorted(os.listdir(OUT)))
+    # Icons (profile picture / app / browser tab): 200 x 200
+    def icon(body): return svg(200, 200, body, MAROON)
+    open(f"{OUT}/icon-ac.svg", "w").write(icon(f'<g transform="translate(-50 0) scale(0.5)">{monogram(IVORY, IVORY, GOLD, ring_text=False)}</g>'))
+    open(f"{OUT}/icon-lotus.svg", "w").write(icon(lotus(30, 52, 1.17, GOLD, 3)))
+    open(f"{OUT}/icon-floral.svg", "w").write(icon(floral_mark(IVORY, IVORY, GOLD, 100, 100, 0.78)))
+    a, _ = text_path(SERIF, 600, "A", 120, 100, 150)
+    open(f"{OUT}/icon-a.svg", "w").write(icon(lotus(70, 22, 0.5, GOLD, 2.2) + F(a, IVORY)))
+    print(sorted(os.listdir(OUT)))
+
+
+if __name__ == "__main__":
+    main()

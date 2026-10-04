@@ -6,6 +6,12 @@ const WHATSAPP_ICON =
   '<path d="M16.6 14.2c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3z"/>' +
   "</svg>";
 
+// Logo files (D-022). Made by brand/tools/make_logo.py; don't edit them by hand.
+const LOGO = {
+  header: "brand/logo/aara-logo-horizontal-on-light.svg",
+  footer: "brand/logo/aara-logo-on-dark.svg",
+};
+
 const MENU_ICON =
   '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 8h18M3 16h18"/></svg>';
 
@@ -118,7 +124,7 @@ function renderHeader(page) {
           ${link("info.html", "How to order", "info")}
         </nav>
       </div>
-      <a class="logo" href="index.html">${escapeHtml(STORE.name)}</a>
+      <a class="logo" href="index.html"><img src="${LOGO.header}" alt="${escapeHtml(STORE.name)}" width="232" height="84"></a>
       <div class="header-right">
         <a class="icon-button" href="${whatsappLink()}" aria-label="Chat on WhatsApp">${WHATSAPP_ICON}</a>
       </div>
@@ -129,7 +135,7 @@ function renderHeader(page) {
     `<div class="menu-overlay" hidden></div>
     <aside class="menu" id="menu" aria-label="Menu" hidden>
       <div class="menu-head">
-        <span class="logo">${escapeHtml(STORE.name)}</span>
+        <a class="logo" href="index.html"><img src="${LOGO.header}" alt="${escapeHtml(STORE.name)}" width="232" height="84"></a>
         <button type="button" class="icon-button menu-close" aria-label="Close menu">${CLOSE_ICON}</button>
       </div>
       <ul class="menu-links">
@@ -173,8 +179,7 @@ function renderFooter() {
     <div class="footer-main">
       <div class="container footer-inner">
         <div class="footer-brand">
-          <p class="logo">${escapeHtml(STORE.name)}</p>
-          <p class="footer-tagline">${escapeHtml(STORE.tagline)}</p>
+          <a class="logo" href="index.html"><img src="${LOGO.footer}" alt="${escapeHtml(STORE.name)}" width="340" height="430"></a>
         </div>
         <div>
           <p class="footer-heading">Shop</p>

@@ -13,7 +13,9 @@ What the business is, who it sells to, and how it sells. This file holds busines
 | Tagline | Kurtis, tops and sets for every day |
 | Orders | WhatsApp +91 63534 25567 |
 | Look | "Minimal luxury": elegant serif, photo-first (D-014) |
-| Brand colours | Maroon `#6E2639`, Ivory `#F8F1E7`, Antique Gold `#B88A44`, Muted Rose `#C98F91`, Charcoal `#292522` (final, D-020; not on the website yet) |
+| Logo | Palace arch with lotus (D-022). Files in `brand/logo/` |
+| Brand tagline | "Wear Your Story." |
+| Brand colours | Maroon `#6E2639`, Ivory `#F8F1E7`, Antique Gold `#B88A44`, Muted Rose `#C98F91`, Charcoal `#292522` (D-020) |
 | Brand guide | `brand/README.md` |
 
 ## What we sell
@@ -81,7 +83,5 @@ Tracked in `backlog.md`. Don't put these on the website until the owner confirms
 - **Size list:** is S–XXL right, or should XS / 3XL be added?
 - **Size chart:** measurements for each size. The site says "coming soon" and sends customers to WhatsApp for size help.
 - **UPI ID off the website:** suggested (D-003), not yet confirmed by the owner.
-- **Logo:** 5 options redrawn from the owner's own boards (`brand/README.md`). Waiting for the owner to pick (D-021).
-- **Tagline:** "Rooted in Grace." (most boards), "Tradition, Beautifully Worn.", "Wear Your Story." or "Wear your culture". To confirm.
 - **Instagram:** no account yet.
 - **Own domain:** for example `aaraculture.in`, when the owner is ready.

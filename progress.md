@@ -9,7 +9,7 @@ Where the project stands right now, what's done, what's next, and a dated log. U
 | **Live site** | https://pradipdj432.github.io/aara-culture/ |
 | **Design** | "Minimal luxury": ivory and black, elegant serif headings, photo-first (D-014) |
 | **Work branch** | `working` (made from `main`; see `CLAUDE.md` → Git workflow) |
-| **Brand** | Final colours chosen (D-020). Logo: 5 options from the owner's boards, waiting for a pick (`brand/README.md`). |
+| **Brand** | Palace arch logo and final colours, used on the website (D-020, D-022). Guide: `brand/README.md`. |
 | **Blocked on** | Nothing. |
 
 ## Done so far
@@ -22,12 +22,12 @@ Where the project stands right now, what's done, what's next, and a dated log. U
 - Project docs and rules: `business.md`, `decisions.md`, `backlog.md`, `progress.md`, `README.md`, `CLAUDE.md`.
 
 ## Next
-1. **Owner:** pick the logo (1–5) and tagline. Then the logo and final colours go on the website.
+1. **Owner:** set the WhatsApp profile picture to `brand/logo/aara-profile-picture-1080.png`.
 2. **Owner:** open the live site on a real phone and try one order on WhatsApp.
 3. **Owner:** confirm the size list. "All sizes" was set as S, M, L, XL, XXL; say if XS or 3XL should be added (D-018).
 4. **Owner:** send size chart measurements, so the "Size help" section can show a real chart.
 5. **Owner:** a second photo per product (back or close-up), and a wider photo of AC-008.
-6. **Dev:** share preview image, so links look good when sent on WhatsApp or Instagram.
+6. **Dev:** brand board with the chosen logo (tags, packaging, social posts).
 7. **Dev:** "Bag" to order several items in one WhatsApp message.
 
 The full list, with priorities, is in `backlog.md`.
@@ -62,3 +62,6 @@ The full list, with priorities, is in `backlog.md`.
 - The owner shared 5 more AI-made boards and chose their colour palette as final (D-020). Saved all 6 boards in `brand/references/`.
 - Redrew the boards' logo ideas as clean vector files in the final colours: Signature, Modern minimal, AC monogram, Palace arch, Diamond floral, plus 4 profile icons (D-021). Files, colours, fonts and the redraw script are in `brand/` (guide: `brand/README.md`).
 - Added the owner's long-term lifestyle-brand plan (Men, Accessories, Footwear, Lifestyle, Beauty & Care, Beyond) to `business.md` and `backlog.md`.
+- Owner picked logo option 4, the Palace arch (D-022). Made the final logo set in `brand/logo/`: full logo with "Wear Your Story.", a version without tagline, a side-by-side version for the header, a square icon, a 1080px profile picture and 2000px print PNGs.
+- Website switched to the final brand colours (maroon, ivory, gold, rose, charcoal) with the logo in the header, menu and footer, a new browser and phone home-screen icon, and a link preview image (`images/share.jpg`) for WhatsApp / Instagram / Facebook shares.
+- Tested at 390px and 1440px: no horizontal scrolling, no broken images, no script errors. Filters, size picker and WhatsApp message work.

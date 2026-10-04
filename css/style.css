@@ -1,13 +1,21 @@
-/* Aara Culture — "minimal luxury" stylesheet. Mobile first. */
+/* Aara Culture — "minimal luxury" stylesheet in the brand colours (D-020). Mobile first. */
 
 :root {
-  --bg: #faf8f5;
-  --surface: #ffffff;
-  --sand: #efeae3;
-  --ink: #141414;
-  --muted: #6b645d;
-  --stone: #8a8178;
-  --line: #e4ded6;
+  /* Brand colours (brand/README.md) */
+  --maroon: #6e2639;
+  --ivory: #f8f1e7;
+  --gold: #b88a44;
+  --rose: #c98f91;
+  --charcoal: #292522;
+  /* Tints of the brand colours */
+  --bg: var(--ivory);
+  --surface: #fcf8f2;
+  --sand: #efe4d6;
+  --rose-soft: #f3e3df;
+  --ink: var(--charcoal);
+  --muted: #6e625b;
+  --stone: var(--gold);
+  --line: #e6d8c6;
   --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
   --font-body: "Jost", "Helvetica Neue", Arial, sans-serif;
   --gutter: 16px;
@@ -53,6 +61,11 @@ img {
 
 a {
   color: inherit;
+}
+
+h1,
+h2 {
+  color: var(--maroon);
 }
 
 h1,
@@ -159,7 +172,7 @@ p {
 }
 
 :focus-visible {
-  outline: 1px solid var(--ink);
+  outline: 1px solid var(--maroon);
   outline-offset: 3px;
 }
 
@@ -172,10 +185,10 @@ p {
   gap: 10px;
   min-height: 52px;
   padding: 14px 32px;
-  border: 1px solid var(--ink);
+  border: 1px solid var(--maroon);
   border-radius: 0;
-  background: var(--ink);
-  color: var(--bg);
+  background: var(--maroon);
+  color: var(--ivory);
   font: inherit;
   font-size: 12px;
   font-weight: 500;
@@ -188,7 +201,7 @@ p {
 
 .button:hover {
   background: transparent;
-  color: var(--ink);
+  color: var(--maroon);
 }
 
 .button .icon {
@@ -239,8 +252,8 @@ p {
 
 .announcement {
   padding: 9px var(--gutter);
-  background: var(--ink);
-  color: #e9e4dd;
+  background: var(--maroon);
+  color: var(--ivory);
   font-size: 10.5px;
   font-weight: 400;
   letter-spacing: 0.22em;
@@ -252,7 +265,7 @@ p {
   position: sticky;
   top: 0;
   z-index: 40;
-  background: rgba(250, 248, 245, 0.92);
+  background: rgba(248, 241, 231, 0.94);
   backdrop-filter: saturate(140%) blur(10px);
   border-bottom: 1px solid var(--line);
 }
@@ -276,17 +289,16 @@ p {
   margin-right: -12px;
 }
 
+/* Logo files come from brand/logo/ (D-022). */
 .logo {
+  display: block;
   margin: 0;
-  /* Letter spacing adds space after the last letter; pull it back so the logo is centred. */
-  margin-right: -0.3em;
-  font-family: var(--font-display);
-  font-size: 21px;
-  font-weight: 500;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  text-decoration: none;
-  white-space: nowrap;
+  line-height: 0;
+}
+
+.logo img {
+  width: auto;
+  height: 40px;
 }
 
 .nav {
@@ -306,7 +318,7 @@ p {
 
 .nav a:hover,
 .nav a[aria-current="page"] {
-  border-bottom-color: var(--ink);
+  border-bottom-color: var(--maroon);
 }
 
 /* ---------- Slide-out menu (phones) ---------- */
@@ -315,7 +327,7 @@ p {
   position: fixed;
   inset: 0;
   z-index: 50;
-  background: rgba(20, 20, 20, 0.35);
+  background: rgba(41, 37, 34, 0.4);
 }
 
 .menu {
@@ -346,8 +358,8 @@ p {
   border-bottom: 1px solid var(--line);
 }
 
-.menu-head .logo {
-  font-size: 18px;
+.menu-head .logo img {
+  height: 36px;
 }
 
 .menu ul {
@@ -585,7 +597,7 @@ p {
 
 .statement {
   padding: 88px var(--gutter);
-  background: var(--sand);
+  background: var(--rose-soft);
   text-align: center;
 }
 
@@ -597,6 +609,7 @@ p {
   font-style: italic;
   font-weight: 400;
   line-height: 1.3;
+  color: var(--maroon);
 }
 
 .statement-sign {
@@ -671,17 +684,17 @@ p {
 
 .footer-main {
   padding: 64px 0 28px;
-  background: var(--ink);
-  color: #cfc8c0;
+  background: var(--maroon);
+  color: rgba(248, 241, 231, 0.8);
 }
 
 .footer-main a {
-  color: #cfc8c0;
+  color: rgba(248, 241, 231, 0.8);
   text-decoration: none;
 }
 
 .footer-main a:hover {
-  color: #fff;
+  color: var(--ivory);
 }
 
 .footer-inner {
@@ -694,20 +707,13 @@ p {
   grid-column: 1 / -1;
 }
 
-.footer-main .logo {
-  margin-right: 0;
-  color: #fff;
-  font-size: 22px;
-}
-
-.footer-tagline {
-  margin-top: 10px;
-  font-weight: 300;
+.footer-main .logo img {
+  height: 150px;
 }
 
 .footer-heading {
   margin-bottom: 14px;
-  color: #fff;
+  color: var(--ivory);
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.22em;
@@ -739,8 +745,8 @@ p {
 .copyright {
   margin-top: 56px;
   padding-top: 24px;
-  border-top: 1px solid #2e2e2e;
-  color: #8f8881;
+  border-top: 1px solid rgba(248, 241, 231, 0.18);
+  color: rgba(248, 241, 231, 0.6);
   font-size: 12px;
 }
 
@@ -757,9 +763,9 @@ p {
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: var(--ink);
-  color: var(--bg);
-  box-shadow: 0 8px 24px rgba(20, 20, 20, 0.18);
+  background: var(--maroon);
+  color: var(--ivory);
+  box-shadow: 0 8px 24px rgba(41, 37, 34, 0.2);
   transition: transform 0.3s var(--ease);
 }
 
@@ -819,8 +825,8 @@ p {
 
 .tab:hover,
 .tab[aria-pressed="true"] {
-  border-bottom-color: var(--ink);
-  color: var(--ink);
+  border-bottom-color: var(--maroon);
+  color: var(--maroon);
 }
 
 .size-filter-row {
@@ -863,13 +869,13 @@ p {
 }
 
 .size-option:hover {
-  border-color: var(--ink);
+  border-color: var(--maroon);
 }
 
 .size-option[aria-pressed="true"] {
-  border-color: var(--ink);
-  background: var(--ink);
-  color: var(--bg);
+  border-color: var(--maroon);
+  background: var(--maroon);
+  color: var(--ivory);
 }
 
 .label {
@@ -920,7 +926,7 @@ p {
   right: 14px;
   bottom: 14px;
   padding: 4px 10px;
-  background: rgba(250, 248, 245, 0.9);
+  background: rgba(248, 241, 231, 0.9);
   font-size: 11px;
   letter-spacing: 0.12em;
 }
@@ -999,7 +1005,7 @@ p {
   z-index: 10;
   margin: 28px calc(var(--gutter) * -1) 0;
   padding: 12px var(--gutter);
-  background: rgba(250, 248, 245, 0.96);
+  background: rgba(248, 241, 231, 0.96);
   border-top: 1px solid var(--line);
 }
 
@@ -1140,8 +1146,8 @@ p {
     margin-left: 0;
   }
 
-  .logo {
-    font-size: 25px;
+  .logo img {
+    height: 48px;
   }
 
   /* Desktop hero: text on the left, photo on the right. */
