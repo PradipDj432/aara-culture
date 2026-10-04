@@ -26,6 +26,21 @@ What the business is, who it sells to, and how it sells. This file holds busines
 - **Stock:** all 8 products are in stock.
 - **Product list:** each product's name, code, price, fabric, sizes and photo are in `products.json`.
 
+## Long-term plan
+Today Aara Culture sells women's ethnic wear only, and the website focuses on that. The owner's bigger plan is a full **lifestyle brand** with sub-brands, each sharing one logo style, colours and fonts:
+
+| Sub-brand | What it would sell |
+|---|---|
+| Aara Culture (Women) | Women's clothing (live now) |
+| Aara Men | Men's clothing |
+| Aara Accessories | Bags and accessories |
+| Aara Footwear | Footwear |
+| Aara Lifestyle | Home and living |
+| Aara Beauty & Care | Beauty and personal care |
+| Aara Beyond | Sustainability / community projects |
+
+These are ideas, not launched products. Sub-brand logos must not use human silhouettes (owner's preference). Tracked in `backlog.md` → "Future: lifestyle brand".
+
 ## Who buys
 Women in India who find us through the website link (shared on WhatsApp, social media and word of mouth) and prefer to order by chat.
 
@@ -64,6 +79,8 @@ Tracked in `backlog.md`. Don't put these on the website until the owner confirms
 - **Size list:** is S–XXL right, or should XS / 3XL be added?
 - **Size chart:** measurements for each size. The site says "coming soon" and sends customers to WhatsApp for size help.
 - **UPI ID off the website:** suggested (D-003), not yet confirmed by the owner.
-- **Logo:** no logo yet. The site uses a text logo.
+- **Logo:** 8 options shown on 2026-10-04 (4 simple, 4 premium; no human silhouettes). Waiting for the owner to pick one.
+- **Brand colours:** proposed Midnight `#141414`, Ivory `#FAF8F5`, Golden Sand `#C9A96A`, Rose Dusk `#B9817A`.
+- **Tagline:** "Wear your culture" (from the owner's brand board), or none. To confirm.
 - **Instagram:** no account yet.
 - **Own domain:** for example `aaraculture.in`, when the owner is ready.
