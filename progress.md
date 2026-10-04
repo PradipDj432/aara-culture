@@ -9,7 +9,7 @@ Where the project stands right now, what's done, what's next, and a dated log. U
 | **Live site** | https://pradipdj432.github.io/aara-culture/ |
 | **Design** | "Minimal luxury": ivory and black, elegant serif headings, photo-first (D-014) |
 | **Work branch** | `working` (made from `main`; see `CLAUDE.md` → Git workflow) |
-| **Brand** | Bloom logo (from the owner's own board) and final colours, used on the website (D-020, D-023). Guide: `brand/README.md`. |
+| **Brand** | Bloom logo, final colours and brand fonts, used on the website (D-020, D-023, D-024). Guide: `brand/README.md`. |
 | **Blocked on** | Nothing. |
 
 ## Done so far
@@ -68,3 +68,6 @@ The full list, with priorities, is in `backlog.md`.
 - Owner still doesn't like the Palace arch as redrawn (it had a plain pointed arch and different letters from their board's scalloped arch). Colours are fine. They asked for options taken only from their own boards. Cut the 6 full logos and both symbol boards out of their images into `brand/logo-options/10–12-*.webp`. Waiting for a pick.
 - Owner picked symbol "03 Bloom" from their board 3, with the name AARA (not AC, not Araa) (D-023). Traced the Bloom straight from their image into clean vector petals (`brand/tools/trace_bloom.py`), keeping its two rose tones, and checked it side by side with the original. New logo set in `brand/logo/`: main logo, on maroon, with tagline, name only, side-by-side header version, Bloom alone, icons, 1080px profile picture, print PNGs, link preview.
 - Website now shows the Bloom logo in the header, menu and footer, with the Bloom as the browser and home-screen icon. Tested at 390px and 1440px: no horizontal scrolling, no broken images, no script errors.
+- Merged the Bloom logo ([PR #6](https://github.com/PradipDj432/aara-culture/pull/6)); it's live. Owner: logo and colours are final for now (colours may be adjusted a little later).
+- Fonts: showed 3 pairs from the owner's boards on real website pieces. Owner chose Cormorant Garamond (titles) + Montserrat (text) + Allura (taglines) (D-024). Replaced Jost with Montserrat across the website, set fixed type styles as CSS variables, put the brand quote in Allura, and switched the logo's tagline version to Allura. Type styles are documented in `brand/README.md`.
+- Tested at 360px, 390px and 1440px: no horizontal scrolling, no clipped text, no broken images, no script errors; the announcement bar stays on one line.

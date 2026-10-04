@@ -35,7 +35,7 @@ These rules apply to anyone working on this repo, people or AI. Keep things simp
 
 ## Design ("minimal luxury", D-014)
 - Colours: the brand colours (D-020), set as CSS variables at the top of `css/style.css`. Maroon `#6e2639` for headings, buttons, the announcement bar and the footer; ivory `#f8f1e7` background; charcoal `#292522` text; gold `#b88a44` for thin lines and small decorations only (not text); muted rose `#c98f91` and its soft tint for gentle backgrounds. No other colours.
-- Fonts: Cormorant Garamond for the logo and headings, Jost for everything else. Small labels are uppercase with wide letter spacing.
+- Fonts (D-024): only **Cormorant Garamond** (titles), **Montserrat** (text, labels, prices, buttons) and **Allura** (taglines, short brand lines). Use the type styles in `brand/README.md` → "Type styles" and the CSS variables at the top of `css/style.css` (`--font-title`, `--font-text`, `--font-script`, `--size-*`, `--track-*`); don't add new fonts or one-off sizes. Small labels are uppercase with wide letter spacing.
 - Sharp corners (no rounded buttons or cards), thin 1px lines, lots of white space. Photos lead every page.
 
 ## Code

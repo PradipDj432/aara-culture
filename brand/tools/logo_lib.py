@@ -10,7 +10,8 @@ def font(name, wght):
     key = (name, wght)
     if key not in _cache:
         f = TTFont(os.path.join(F, name))
-        _cache[key] = instantiateVariableFont(f, {"wght": wght})
+        # Variable fonts get the requested weight; single-weight fonts (like Allura) are used as they are.
+        _cache[key] = instantiateVariableFont(f, {"wght": wght}) if "fvar" in f else f
     return _cache[key]
 
 def text_path(fname, wght, text, size, x, y, tracking=0.0, anchor="middle"):

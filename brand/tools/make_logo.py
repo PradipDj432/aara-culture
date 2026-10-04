@@ -1,8 +1,8 @@
 """Draws the chosen Aara Culture logo (Bloom, D-023) into brand/logo/.
 
 The Bloom petals are traced from the owner's own board (see trace_bloom.py); the
-lettering uses the fonts named on the owner's brand boards: Cormorant Garamond
-SemiBold for AARA, Montserrat for CULTURE.
+lettering uses the brand fonts (D-024): Cormorant Garamond SemiBold for AARA,
+Montserrat for CULTURE, Allura for the tagline.
 
 Run: pip install fonttools && python3 brand/tools/make_logo.py
 Then, for the PNG versions: node brand/tools/export_png.js  (needs Node + Playwright)
@@ -11,13 +11,14 @@ import glob
 import json
 import os
 
-from logo_lib import text_path, SERIF, ITALIC
+from logo_lib import text_path, SERIF
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "..", "logo")
 os.makedirs(OUT, exist_ok=True)
 
 MONTSERRAT = "Montserrat[wght].ttf"
+ALLURA = "Allura-Regular.ttf"       # tagline script (D-024)
 MAROON, IVORY, CHARCOAL = "#6E2639", "#F8F1E7", "#292522"
 ROSE = "#C98F91"        # Muted Rose: the Bloom's centre petal
 DEEP_ROSE = "#955457"   # the Bloom's outer leaves, as on the owner's board
@@ -56,7 +57,7 @@ def stacked(dark=False, name_only=False, tagline=False):
         c, _ = text_path(MONTSERRAT, 500, "CULTURE", 25, 300, 372, 0.45)
         body += F(c, sub)
     if tagline:
-        t, _ = text_path(ITALIC, 500, TAGLINE, 30, 300, 432, 0.04)
+        t, _ = text_path(ALLURA, 400, TAGLINE, 46, 300, 440, 0.0)
         body += F(t, sub)
     return body
 
@@ -91,8 +92,8 @@ def profile():
 FILES = {
     "aara-logo-on-light.svg": svg((100, 0, 400, 400), stacked()),
     "aara-logo-on-dark.svg": svg((100, 0, 400, 400), stacked(dark=True)),
-    "aara-logo-tagline-on-light.svg": svg((100, 0, 400, 460), stacked(tagline=True)),
-    "aara-logo-tagline-on-dark.svg": svg((100, 0, 400, 460), stacked(dark=True, tagline=True)),
+    "aara-logo-tagline-on-light.svg": svg((100, 0, 400, 470), stacked(tagline=True)),
+    "aara-logo-tagline-on-dark.svg": svg((100, 0, 400, 470), stacked(dark=True, tagline=True)),
     "aara-logo-name-only-on-light.svg": svg((100, 0, 400, 345), stacked(name_only=True)),
     "aara-logo-name-only-on-dark.svg": svg((100, 0, 400, 345), stacked(dark=True, name_only=True)),
     "aara-logo-horizontal-on-light.svg": svg((0, 0, 262, 84), horizontal()),

@@ -21,7 +21,8 @@ Everything still to do, newest ideas at the bottom of each section. When work st
 - [ ] **P2 · Dev** Size chart table on the info page (once the owner sends measurements).
 - [ ] **P2 · Dev** Bag: add several items, then send them all in one WhatsApp message (no login, saved in the browser).
 - [ ] **P2 · Dev** When the first single kurti is added, use its photo as the Kurtis category picture in `js/config.js` (it's a drawn placeholder now).
-- [ ] **P2 · Dev** Brand board with the chosen logo (logo, colours, fonts, icon, pattern, tag and packaging mock-ups), saved in `brand/`.
+- [ ] **P2 · Dev** Brand board with the final logo, colours and fonts (icon, pattern, hang tag, packaging, social post mock-ups), saved in `brand/`.
+- [ ] **P3 · Owner** Small colour adjustments, if wanted later (colours are final for now, D-020).
 - [ ] **P3 · Dev** Connect custom domain once bought.
 - [ ] **P3 · Dev** Google Business Profile listing.
 - [ ] **P3 · Dev** Optional Razorpay "Pay now" link if order volume grows (see D-002 / D-010).
@@ -63,3 +64,5 @@ Focus now is women's clothing only. Later, grow into a lifestyle brand with sub-
 - [x] **Dev** Link preview image for WhatsApp / Instagram / Facebook (`images/share.jpg`).
 - [x] **Owner** Logo re-picked from their own boards: "03 Bloom", name AARA (D-023).
 - [x] **Dev** Bloom traced from the owner's image; new logo set in `brand/logo/`; website, icons, profile picture and link preview updated (D-023).
+- [x] **Owner** Fonts chosen: Cormorant Garamond + Montserrat + Allura (D-024).
+- [x] **Dev** Fonts and type styles applied to the website, logo tagline and brand guide (D-024).

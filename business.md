@@ -15,7 +15,8 @@ What the business is, who it sells to, and how it sells. This file holds busines
 | Look | "Minimal luxury": elegant serif, photo-first (D-014) |
 | Logo | The Bloom (rose petals) above **AARA**, with CULTURE (D-023). Files in `brand/logo/` |
 | Brand tagline | Not confirmed. A logo version with "Wear Your Story." exists |
-| Brand colours | Maroon `#6E2639`, Ivory `#F8F1E7`, Antique Gold `#B88A44`, Muted Rose `#C98F91`, Charcoal `#292522` (D-020) |
+| Brand colours | Maroon `#6E2639`, Ivory `#F8F1E7`, Antique Gold `#B88A44`, Muted Rose `#C98F91`, Charcoal `#292522` (D-020; may be adjusted a little later) |
+| Brand fonts | Cormorant Garamond (titles), Montserrat (text), Allura (taglines) (D-024) |
 | Brand guide | `brand/README.md` |
 
 ## What we sell
