@@ -16,7 +16,7 @@ A log of choices made for Aara Culture and why. Add new decisions at the bottom 
 
 ## D-002 — Payment by UPI or cash on delivery, after WhatsApp confirmation
 - **Date:** 2026-10-04
-- **Status:** Accepted
+- **Status:** Replaced by D-010
 - **Context:** Customers need a simple way to pay that costs nothing to set up.
 - **Decision:** After confirming stock on WhatsApp, take payment by UPI or cash on delivery.
 - **Alternatives considered:** A "Pay now" Razorpay payment link (needs a Razorpay account with KYC and charges a fee per payment).
@@ -56,7 +56,7 @@ A log of choices made for Aara Culture and why. Add new decisions at the bottom 
 
 ## D-007 — Plain HTML, CSS and JavaScript with no build step
 - **Date:** 2026-10-04
-- **Status:** Proposed
+- **Status:** Accepted
 - **Context:** Most customers will open the site on a phone. The owner will edit files directly on GitHub.
 - **Decision:** Write the site in plain HTML/CSS/JavaScript. No framework, no build tools, no `npm install`.
 - **Alternatives considered:** Angular / React / a static site generator (needs a build step and makes direct edits on GitHub harder).
@@ -77,3 +77,36 @@ A log of choices made for Aara Culture and why. Add new decisions at the bottom 
 - **Decision:** Don't show Instagram on the site. Add it when the account exists.
 - **Alternatives considered:** —
 - **Consequences:** WhatsApp is the only contact channel on the site.
+
+## D-010 — UPI only, no cash on delivery (for now)
+- **Date:** 2026-10-04
+- **Status:** Accepted
+- **Context:** The owner wants to keep things simple at the start. Cash on delivery adds courier fees and risk of refused parcels.
+- **Decision:** Customers pay by UPI after the order is confirmed on WhatsApp. No cash on delivery. Replaces D-002.
+- **Alternatives considered:** UPI or cash on delivery (D-002).
+- **Consequences:** Every order is prepaid. The owner may turn COD on later; change the payment text in `js/config.js`.
+
+## D-011 — Deliver all over India, flat ₹50 per order
+- **Date:** 2026-10-04
+- **Status:** Accepted
+- **Context:** The site needs a clear delivery rule.
+- **Decision:** Ship anywhere in India for a flat ₹50 delivery charge per order. The owner may change the charge later.
+- **Alternatives considered:** Local delivery only; free delivery above an order value.
+- **Consequences:** The delivery text is in one place, `js/config.js`.
+
+## D-012 — No returns or exchanges (for now)
+- **Date:** 2026-10-04
+- **Status:** Accepted
+- **Context:** The owner wants to keep things simple at the start.
+- **Decision:** No returns or exchanges. Customers are invited to ask about size on WhatsApp before ordering.
+- **Alternatives considered:** Exchange within a few days.
+- **Consequences:** Size help matters more, so a size chart is in the backlog. The rule can change later in `js/config.js`.
+
+## D-013 — Launch with sample products and drawn placeholder photos
+- **Date:** 2026-10-04
+- **Status:** Accepted
+- **Context:** No real product photos are ready yet, but the owner wants to see the site working.
+- **Decision:** Add 6 sample products (`"sample": true`) with simple drawn outfit images in `images/samples/`. Each shows a "Sample" badge.
+- **Alternatives considered:** Wait for real products before building; use stock photos (copyright risk).
+- **Consequences:** The samples must be deleted from `products.json` (and `images/samples/`) before real launch.
+

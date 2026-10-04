@@ -19,12 +19,23 @@ Women in India who find us through the website link (shared on WhatsApp, social 
 The website is a **catalog**, not a full online shop. It has no checkout, no customer login and no payment gateway.
 
 1. The customer browses the website and opens a product.
-2. They pick a size and tap **"Order on WhatsApp"** (or add several items to the bag and send them together).
+2. They pick a size and tap **"Order on WhatsApp"**.
 3. WhatsApp opens with a ready message, for example:
-   *"Hi Aara Culture, I want to order Pink Cotton Kurti (AC-012), Size M, ₹899."*
-4. We confirm stock on WhatsApp.
-5. The customer pays by **UPI** or **cash on delivery**.
-6. We ship the order.
+   *"Hi Aara Culture, I want to order: Rose Pink Cotton Kurti (AC-001), Size: M, Price: ₹799"* plus a link to the product.
+4. We confirm stock on WhatsApp and tell them the total including delivery.
+5. The customer pays by **UPI**.
+6. We pack and ship the order.
+
+## Shop rules
+These are shown on the website. To change one, edit `js/config.js` (see `README.md`).
+
+| Rule | Current setting | Decision |
+|---|---|---|
+| Delivery area | All over India | D-011 |
+| Delivery charge | Flat ₹50 per order (may change later) | D-011 |
+| Payment | UPI only, after the order is confirmed on WhatsApp | D-010 |
+| Cash on delivery | Not available (may change later) | D-010 |
+| Returns / exchange | No returns or exchanges (may change later) | D-012 |
 
 ## Contact
 | Channel | Detail |
@@ -34,11 +45,8 @@ The website is a **catalog**, not a full online shop. It has no checkout, no cus
 | Website | `pradipdj432.github.io/aara-culture` (not live yet) |
 
 ## Still to decide
-These are open. Don't put them on the website until the owner confirms them. Tracked in `backlog.md`.
+Tracked in `backlog.md`. Don't put these on the website until the owner confirms them.
 
-- **Delivery area:** all of India, or only our city?
-- **Delivery charge:** free, flat fee, or free above a certain order value?
-- **Cash on delivery:** available everywhere, only locally, or not at all?
-- **Return / exchange rule:** for example "exchange within 7 days, no returns".
-- **Logo and brand colours:** no logo yet.
-- **First products:** photos, names, prices, sizes and fabric.
+- **Logo and brand colours:** no logo yet. The site uses a text logo.
+- **First real products:** photos, names, prices, sizes and fabric. The site shows 6 sample products until then.
+- **Size chart:** measurements for each size. The site says "coming soon" and sends customers to WhatsApp for size help.
