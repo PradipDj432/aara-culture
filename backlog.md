@@ -11,7 +11,7 @@ Everything still to do, newest ideas at the bottom of each section. When work st
 - [x] **P1 · Owner** Cash on delivery: not for now (D-010).
 - [x] **P1 · Owner** Return / exchange rule: no returns or exchanges for now (D-012).
 - [x] **P1 · Owner** Upload real product photos, with price and fabric for each (8 products).
-- [ ] **P1 · Owner** Sizes for each of the 8 products.
+- [x] **P1 · Owner** Sizes for each of the 8 products: all sizes (S–XXL).
 - [x] **P1 · Owner** Turn on GitHub Pages.
 - [ ] **P2 · Owner** Size chart: measurements for each size (bust, length, etc.).
 - [ ] **P2 · Owner** Logo and brand colours. Until then, the site uses a text logo.
@@ -31,7 +31,7 @@ Everything still to do, newest ideas at the bottom of each section. When work st
 - [x] **P1 · Dev** Merge to `main` and turn on GitHub Pages.
 - [x] **P1 · Dev** Redesign in the "minimal luxury" style (D-014).
 - [x] **P1 · Dev** Put the owner's real photos in: products, home banner, category pictures. Remove the 6 samples.
-- [ ] **P1 · Dev** Add size buttons once the owner sends sizes.
+- [x] **P1 · Dev** Add size buttons once the owner sends sizes.
 - [ ] **P1 · Dev** Check the live site on a real phone.
 
 ## Build — after launch

@@ -5,10 +5,10 @@ Where the project stands right now, and a dated log of what was done. Update thi
 ## Current status
 | | |
 |---|---|
-| **Phase** | 8 real products with the owner's photos, ready to go live. |
+| **Phase** | Live with 8 real products, the owner's photos and sizes S–XXL. |
 | **Live site** | https://pradipdj432.github.io/aara-culture/ |
-| **Blocked on** | Sizes for each product (the site asks customers to check sizes on WhatsApp until then). |
-| **Next step** | Merge the real products. Then add size buttons when the owner sends sizes. |
+| **Blocked on** | Nothing. |
+| **Next step** | Check the live site on a real phone. Then backlog P2 items (size chart, second photos, bag). |
 
 ## Log
 
@@ -32,3 +32,5 @@ Where the project stands right now, and a dated log of what was done. Update thi
 - Replaced the 6 samples with the 8 real products. Home banner now uses the ivory floral co-ord photo; category tiles use product photos.
 - Empty categories ("Kurtis" for now) are hidden everywhere (D-016). Products without sizes can still be ordered; the WhatsApp message asks for available sizes (D-017).
 - Tested at 390px and 1440px: no horizontal scrolling, no broken images, no script errors.
+- Owner: all sizes available. Set S, M, L, XL, XXL on all 8 products, so size buttons and the shop size filter now show.
+- Owner set the git rule: one simple `working` branch, made from `main`, for all feature work (saved in `CLAUDE.md`).
