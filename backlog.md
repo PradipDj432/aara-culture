@@ -66,3 +66,4 @@ Focus now is women's clothing only. Later, grow into a lifestyle brand with sub-
 - [x] **Dev** Bloom traced from the owner's image; new logo set in `brand/logo/`; website, icons, profile picture and link preview updated (D-023).
 - [x] **Owner** Fonts chosen: Cormorant Garamond + Montserrat + Allura (D-024).
 - [x] **Dev** Fonts and type styles applied to the website, logo tagline and brand guide (D-024).
+- [x] **Dev** Olive Green Short Kurti as the master image: home banner and link preview (D-025).

@@ -198,3 +198,11 @@ A log of choices made for Aara Culture and why. Add new decisions at the bottom 
 - **Alternatives considered:** Cormorant + Manrope (board 6); Cormorant + Jost (the website before).
 - **Consequences:** Website, logo and print all use the same three fonts. Montserrat is wider than Jost, so the phone announcement bar uses slightly tighter spacing to stay on one line. Allura is only for short lines.
 
+## D-025 — Olive Green Short Kurti is the master image
+- **Date:** 2026-10-04
+- **Status:** Accepted
+- **Context:** The owner wants the Olive Green Short Kurti (AC-003) photo as the main brand image instead of the ivory floral co-ord set.
+- **Decision:** Use it for the home page banner (`images/hero.jpg`, cut to 4:5 from the owner's original full-size upload) and for the link preview (`images/share.jpg`, rebuilt with `node brand/tools/export_png.js`).
+- **Alternatives considered:** Keep the ivory floral co-ord photo (the previous banner).
+- **Consequences:** When the master image changes again, replace `images/hero.jpg` and re-run `export_png.js` so the link preview matches.
+

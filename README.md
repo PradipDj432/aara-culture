@@ -120,7 +120,7 @@ Edit `js/config.js`:
 - The link preview address is in each page's `<head>` (`og:image`). If the website moves to its own domain, update it there.
 
 ## Change the home page banner
-Upload a portrait photo (about 1000 × 1250 pixels) to `images/`, then in `index.html` change `images/hero.jpg` to your photo's name.
+The banner is `images/hero.jpg` (now the Olive Green Short Kurti, D-025). To change it, replace that file with a portrait photo of about 1000 × 1250 pixels (or upload a new one and change `images/hero.jpg` in `index.html`). Then run `node brand/tools/export_png.js` so the link preview uses the same photo.
 
 ## Photo tips for the premium look
 - Keep each photo under about 250 KB. Big phone or AI photos (1–2 MB) make the site slow on mobile data; ask Claude to compress them, or use a free tool like squoosh.app (JPEG, quality 80, width 1000).
