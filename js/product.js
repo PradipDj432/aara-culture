@@ -32,52 +32,64 @@ document.addEventListener("DOMContentLoaded", async () => {
   const slides = images
     .map((src, i) => `<img src="${escapeHtml(src)}" alt="${escapeHtml(product.name)}, photo ${i + 1}" width="600" height="800"${i ? ' loading="lazy"' : ""}>`)
     .join("");
-  const dots =
+  const counter =
     images.length > 1
-      ? `<div class="gallery-dots">${images
-          .map((_, i) => `<button type="button" aria-label="Photo ${i + 1}"${i ? "" : ' aria-current="true"'}></button>`)
-          .join("")}</div>`
+      ? `<p class="gallery-count" aria-hidden="true"><span id="gallery-index">1</span> / ${images.length}</p>`
       : "";
 
   container.innerHTML = `
     <div class="product-layout">
       <div class="gallery">
         <div class="gallery-track">${slides}</div>
-        ${dots}
+        ${counter}
       </div>
       <div class="product-info">
         <p class="breadcrumb">
-          <a href="shop.html">Shop</a> /
-          <a href="shop.html?cat=${encodeURIComponent(product.category)}">${escapeHtml(categoryName(product.category))}</a>
+          <a href="shop.html">Shop</a><span aria-hidden="true">/</span><a href="shop.html?cat=${encodeURIComponent(product.category)}">${escapeHtml(categoryName(product.category))}</a>
         </p>
         <h1 class="product-title">${escapeHtml(product.name)}</h1>
-        <p class="product-code">Code: ${escapeHtml(product.id)}${product.sample ? ' <span class="badge badge-sample">Sample</span>' : ""}</p>
         <p class="product-price">${formatPrice(product.price)}</p>
+        <p class="product-code">Code ${escapeHtml(product.id)}${product.sample ? ' <span class="badge badge-light">Sample</span>' : ""}</p>
 
         <div class="size-picker">
-          <p class="label" id="size-label">Size</p>
-          <div class="chips" role="group" aria-labelledby="size-label">
+          <div class="size-head">
+            <p class="label" id="size-label">Select size</p>
+            <a href="info.html#size-chart">Size help</a>
+          </div>
+          <div class="sizes" role="group" aria-labelledby="size-label">
             ${sizes
-              .map((s) => `<button type="button" class="chip" data-size="${escapeHtml(s)}" aria-pressed="${s === selectedSize}">${escapeHtml(s)}</button>`)
+              .map((s) => `<button type="button" class="size-option" data-size="${escapeHtml(s)}" aria-pressed="${s === selectedSize}">${escapeHtml(s)}</button>`)
               .join("")}
           </div>
-          <p class="size-help"><a href="info.html#size-chart">Size help</a></p>
         </div>
 
         <div class="order-bar">
-          <a class="button button-whatsapp" id="order-button" target="_blank" rel="noopener"></a>
+          <a class="button button-block" id="order-button" target="_blank" rel="noopener"></a>
         </div>
+        <p class="order-note">We confirm availability on WhatsApp before you pay.</p>
 
-        <dl class="details">
-          ${product.fabric ? `<dt>Fabric</dt><dd>${escapeHtml(product.fabric)}</dd>` : ""}
-          ${product.description ? `<dt>Details</dt><dd>${escapeHtml(product.description)}</dd>` : ""}
-        </dl>
-
-        <ul class="policy-list">
-          <li><strong>Delivery:</strong> <span data-policy="delivery"></span></li>
-          <li><strong>Payment:</strong> <span data-policy="payment"></span></li>
-          <li><strong>Returns:</strong> <span data-policy="returns"></span></li>
-        </ul>
+        <div class="accordion">
+          <details open>
+            <summary>Details</summary>
+            <div class="accordion-body">
+              ${product.description ? `<p>${escapeHtml(product.description)}</p>` : ""}
+              ${product.fabric ? `<p><strong>Fabric:</strong> ${escapeHtml(product.fabric)}</p>` : ""}
+            </div>
+          </details>
+          <details>
+            <summary>Delivery &amp; payment</summary>
+            <div class="accordion-body">
+              <p data-policy="delivery"></p>
+              <p data-policy="payment"></p>
+            </div>
+          </details>
+          <details>
+            <summary>Returns</summary>
+            <div class="accordion-body">
+              <p data-policy="returns"></p>
+            </div>
+          </details>
+        </div>
       </div>
     </div>`;
   fillPolicies();
@@ -94,7 +106,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (!selectedSize) {
       orderButton.removeAttribute("href");
       orderButton.setAttribute("aria-disabled", "true");
-      orderButton.textContent = "Select a size to order";
+      orderButton.textContent = "Select a size";
       return;
     }
     const message = [
@@ -109,29 +121,24 @@ document.addEventListener("DOMContentLoaded", async () => {
     orderButton.innerHTML = WHATSAPP_ICON + " Order on WhatsApp";
   }
 
-  container.querySelector(".size-picker .chips").addEventListener("click", (event) => {
-    const button = event.target.closest(".chip");
+  container.querySelector(".sizes").addEventListener("click", (event) => {
+    const button = event.target.closest(".size-option");
     if (!button) return;
     selectedSize = button.dataset.size;
-    container.querySelectorAll(".size-picker .chip").forEach((chip) => {
-      chip.setAttribute("aria-pressed", String(chip.dataset.size === selectedSize));
+    container.querySelectorAll(".size-option").forEach((option) => {
+      option.setAttribute("aria-pressed", String(option.dataset.size === selectedSize));
     });
     updateOrderButton();
   });
 
-  // Swipeable photos: keep the dots in sync, and let dots jump to a photo.
+  // Swipeable photos on phones: keep the "1 / 2" counter in sync.
   const track = container.querySelector(".gallery-track");
-  const dotButtons = [...container.querySelectorAll(".gallery-dots button")];
-  track.addEventListener("scroll", () => {
-    const index = Math.round(track.scrollLeft / track.clientWidth);
-    dotButtons.forEach((dot, i) => {
-      if (i === index) dot.setAttribute("aria-current", "true");
-      else dot.removeAttribute("aria-current");
+  const indexLabel = document.getElementById("gallery-index");
+  if (indexLabel) {
+    track.addEventListener("scroll", () => {
+      indexLabel.textContent = String(Math.round(track.scrollLeft / track.clientWidth) + 1);
     });
-  });
-  dotButtons.forEach((dot, i) => {
-    dot.addEventListener("click", () => track.scrollTo({ left: i * track.clientWidth, behavior: "smooth" }));
-  });
+  }
 
   updateOrderButton();
 });

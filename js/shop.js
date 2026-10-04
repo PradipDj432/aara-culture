@@ -20,16 +20,16 @@ document.addEventListener("DOMContentLoaded", async () => {
   const state = { cat: params.get("cat") || "", size: params.get("size") || "" };
   const allSizes = sortSizes([...new Set(products.flatMap((p) => p.sizes || []))]);
 
-  function chip(group, value, label) {
+  function chip(group, value, label, className) {
     const active = state[group] === value;
-    return `<button type="button" class="chip" data-group="${group}" data-value="${escapeHtml(value)}" aria-pressed="${active}">${escapeHtml(label)}</button>`;
+    return `<button type="button" class="${className}" data-group="${group}" data-value="${escapeHtml(value)}" aria-pressed="${active}">${escapeHtml(label)}</button>`;
   }
 
   function render() {
     categoryFilter.innerHTML =
-      chip("cat", "", "All") + CATEGORIES.map((c) => chip("cat", c.id, c.name)).join("");
+      chip("cat", "", "All", "tab") + CATEGORIES.map((c) => chip("cat", c.id, c.name, "tab")).join("");
     sizeFilter.innerHTML =
-      chip("size", "", "All sizes") + allSizes.map((s) => chip("size", s, s)).join("");
+      chip("size", "", "All", "size-option") + allSizes.map((s) => chip("size", s, s, "size-option")).join("");
 
     const shown = products.filter(
       (p) => (!state.cat || p.category === state.cat) && (!state.size || (p.sizes || []).includes(state.size))
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   document.querySelector(".filters").addEventListener("click", (event) => {
-    const button = event.target.closest(".chip");
+    const button = event.target.closest("[data-group]");
     if (!button) return;
     state[button.dataset.group] = button.dataset.value;
     render();

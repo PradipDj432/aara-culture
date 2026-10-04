@@ -102,8 +102,18 @@ Click **Commit changes**. The live site updates in about a minute.
 ## Change store details
 Edit `js/config.js`:
 - `whatsappNumber` / `whatsappDisplay`: the order number (country code + number, no `+` or spaces in `whatsappNumber`).
+- `announcement`: the text in the thin black bar at the top of every page.
+- `highlights`: the three short points shown above the footer.
 - `policies.delivery`, `policies.payment`, `policies.returns`: the delivery, payment and return text. It shows on every product page and on the info page.
-- `CATEGORIES`: category names and their home page pictures.
+- `CATEGORIES`: category names and their home page pictures. To use a real photo, upload it to `images/` and change `image` (for example `"images/category-kurtis.jpg"`).
+
+## Change the home page banner
+Upload a portrait photo (about 1000 × 1250 pixels) to `images/`, then in `index.html` change `images/hero.svg` to your photo's name.
+
+## Photo tips for the premium look
+- Portrait (3:4), plain light background (white, cream or light grey wall), daylight, no clutter.
+- Same background and framing for every product, so the shop looks tidy.
+- First photo: the full outfit from the front. Second photo: a close-up or the back. It shows when a customer hovers on a computer.
 
 ## Go live (GitHub Pages)
 GitHub Pages serves the `main` branch from the repo root. Turn it on once:
