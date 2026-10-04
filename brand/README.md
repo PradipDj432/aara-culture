@@ -69,6 +69,9 @@ Rules:
 - In small spaces (under about 120px tall), use the side-by-side version or the icon, not the full stacked logo.
 - On maroon, the Bloom's centre petal turns ivory and the leaves turn rose (the "on-dark" files already do this).
 
+## Master image (D-025)
+The **Olive Green Short Kurti** (AC-003) photo is the brand's main picture: the home page banner (`../images/hero.jpg`) and the link preview (`../images/share.jpg`). Use it first for posts, ads and anything that needs one photo for the brand. To change it, replace `images/hero.jpg` and run `node brand/tools/export_png.js`.
+
 ## Earlier logo options (not chosen, D-021, D-022)
 The Palace arch (D-022) was used on the website for a short time, then replaced by the Bloom.
 Redrawn from the owner's boards (`references/05` and `06`) as clean vector files. Each comes in a light version (on ivory) and a dark version (on maroon).

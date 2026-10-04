@@ -5,30 +5,31 @@ Where the project stands right now, what's done, what's next, and a dated log. U
 ## Where we are
 | | |
 |---|---|
-| **Phase** | Live. 8 real products with the owner's photos, prices, fabrics and sizes. |
+| **Phase** | Live. 8 real products, final brand (logo, colours, fonts, master image). |
 | **Live site** | https://pradipdj432.github.io/aara-culture/ |
-| **Design** | "Minimal luxury": ivory and black, elegant serif headings, photo-first (D-014) |
+| **Brand** | Bloom logo with **AARA** (D-023) · colours maroon, ivory, gold, rose, charcoal (D-020) · fonts Cormorant Garamond, Montserrat, Allura (D-024) · master image Olive Green Short Kurti (D-025). Guide: `brand/README.md` |
+| **Design** | "Minimal luxury": elegant serif titles, lots of white space, photo-first (D-014) |
 | **Work branch** | `working` (made from `main`; see `CLAUDE.md` → Git workflow) |
-| **Brand** | Bloom logo, final colours and brand fonts, used on the website (D-020, D-023, D-024). Guide: `brand/README.md`. |
-| **Blocked on** | Nothing. |
+| **Blocked on** | Nothing. Next steps mostly need the owner (see below). |
 
 ## Done so far
-- Business plan: a catalog website with WhatsApp ordering, UPI payment, delivery all over India for ₹50, no returns (D-001, D-010 to D-012).
-- Website built with plain HTML/CSS/JS on free GitHub Pages: home, shop with filters, product pages, how-to-order page.
-- Premium "minimal luxury" redesign (D-014).
-- 8 real products live: 3 tops at ₹400 and 5 sets at ₹1,000, sizes S–XXL (D-015, D-018).
-- Photos compressed for fast loading on phones (D-015).
-- Empty categories hide by themselves (D-016).
-- Project docs and rules: `business.md`, `decisions.md`, `backlog.md`, `progress.md`, `README.md`, `CLAUDE.md`.
+- **Business set-up:** catalog website with WhatsApp ordering, UPI payment, delivery all over India for ₹50, no returns (D-001, D-010 to D-012).
+- **Website:** plain HTML/CSS/JS on free GitHub Pages: home, shop with category and size filters, product pages, how-to-order page (D-006, D-007).
+- **Products:** 8 real products with the owner's photos: 3 tops at ₹400 and 5 sets at ₹1,000, sizes S–XXL; photos compressed for phones (D-015, D-018). Empty categories hide by themselves (D-016).
+- **Design:** premium "minimal luxury" look (D-014).
+- **Brand:** the owner's own Bloom logo traced from their board, final colours, 3 brand fonts with fixed type styles, and the olive kurti as master image, used the same way on every page (D-020 to D-025).
+- **Sharing:** link preview picture for WhatsApp / Instagram / Facebook; WhatsApp profile picture and print-ready logo files in `brand/logo/`.
+- **Docs and rules:** `business.md`, `decisions.md`, `backlog.md`, `progress.md`, `README.md`, `CLAUDE.md`, `brand/README.md`; one `working` branch for all work (D-019).
 
 ## Next
 1. **Owner:** set the WhatsApp profile picture to `brand/logo/aara-profile-picture-1080.png`.
 2. **Owner:** open the live site on a real phone and try one order on WhatsApp.
-3. **Owner:** confirm the size list. "All sizes" was set as S, M, L, XL, XXL; say if XS or 3XL should be added (D-018).
-4. **Owner:** send size chart measurements, so the "Size help" section can show a real chart.
-5. **Owner:** a second photo per product (back or close-up), and a wider photo of AC-008.
-6. **Dev:** brand board with the chosen logo (tags, packaging, social posts).
-7. **Dev:** "Bag" to order several items in one WhatsApp message.
+3. **Owner:** confirm the size list. "All sizes" is set as S, M, L, XL, XXL; say if XS or 3XL should be added (D-018).
+4. **Owner:** pick a tagline ("Wear Your Story.", another line from the boards, or none).
+5. **Owner:** send size chart measurements, so "Size help" can show a real chart.
+6. **Owner:** a second photo per product (back or close-up), and a wider photo of AC-008.
+7. **Dev:** brand board with the final logo, colours and fonts (hang tag, packaging, social post mock-ups).
+8. **Dev:** "Bag" to order several items in one WhatsApp message.
 
 The full list, with priorities, is in `backlog.md`.
 
@@ -72,3 +73,5 @@ The full list, with priorities, is in `backlog.md`.
 - Fonts: showed 3 pairs from the owner's boards on real website pieces. Owner chose Cormorant Garamond (titles) + Montserrat (text) + Allura (taglines) (D-024). Replaced Jost with Montserrat across the website, set fixed type styles as CSS variables, put the brand quote in Allura, and switched the logo's tagline version to Allura. Type styles are documented in `brand/README.md`.
 - Tested at 360px, 390px and 1440px: no horizontal scrolling, no clipped text, no broken images, no script errors; the announcement bar stays on one line.
 - Owner chose the Olive Green Short Kurti (AC-003) as the master image (D-025). New home banner cut from the original full-size upload (from git history, not the compressed copy); link preview rebuilt with it. Checked on phone and computer.
+- Merged the brand fonts and the olive kurti master image ([PR #7](https://github.com/PradipDj432/aara-culture/pull/7)); live.
+- Reviewed and updated every `.md` file: progress summary, backlog order, business summary (master image, fonts), README (brand folder, fonts), brand guide and CLAUDE.md (master image rule). Removed an unused `tagline` setting from `js/config.js` (left over from the old footer).

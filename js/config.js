@@ -2,13 +2,12 @@
 
 const STORE = {
   name: "Aara Culture",
-  tagline: "Kurtis, tops and sets for every day",
 
   // WhatsApp number for orders: country code + number, no "+" or spaces.
   whatsappNumber: "916353425567",
   whatsappDisplay: "+91 63534 25567",
 
-  // Thin black bar at the very top of every page.
+  // Thin maroon bar at the very top of every page.
   announcement: "Delivery all over India · Order on WhatsApp",
 
   // Three short points shown above the footer.

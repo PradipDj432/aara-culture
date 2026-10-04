@@ -13,11 +13,13 @@ The catalog website for **Aara Culture**, a women's clothing brand (kurtis, tops
 | `backlog.md` | Everything still to do, with priority |
 | `progress.md` | Current status and a dated work log |
 | `CLAUDE.md` | Rules for keeping these docs and the code up to date |
+| `brand/README.md` | Brand guide: logo files, colours, fonts and type styles, master image |
 
 ## How it works
 - A static website: plain **HTML, CSS and JavaScript**. No framework and no build step (D-007).
 - Hosted free on **GitHub Pages** at `pradipdj432.github.io/aara-culture` (D-006).
 - Every product comes from one file, **`products.json`**. The pages read it in the browser and draw the product cards.
+- **Brand:** logo files come from `brand/logo/` (D-023). Colours, fonts and type styles are CSS variables at the top of `css/style.css` (D-020, D-024). Fonts load from Google Fonts in each page's `<head>`.
 - The **"Order on WhatsApp"** button opens `https://wa.me/916353425567?text=<message>` with the product name, code, size, price and a link to the product (D-001, D-008).
 
 ## Folder layout
@@ -109,7 +111,7 @@ Click **Commit changes**. The live site updates in about a minute.
 ## Change store details
 Edit `js/config.js`:
 - `whatsappNumber` / `whatsappDisplay`: the order number (country code + number, no `+` or spaces in `whatsappNumber`).
-- `announcement`: the text in the thin black bar at the top of every page.
+- `announcement`: the text in the thin maroon bar at the top of every page.
 - `highlights`: the three short points shown above the footer.
 - `policies.delivery`, `policies.payment`, `policies.returns`: the delivery, payment and return text. It shows on every product page and on the info page.
 - `CATEGORIES`: category names and their home page pictures. Each picture is one of the product photos (for example `"images/products/ac-006-1.jpg"`); if you delete that product, pick another photo. A category with no products is hidden by itself, and shows up again when you add a product to it.

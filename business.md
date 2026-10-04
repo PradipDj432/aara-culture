@@ -10,10 +10,11 @@ What the business is, who it sells to, and how it sells. This file holds busines
 | Brand | Aara Culture |
 | Website | https://pradipdj432.github.io/aara-culture/ |
 | Website headline | "Everyday elegance" |
-| Tagline | Kurtis, tops and sets for every day |
+| Short description | Kurtis, tops and sets for every day |
 | Orders | WhatsApp +91 63534 25567 |
 | Look | "Minimal luxury": elegant serif, photo-first (D-014) |
 | Logo | The Bloom (rose petals) above **AARA**, with CULTURE (D-023). Files in `brand/logo/` |
+| Master image | Olive Green Short Kurti (AC-003): home banner and link preview (D-025) |
 | Brand tagline | Not confirmed. A logo version with "Wear Your Story." exists |
 | Brand colours | Maroon `#6E2639`, Ivory `#F8F1E7`, Antique Gold `#B88A44`, Muted Rose `#C98F91`, Charcoal `#292522` (D-020; may be adjusted a little later) |
 | Brand fonts | Cormorant Garamond (titles), Montserrat (text), Allura (taglines) (D-024) |
