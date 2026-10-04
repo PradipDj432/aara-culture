@@ -7,6 +7,9 @@ const STORE = {
   whatsappNumber: "916353425567",
   whatsappDisplay: "+91 63534 25567",
 
+  // Instagram username, without the "@" (D-026).
+  instagram: "aara_culture",
+
   // Thin maroon bar at the very top of every page.
   announcement: "Delivery all over India · Order on WhatsApp",
 
@@ -28,6 +31,17 @@ const CATEGORIES = [
   { id: "tops", name: "Tops", image: "images/products/ac-006-1.jpg" },
   { id: "2-piece", name: "2-piece sets", image: "images/products/ac-008-1.jpg" },
   { id: "3-piece", name: "3-piece sets", image: "images/products/ac-001-1.jpg" },
+];
+
+// Full-screen photo slider at the top of the home page (D-027).
+// The first photo is the master image (D-025). "product" is the code of the product the photo opens.
+const HERO_SLIDES = [
+  { image: "images/hero.jpg", product: "AC-003" },
+  { image: "images/products/ac-002-1.jpg", product: "AC-002" },
+  { image: "images/products/ac-001-1.jpg", product: "AC-001" },
+  { image: "images/products/ac-007-1.jpg", product: "AC-007" },
+  { image: "images/products/ac-006-1.jpg", product: "AC-006" },
+  { image: "images/products/ac-004-1.jpg", product: "AC-004" },
 ];
 
 // Order sizes are listed in on the shop filter.

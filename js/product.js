@@ -1,5 +1,7 @@
-// Product page: photos, size picker and the "Order on WhatsApp" button.
+// Product page: photos, size picker, the "Order on WhatsApp" button and "You may also like".
 // Opened as product.html?id=AC-001
+
+const RELATED_COUNT = 4;
 
 document.addEventListener("DOMContentLoaded", async () => {
   const container = document.getElementById("product");
@@ -99,6 +101,28 @@ document.addEventListener("DOMContentLoaded", async () => {
       </div>
     </div>`;
   fillPolicies();
+
+  // "You may also like": same category first, then the rest.
+  const others = products.filter((p) => p.id !== product.id);
+  const related = [
+    ...others.filter((p) => p.category === product.category),
+    ...others.filter((p) => p.category !== product.category),
+  ].slice(0, RELATED_COUNT);
+  if (related.length) {
+    container.insertAdjacentHTML(
+      "beforeend",
+      `<section class="related">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">More to love</p>
+            <h2 class="section-title">You may also like</h2>
+          </div>
+          <a class="text-link" href="shop.html">View all ${ARROW_ICON}</a>
+        </div>
+        <div class="product-grid">${related.map(productCard).join("")}</div>
+      </section>`
+    );
+  }
 
   const orderButton = document.getElementById("order-button");
 

@@ -30,6 +30,7 @@
     <div class="page-head">
       <p class="eyebrow">Help</p>
       <h1 class="page-title">How to order</h1>
+      <p class="page-intro">Order in a few taps on WhatsApp. Here's how it works, plus payment, delivery and returns.</p>
     </div>
 
     <section class="info-block" id="how-to-order">
@@ -62,7 +63,18 @@
     <section class="info-block" id="size-chart">
       <h2>Size help</h2>
       <p>Our size chart is coming soon. Until then, message us your bust size or your usual size on WhatsApp and we'll help you choose.</p>
-      <a class="button" id="size-help-button" href="#">Ask about size</a>
+      <div class="info-actions">
+        <a class="button" id="size-help-button" href="#" target="_blank" rel="noopener">Ask about size</a>
+      </div>
+    </section>
+
+    <section class="info-block" id="contact">
+      <h2>Contact us</h2>
+      <p class="lead">Questions about a product, your size or an order? Message us on WhatsApp. For new arrivals, follow us on Instagram.</p>
+      <div class="info-actions">
+        <a class="button" id="contact-whatsapp" target="_blank" rel="noopener"></a>
+        <a class="button button-outline" id="contact-instagram" target="_blank" rel="noopener"></a>
+      </div>
     </section>
   </main>
 
@@ -72,6 +84,13 @@
       const button = document.getElementById("size-help-button");
       button.href = whatsappLink("Hi " + STORE.name + ", can you help me choose my size?");
       button.insertAdjacentHTML("afterbegin", WHATSAPP_ICON);
+
+      const whatsapp = document.getElementById("contact-whatsapp");
+      whatsapp.href = whatsappLink("Hi " + STORE.name + ", I have a question.");
+      whatsapp.innerHTML = WHATSAPP_ICON + " " + escapeHtml(STORE.whatsappDisplay);
+      const instagram = document.getElementById("contact-instagram");
+      instagram.href = instagramLink();
+      instagram.innerHTML = INSTAGRAM_ICON + " @" + escapeHtml(STORE.instagram);
     });
   </script>
 </body>
