@@ -2,6 +2,8 @@
 
 The catalog website for **Aara Culture**, a women's clothing brand (kurtis, tops, 2-piece and 3-piece sets). Customers browse products and order on WhatsApp. There's no checkout, login or payment gateway.
 
+**Live:** https://pradipdj432.github.io/aara-culture/ · **Status, done and next:** see `progress.md`
+
 ## Project docs
 | File | What's in it |
 |---|---|
@@ -54,8 +56,8 @@ Then open http://localhost:8000.
 
 ### 1. Upload the photos
 - Go to the `images/products/` folder → **Add file → Upload files**.
-- Name the photos after the product code: `ac-007-1.jpg`, `ac-007-2.jpg`, …
-- Use **portrait** photos (3:4, for example 900 × 1200 pixels). Keep each photo under about 300 KB so the site stays fast on phones.
+- Name the photos after the product code: `ac-009-1.jpg`, `ac-009-2.jpg`, … (AC-001 to AC-008 are taken).
+- Use **portrait** photos (3:4, for example 1000 × 1333 pixels). Keep each photo under about 250 KB so the site stays fast on phones.
 - Click **Commit changes**.
 
 ### 2. Add the product details
@@ -109,17 +111,19 @@ Edit `js/config.js`:
 Upload a portrait photo (about 1000 × 1250 pixels) to `images/`, then in `index.html` change `images/hero.jpg` to your photo's name.
 
 ## Photo tips for the premium look
-- Keep each photo under about 300 KB. Big phone or AI photos (1–2 MB) make the site slow on mobile data; ask Claude to compress them, or use a free tool like squoosh.app (JPEG, quality 80, width 1000).
+- Keep each photo under about 250 KB. Big phone or AI photos (1–2 MB) make the site slow on mobile data; ask Claude to compress them, or use a free tool like squoosh.app (JPEG, quality 80, width 1000).
 - Portrait (3:4), plain light background (white, cream or light grey wall), daylight, no clutter.
 - Same background and framing for every product, so the shop looks tidy.
 - First photo: the full outfit from the front. Second photo: a close-up or the back. It shows when a customer hovers on a computer.
 
-## Go live (GitHub Pages)
-GitHub Pages serves the `main` branch from the repo root. Turn it on once:
+## How changes go live
+GitHub Pages is **on**: it serves the `main` branch from the repo root at https://pradipdj432.github.io/aara-culture/. Every change merged into `main` goes live in a minute or two.
 
-1. Open the repo on GitHub → **Settings → Pages**.
-2. Under **Build and deployment**, choose **Deploy from a branch**.
-3. Pick branch **`main`** and folder **`/ (root)`** → **Save**.
-4. After a minute or two the site is live at `https://pradipdj432.github.io/aara-culture/`.
+- **Small edits by the owner** (a price, sold out, a new product) can be made straight on `main` from the GitHub website.
+- **Feature work** (design or code changes) goes on the `working` branch (D-019):
+  1. Bring `working` up to date with `main`.
+  2. Make the change, test it at phone and desktop width, and update the `.md` docs.
+  3. Push `working` and open a pull request from `working` to `main`.
+  4. Merge when the owner says so. GitHub Pages then publishes it.
 
-After that, every change on `main` goes live automatically.
+If GitHub Pages is ever turned off: **Settings → Pages → Build and deployment → Deploy from a branch → `main` / `(root)` → Save**.

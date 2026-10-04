@@ -2,19 +2,29 @@
 
 What the business is, who it sells to, and how it sells. This file holds business facts only. Technical details go in `README.md`, choices go in `decisions.md`.
 
+## In short
+**Aara Culture** is a women's ethnic-wear brand selling short kurtis, co-ord sets and kurti sets with dupatta. Customers browse the website and order on WhatsApp. Payment is by UPI, and orders ship all over India.
+
+| | |
+|---|---|
+| Brand | Aara Culture |
+| Website | https://pradipdj432.github.io/aara-culture/ |
+| Website headline | "Everyday elegance" |
+| Tagline | Kurtis, tops and sets for every day |
+| Orders | WhatsApp +91 63534 25567 |
+| Look | "Minimal luxury": ivory and black, elegant serif, photo-first (D-014) |
+
 ## What we sell
-Aara Culture is a women's clothing brand. The range:
+| Category | Description | Price | Fabric | Live products |
+|---|---|---|---|---|
+| Tops | Short kurtis, sold as the top only (no pants) | ₹400 | Cotton | 3 |
+| 2-piece sets | Kurti + bottom (co-ord set) | ₹1,000 | Cotton | 2 |
+| 3-piece sets | Kurti + bottom + dupatta | ₹1,000 | Rayon slub | 3 |
+| Kurtis | Single long kurtis | — | — | 0 (category hidden until a product is added) |
 
-| Category | Description | Current price | Current fabric |
-|---|---|---|---|
-| Kurtis | Single kurtis | No products yet | — |
-| Tops | Short kurtis, sold as the top only (no pants) | ₹400 | Cotton |
-| 2-piece sets | Kurti + bottom (co-ord set) | ₹1,000 | Cotton |
-| 3-piece sets | Kurti + bottom + dupatta | ₹1,000 | Rayon slub |
-
-All current products come in **S, M, L, XL and XXL** (owner: "all sizes available").
-
-The product list, with each product's price, fabric and sizes, is in `products.json`.
+- **Sizes:** all current products come in **S, M, L, XL and XXL**. The owner said "all sizes available"; whether XS or 3XL should be added is still to confirm (D-018).
+- **Stock:** all 8 products are in stock.
+- **Product list:** each product's name, code, price, fabric, sizes and photo are in `products.json`.
 
 ## Who buys
 Women in India who find us through the website link (shared on WhatsApp, social media and word of mouth) and prefer to order by chat.
@@ -25,9 +35,9 @@ The website is a **catalog**, not a full online shop. It has no checkout, no cus
 1. The customer browses the website and opens a product.
 2. They pick a size and tap **"Order on WhatsApp"**.
 3. WhatsApp opens with a ready message, for example:
-   *"Hi Aara Culture, I want to order: Rose Pink Cotton Kurti (AC-001), Size: M, Price: ₹799"* plus a link to the product.
+   *"Hi Aara Culture, I want to order: White Leaf Print Short Kurti (AC-005), Size: XL, Price: ₹400"* plus a link to the product.
 4. We confirm stock on WhatsApp and tell them the total including delivery.
-5. The customer pays by **UPI**.
+5. The customer pays by **UPI**. The UPI details are sent on WhatsApp, not shown on the website (D-003).
 6. We pack and ship the order.
 
 ## Shop rules
@@ -51,5 +61,9 @@ These are shown on the website. To change one, edit `js/config.js` (see `README.
 ## Still to decide
 Tracked in `backlog.md`. Don't put these on the website until the owner confirms them.
 
-- **Logo and brand colours:** no logo yet. The site uses a text logo.
+- **Size list:** is S–XXL right, or should XS / 3XL be added?
 - **Size chart:** measurements for each size. The site says "coming soon" and sends customers to WhatsApp for size help.
+- **UPI ID off the website:** suggested (D-003), not yet confirmed by the owner.
+- **Logo:** no logo yet. The site uses a text logo.
+- **Instagram:** no account yet.
+- **Own domain:** for example `aaraculture.in`, when the owner is ready.

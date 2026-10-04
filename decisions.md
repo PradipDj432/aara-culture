@@ -142,3 +142,19 @@ A log of choices made for Aara Culture and why. Add new decisions at the bottom 
 - **Alternatives considered:** Wait for sizes before showing the products; guess common sizes.
 - **Consequences:** The site can go live now. Once sizes are added to `products.json`, size buttons and the size filter appear by themselves.
 
+## D-018 — "All sizes" means S, M, L, XL and XXL
+- **Date:** 2026-10-04
+- **Status:** Proposed (the owner said "all sizes available"; the exact list is still to confirm)
+- **Context:** The owner said every product comes in all sizes. The website needs an exact list to show size buttons.
+- **Decision:** Every current product lists S, M, L, XL and XXL, the usual range for women's ethnic wear.
+- **Alternatives considered:** XS to XXL; S to 3XL; leave sizes empty and ask on WhatsApp (D-017).
+- **Consequences:** Customers pick a size before ordering, and the size goes into the WhatsApp message. If the owner wants XS or 3XL, add it to `"sizes"` in `products.json`.
+
+## D-019 — One `working` branch for all feature work
+- **Date:** 2026-10-04
+- **Status:** Accepted
+- **Context:** Tools created long, auto-generated branch names (like `claude/cool-cerf-i7ombh`), which the owner found confusing.
+- **Decision:** All feature work happens on one branch named `working`, made from `main`. When work is done: push `working`, open a pull request to `main`, and merge when the owner says so. The steps are in `CLAUDE.md`.
+- **Alternatives considered:** A new branch per feature; working directly on `main` (no review before going live).
+- **Consequences:** One easy-to-find branch. `working` must be brought up to date with `main` before each new piece of work.
+

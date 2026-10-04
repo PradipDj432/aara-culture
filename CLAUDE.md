@@ -2,6 +2,12 @@
 
 These rules apply to anyone working on this repo, people or AI. Keep things simple: this is a small catalog site, not an online shop.
 
+## Working with the owner
+- Use plain, simple English and keep answers short. The owner reads replies on a phone.
+- For anything big (a new feature, a redesign), share the plan and ask first. Small fixes can just be done.
+- Never guess business facts; ask (see "Business facts" below).
+- Merge to `main` (which makes changes live) only when the owner says so.
+
 ## Git workflow (owner's rule)
 - Do all feature work on **one branch named `working`**, made from `main`. Don't create long or auto-generated branch names (like `claude/cool-cerf-i7ombh`), even if a tool suggests one.
 - Before starting new work, bring `working` up to date with `main` (`git fetch origin main` then `git merge origin/main`). If `working` doesn't exist, create it: `git checkout -b working origin/main`.

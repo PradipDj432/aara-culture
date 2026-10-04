@@ -2,45 +2,50 @@
 
 Everything still to do, newest ideas at the bottom of each section. When work starts on an item, note it in `progress.md`. When it's done, tick it here and add a line to `progress.md`.
 
-**Priority:** `P1` needed for first launch · `P2` soon after launch · `P3` later / nice to have
+**Priority:** `P1` needed now · `P2` soon · `P3` later / nice to have
 **Owner:** `Owner` (business owner must provide or decide) · `Dev` (build work)
 
-## Waiting on the business owner
-- [x] **P1 · Owner** Delivery area: all of India (D-011).
-- [x] **P1 · Owner** Delivery charge: flat ₹50 per order (D-011).
-- [x] **P1 · Owner** Cash on delivery: not for now (D-010).
-- [x] **P1 · Owner** Return / exchange rule: no returns or exchanges for now (D-012).
-- [x] **P1 · Owner** Upload real product photos, with price and fabric for each (8 products).
-- [x] **P1 · Owner** Sizes for each of the 8 products: all sizes (S–XXL).
-- [x] **P1 · Owner** Turn on GitHub Pages.
+## To do — waiting on the business owner
+- [ ] **P1 · Owner** Open the live site on a real phone and try one order on WhatsApp.
+- [ ] **P1 · Owner** Confirm the size list: S, M, L, XL, XXL, or also XS / 3XL? (D-018)
 - [ ] **P2 · Owner** Size chart: measurements for each size (bust, length, etc.).
-- [ ] **P2 · Owner** Logo and brand colours. Until then, the site uses a text logo.
+- [ ] **P2 · Owner** Confirm the UPI ID stays off the website and is sent on WhatsApp only (D-003).
+- [ ] **P2 · Owner** A second photo for each product (back or close-up). It shows on hover and in the product gallery.
+- [ ] **P2 · Owner** Logo, if wanted. Until then, the site uses a text logo.
+- [ ] **P3 · Owner** A wider photo of AC-008 (the current one is very tall, so its sides are filled with a soft blur).
 - [ ] **P3 · Owner** Create an Instagram account, then add the link to the site.
 - [ ] **P3 · Owner** Buy a custom domain (for example `aaraculture.in`).
 
-## Build — first launch
-- [x] **P1 · Dev** Site skeleton: shared header and footer, mobile-first styles, store settings file (`js/config.js`).
-- [x] **P1 · Dev** `products.json` format with 6 sample products.
-- [x] **P1 · Dev** Home page: banner, the four categories, new arrivals, "How to order".
-- [x] **P1 · Dev** Shop page: all products with category and size filters.
-- [x] **P1 · Dev** Product page: swipeable photos, price, size buttons, fabric/details, "Order on WhatsApp" button.
-- [x] **P1 · Dev** WhatsApp message builder (product name, code, size, price, product link).
-- [x] **P1 · Dev** Info page: how to order, payment, delivery, returns, size help.
-- [x] **P1 · Dev** Sold-out handling: "Sold out" badge and disabled order button when `inStock` is false.
-- [x] **P1 · Dev** README guide for the owner: how to add and edit products, with examples.
-- [x] **P1 · Dev** Merge to `main` and turn on GitHub Pages.
-- [x] **P1 · Dev** Redesign in the "minimal luxury" style (D-014).
-- [x] **P1 · Dev** Put the owner's real photos in: products, home banner, category pictures. Remove the 6 samples.
-- [x] **P1 · Dev** Add size buttons once the owner sends sizes.
-- [ ] **P1 · Dev** Check the live site on a real phone.
-
-## Build — after launch
+## To do — build
 - [ ] **P2 · Dev** Size chart table on the info page (once the owner sends measurements).
-- [ ] **P2 · Owner** A second photo for each product (back or close-up). It shows on hover and in the product gallery.
-- [ ] **P3 · Owner** A wider photo of AC-008 (the current one is very tall, so its sides are filled with a soft blur).
+- [ ] **P2 · Dev** Share preview image, so links look good when shared on WhatsApp/Instagram.
 - [ ] **P2 · Dev** Bag: add several items, then send them all in one WhatsApp message (no login, saved in the browser).
-- [ ] **P2 · Dev** Share preview image so links look good when shared on WhatsApp/Instagram.
+- [ ] **P2 · Dev** When the first single kurti is added, use its photo as the Kurtis category picture in `js/config.js` (it's a drawn placeholder now).
 - [ ] **P2 · Dev** Real logo once the owner has one.
 - [ ] **P3 · Dev** Connect custom domain once bought.
 - [ ] **P3 · Dev** Google Business Profile listing.
 - [ ] **P3 · Dev** Optional Razorpay "Pay now" link if order volume grows (see D-002 / D-010).
+
+## Done
+- [x] **Owner** Delivery area: all of India (D-011).
+- [x] **Owner** Delivery charge: flat ₹50 per order (D-011).
+- [x] **Owner** Cash on delivery: not for now (D-010).
+- [x] **Owner** Return / exchange rule: no returns or exchanges for now (D-012).
+- [x] **Owner** Turn on GitHub Pages.
+- [x] **Owner** Upload real product photos, with price and fabric for each (8 products).
+- [x] **Owner** Sizes for the 8 products: "all sizes", set as S–XXL (D-018).
+- [x] **Dev** Site skeleton: shared header and footer, mobile-first styles, store settings file (`js/config.js`).
+- [x] **Dev** `products.json` format (first with 6 sample products).
+- [x] **Dev** Home page: banner, categories, new arrivals, "How to order".
+- [x] **Dev** Shop page: all products with category and size filters.
+- [x] **Dev** Product page: swipeable photos, price, size buttons, fabric/details, "Order on WhatsApp" button.
+- [x] **Dev** WhatsApp message builder (product name, code, size, price, product link).
+- [x] **Dev** Info page: how to order, payment, delivery, returns, size help.
+- [x] **Dev** Sold-out handling: "Sold out" badge and disabled order button when `inStock` is false.
+- [x] **Dev** README guide for the owner: how to add and edit products, with examples.
+- [x] **Dev** Go live on GitHub Pages ([PR #1](https://github.com/PradipDj432/aara-culture/pull/1)).
+- [x] **Dev** Redesign in the "minimal luxury" style (D-014, [PR #2](https://github.com/PradipDj432/aara-culture/pull/2)).
+- [x] **Dev** Owner's photos in: products, home banner, category pictures. 6 samples removed (D-015, [PR #3](https://github.com/PradipDj432/aara-culture/pull/3)).
+- [x] **Dev** Hide empty categories (D-016).
+- [x] **Dev** Size buttons and size filter (D-017, D-018).
+- [x] **Dev** `working` branch for all feature work (D-019).

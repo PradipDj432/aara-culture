@@ -1,14 +1,34 @@
 # Progress
 
-Where the project stands right now, and a dated log of what was done. Update this file at the end of every work session.
+Where the project stands right now, what's done, what's next, and a dated log. Update this file at the end of every work session.
 
-## Current status
+## Where we are
 | | |
 |---|---|
-| **Phase** | Live with 8 real products, the owner's photos and sizes S–XXL. |
+| **Phase** | Live. 8 real products with the owner's photos, prices, fabrics and sizes. |
 | **Live site** | https://pradipdj432.github.io/aara-culture/ |
+| **Design** | "Minimal luxury": ivory and black, elegant serif headings, photo-first (D-014) |
+| **Work branch** | `working` (made from `main`; see `CLAUDE.md` → Git workflow) |
 | **Blocked on** | Nothing. |
-| **Next step** | Check the live site on a real phone. Then backlog P2 items (size chart, second photos, bag). |
+
+## Done so far
+- Business plan: a catalog website with WhatsApp ordering, UPI payment, delivery all over India for ₹50, no returns (D-001, D-010 to D-012).
+- Website built with plain HTML/CSS/JS on free GitHub Pages: home, shop with filters, product pages, how-to-order page.
+- Premium "minimal luxury" redesign (D-014).
+- 8 real products live: 3 tops at ₹400 and 5 sets at ₹1,000, sizes S–XXL (D-015, D-018).
+- Photos compressed for fast loading on phones (D-015).
+- Empty categories hide by themselves (D-016).
+- Project docs and rules: `business.md`, `decisions.md`, `backlog.md`, `progress.md`, `README.md`, `CLAUDE.md`.
+
+## Next
+1. **Owner:** open the live site on a real phone and try one order on WhatsApp.
+2. **Owner:** confirm the size list. "All sizes" was set as S, M, L, XL, XXL; say if XS or 3XL should be added (D-018).
+3. **Owner:** send size chart measurements, so the "Size help" section can show a real chart.
+4. **Owner:** a second photo per product (back or close-up), and a wider photo of AC-008.
+5. **Dev:** share preview image, so links look good when sent on WhatsApp or Instagram.
+6. **Dev:** "Bag" to order several items in one WhatsApp message.
+
+The full list, with priorities, is in `backlog.md`.
 
 ## Log
 
@@ -24,13 +44,15 @@ Where the project stands right now, and a dated log of what was done. Update thi
 - Merged the first version to `main` ([PR #1](https://github.com/PradipDj432/aara-culture/pull/1)). The owner turned on GitHub Pages.
 - The owner found the first design looked bad and chose the "Minimal luxury" style (D-014). Redesigned every page: black announcement bar, centred spaced-out logo, slide-out menu on phones, split hero on desktop, category carousel on phones, product cards with a second photo on hover, stacked photos and sticky details on the desktop product page, fold-out Details / Delivery / Returns sections, and a dark footer.
 - Redrew the placeholder pictures as garments on hangers in muted tones.
-- Stock photo sites (Unsplash, Pexels) are blocked by this environment's network settings, so the owner is uploading their own photos instead.
+- Stock photo sites (Unsplash, Pexels) are blocked by this environment's network settings, so the owner uploaded their own photos instead.
 - Tested at 390px and 1440px: no horizontal scrolling and no script errors. The menu, filters, size picker, WhatsApp message, photo counter, sold-out state and unknown-product page all work.
 - Merged the redesign ([PR #2](https://github.com/PradipDj432/aara-culture/pull/2)); it's live.
 - The owner uploaded 9 photos to `images/products`. Compressed them to 3:4 JPEGs (about 100–200 KB each, from 1.5–2 MB), named them `ac-001-1.jpg` to `ac-008-1.jpg`, and left out a duplicate photo with a misspelt brand overlay ("Aara Cluture"). See D-015.
-- Owner gave prices and fabrics: tops (AC-003, AC-005, AC-006) ₹400, cotton, top only; sets ₹1,000; AC-001, AC-004 and AC-007 are rayon slub, the rest cotton. Sizes not given yet.
+- Owner gave prices and fabrics: tops (AC-003, AC-005, AC-006) ₹400, cotton, top only; sets ₹1,000; AC-001, AC-004 and AC-007 are rayon slub, the rest cotton.
 - Replaced the 6 samples with the 8 real products. Home banner now uses the ivory floral co-ord photo; category tiles use product photos.
 - Empty categories ("Kurtis" for now) are hidden everywhere (D-016). Products without sizes can still be ordered; the WhatsApp message asks for available sizes (D-017).
 - Tested at 390px and 1440px: no horizontal scrolling, no broken images, no script errors.
-- Owner: all sizes available. Set S, M, L, XL, XXL on all 8 products, so size buttons and the shop size filter now show.
-- Owner set the git rule: one simple `working` branch, made from `main`, for all feature work (saved in `CLAUDE.md`).
+- Owner: all sizes available. Set S, M, L, XL, XXL on all 8 products, so size buttons and the shop size filter now show (D-018).
+- Merged the real products and sizes ([PR #3](https://github.com/PradipDj432/aara-culture/pull/3)); live on GitHub Pages.
+- Owner set the git rule: one simple `working` branch, made from `main`, for all feature work (D-019, saved in `CLAUDE.md`). Created `working` from `main`.
+- Reviewed and updated every `.md` file so each one matches what's live: business summary, done / where we are / next, backlog order, new decisions D-018 and D-019, README workflow.
