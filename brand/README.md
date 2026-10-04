@@ -58,6 +58,13 @@ Profile and app icons (on maroon): `icon-ac.svg`, `icon-lotus.svg`, `icon-floral
 
 All options on one page: `logo-options/00-preview-board.webp`.
 
+**Round 4 (owner's request: options taken only from their own boards, nothing new):**
+- `logo-options/10-logos-from-your-boards.webp`: the 6 full logos cut straight out of boards 5 and 6 (1 Signature, 2 Modern minimal, 3 AC monogram, 4 Palace arch with scalloped top, 5 Reversed, 6 Single colour).
+- `logo-options/11-symbols-board-3.webp`: symbols 01–16 from board 3.
+- `logo-options/12-symbols-board-4.webp`: symbols 01.1–03.4 from board 4 (the board labels 03.2 as "02.2" by mistake).
+
+Whichever the owner picks is traced exactly into clean vector files, checked side by side with the original, then replaces the current logo.
+
 ## Taglines from the boards
 - **"Wear Your Story."** (in use, part of the chosen arch logo)
 - "Rooted in Grace."

@@ -11,6 +11,7 @@ Everything still to do, newest ideas at the bottom of each section. When work st
 - [ ] **P2 · Owner** Size chart: measurements for each size (bust, length, etc.).
 - [ ] **P2 · Owner** Confirm the UPI ID stays off the website and is sent on WhatsApp only (D-003).
 - [ ] **P2 · Owner** A second photo for each product (back or close-up). It shows on hover and in the product gallery.
+- [ ] **P1 · Owner** Pick the logo from your own boards (`brand/logo-options/10–12-*.webp`): a full logo 1–6, or a symbol number. Then it gets traced exactly and replaces the current logo.
 - [ ] **P1 · Owner** Set the WhatsApp Business profile picture to `brand/logo/aara-profile-picture-1080.png` (and Instagram, once the account exists).
 - [ ] **P3 · Owner** A wider photo of AC-008 (the current one is very tall, so its sides are filled with a soft blur).
 - [ ] **P3 · Owner** Create an Instagram account, then add the link to the site.
