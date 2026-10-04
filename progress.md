@@ -9,6 +9,7 @@ Where the project stands right now, what's done, what's next, and a dated log. U
 | **Live site** | https://pradipdj432.github.io/aara-culture/ |
 | **Design** | "Minimal luxury": ivory and black, elegant serif headings, photo-first (D-014) |
 | **Work branch** | `working` (made from `main`; see `CLAUDE.md` → Git workflow) |
+| **Brand** | Final colours chosen (D-020). Logo: 5 options from the owner's boards, waiting for a pick (`brand/README.md`). |
 | **Blocked on** | Nothing. |
 
 ## Done so far
@@ -21,12 +22,13 @@ Where the project stands right now, what's done, what's next, and a dated log. U
 - Project docs and rules: `business.md`, `decisions.md`, `backlog.md`, `progress.md`, `README.md`, `CLAUDE.md`.
 
 ## Next
-1. **Owner:** open the live site on a real phone and try one order on WhatsApp.
-2. **Owner:** confirm the size list. "All sizes" was set as S, M, L, XL, XXL; say if XS or 3XL should be added (D-018).
-3. **Owner:** send size chart measurements, so the "Size help" section can show a real chart.
-4. **Owner:** a second photo per product (back or close-up), and a wider photo of AC-008.
-5. **Dev:** share preview image, so links look good when sent on WhatsApp or Instagram.
-6. **Dev:** "Bag" to order several items in one WhatsApp message.
+1. **Owner:** pick the logo (1–5) and tagline. Then the logo and final colours go on the website.
+2. **Owner:** open the live site on a real phone and try one order on WhatsApp.
+3. **Owner:** confirm the size list. "All sizes" was set as S, M, L, XL, XXL; say if XS or 3XL should be added (D-018).
+4. **Owner:** send size chart measurements, so the "Size help" section can show a real chart.
+5. **Owner:** a second photo per product (back or close-up), and a wider photo of AC-008.
+6. **Dev:** share preview image, so links look good when sent on WhatsApp or Instagram.
+7. **Dev:** "Bag" to order several items in one WhatsApp message.
 
 The full list, with priorities, is in `backlog.md`.
 
@@ -56,3 +58,7 @@ The full list, with priorities, is in `backlog.md`.
 - Merged the real products and sizes ([PR #3](https://github.com/PradipDj432/aara-culture/pull/3)); live on GitHub Pages.
 - Owner set the git rule: one simple `working` branch, made from `main`, for all feature work (D-019, saved in `CLAUDE.md`). Created `working` from `main`.
 - Reviewed and updated every `.md` file so each one matches what's live: business summary, done / where we are / next, backlog order, new decisions D-018 and D-019, README workflow.
+- Logo round 1: 4 options (wordmark, arch, lotus, signature). Round 2, after the owner's first board: 8 options (4 simple, 4 premium), no human silhouettes. The owner liked neither.
+- The owner shared 5 more AI-made boards and chose their colour palette as final (D-020). Saved all 6 boards in `brand/references/`.
+- Redrew the boards' logo ideas as clean vector files in the final colours: Signature, Modern minimal, AC monogram, Palace arch, Diamond floral, plus 4 profile icons (D-021). Files, colours, fonts and the redraw script are in `brand/` (guide: `brand/README.md`).
+- Added the owner's long-term lifestyle-brand plan (Men, Accessories, Footwear, Lifestyle, Beauty & Care, Beyond) to `business.md` and `backlog.md`.

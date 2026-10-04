@@ -36,11 +36,16 @@ aara-culture/
 │   ├── home.js         Home page
 │   ├── shop.js         Shop page filters
 │   └── product.js      Product page, size picker, order button
-└── images/
-    ├── products/       Product photos (ac-001-1.jpg, ac-002-1.jpg, …)
-    ├── categories/     Placeholder tile for a category with no photo yet
-    ├── hero.jpg        Home page banner photo
-    └── favicon.svg     Browser tab icon
+├── images/
+│   ├── products/       Product photos (ac-001-1.jpg, ac-002-1.jpg, …)
+│   ├── categories/     Placeholder tile for a category with no photo yet
+│   ├── hero.jpg        Home page banner photo
+│   └── favicon.svg     Browser tab icon
+└── brand/              Brand guide: colours, fonts, logo files, owner's reference boards
+    ├── README.md       Read this first
+    ├── references/     The owner's brand boards
+    ├── logo-options/   Logo and icon files (SVG), preview board
+    └── tools/          Script and fonts that draw the logo files
 ```
 
 ## Run it on your computer

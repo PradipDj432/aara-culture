@@ -27,8 +27,13 @@ These rules apply to anyone working on this repo, people or AI. Keep things simp
 - Don't show the UPI ID on the website (D-003).
 - The WhatsApp number and shop rules live in one place, `js/config.js`. Don't hard-code them elsewhere.
 
+## Brand
+- The brand guide is `brand/README.md`: final colours (D-020), fonts, logo files. Always spell it **Aara Culture**.
+- Use the logo files in `brand/logo-options/`; don't retype the logo. Change logos with `brand/tools/make_logo_options.py`.
+- No human silhouettes in any logo or icon (owner's preference).
+
 ## Design ("minimal luxury", D-014)
-- Colours: ivory background `#faf8f5`, black text and buttons `#141414`, muted grey `#6b645d`, sand behind photos `#efeae3`. No bright colours.
+- Colours on the website today: ivory background `#faf8f5`, black text and buttons `#141414`, muted grey `#6b645d`, sand behind photos `#efeae3`. These switch to the final brand colours (D-020) when the new logo goes live; update this line then. No bright colours.
 - Fonts: Cormorant Garamond for the logo and headings, Jost for everything else. Small labels are uppercase with wide letter spacing.
 - Sharp corners (no rounded buttons or cards), thin 1px lines, lots of white space. Photos lead every page.
 
