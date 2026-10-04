@@ -7,11 +7,11 @@
   <meta name="description" content="Shop kurtis, tops, 2-piece and 3-piece sets from Aara Culture. Order on WhatsApp.">
   <meta property="og:title" content="Shop | Aara Culture">
   <meta property="og:description" content="Shop kurtis, tops, 2-piece and 3-piece sets from Aara Culture. Order on WhatsApp.">
-  <meta name="theme-color" content="#8c2f39">
+  <meta name="theme-color" content="#faf8f5">
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/config.js" defer></script>
   <script src="js/common.js" defer></script>
@@ -20,11 +20,17 @@
 <body data-page="shop">
   <header id="site-header" class="site-header"></header>
 
-  <main class="section container">
-    <h1 class="page-title">Shop</h1>
+  <main class="container page">
+    <div class="page-head">
+      <p class="eyebrow">The collection</p>
+      <h1 class="page-title">Shop</h1>
+    </div>
     <div class="filters">
       <div class="filter-row" id="category-filter" role="group" aria-label="Category"></div>
-      <div class="filter-row" id="size-filter" role="group" aria-label="Size"></div>
+      <div class="size-filter-row">
+        <p class="label" id="size-filter-label">Size</p>
+        <div class="filter-row" id="size-filter" role="group" aria-labelledby="size-filter-label"></div>
+      </div>
     </div>
     <p class="result-count" id="result-count" aria-live="polite"></p>
     <div class="product-grid" id="product-grid"><p class="loading">Loading products…</p></div>

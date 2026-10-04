@@ -110,3 +110,11 @@ A log of choices made for Aara Culture and why. Add new decisions at the bottom 
 - **Alternatives considered:** Wait for real products before building; use stock photos (copyright risk).
 - **Consequences:** The samples must be deleted from `products.json` (and `images/samples/`) before real launch.
 
+## D-014 — "Minimal luxury" design
+- **Date:** 2026-10-04
+- **Status:** Accepted
+- **Context:** The owner found the first design looked bad and asked for a modern, premium look.
+- **Decision:** Ivory and black colours, an elegant serif for headings (Cormorant Garamond) with a clean sans for text (Jost), small spaced-out capital labels, sharp corners, lots of white space and photo-first layouts. The "Order on WhatsApp" button is black instead of bright green. Placeholder pictures were redrawn as garments on hangers in muted tones.
+- **Alternatives considered:** "Indian heritage premium" (maroon and gold, pattern borders); "Soft modern" (blush colours, rounded cards).
+- **Consequences:** Real photos now matter most. Portrait photos (3:4) on plain, light backgrounds suit the design best.
+

@@ -16,6 +16,11 @@ These rules apply to anyone working on this repo, people or AI. Keep things simp
 - Don't show the UPI ID on the website (D-003).
 - The WhatsApp number and shop rules live in one place, `js/config.js`. Don't hard-code them elsewhere.
 
+## Design ("minimal luxury", D-014)
+- Colours: ivory background `#faf8f5`, black text and buttons `#141414`, muted grey `#6b645d`, sand behind photos `#efeae3`. No bright colours.
+- Fonts: Cormorant Garamond for the logo and headings, Jost for everything else. Small labels are uppercase with wide letter spacing.
+- Sharp corners (no rounded buttons or cards), thin 1px lines, lots of white space. Photos lead every page.
+
 ## Code
 - Plain HTML, CSS and JavaScript only. No framework, no build step, no `npm` (D-007).
 - Mobile first: check every page at phone width (390px) with no horizontal scrolling.

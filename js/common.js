@@ -1,10 +1,19 @@
-// Shared code for every page: header, footer, product cards, WhatsApp links.
+// Shared code for every page: header, menu, footer, product cards, WhatsApp links.
 
 const WHATSAPP_ICON =
   '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">' +
   '<path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/>' +
   '<path d="M16.6 14.2c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3z"/>' +
   "</svg>";
+
+const MENU_ICON =
+  '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 8h18M3 16h18"/></svg>';
+
+const CLOSE_ICON =
+  '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 5l14 14M19 5L5 19"/></svg>';
+
+const ARROW_ICON =
+  '<svg class="icon icon-arrow" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 12h16M14 6l6 6-6 6"/></svg>';
 
 function escapeHtml(text) {
   return String(text ?? "")
@@ -45,20 +54,22 @@ async function loadProducts() {
 
 function productCard(product) {
   const badges = [];
-  if (!product.inStock) badges.push('<span class="badge badge-soldout">Sold out</span>');
-  if (product.sample) badges.push('<span class="badge badge-sample">Sample</span>');
-  const image = (product.images && product.images[0]) || "";
+  if (!product.inStock) badges.push('<span class="badge">Sold out</span>');
+  if (product.sample) badges.push('<span class="badge badge-light">Sample</span>');
+  const [first = "", second] = product.images || [];
+  // A second photo fades in on hover (desktop only).
+  const hoverImage = second
+    ? `<img class="card-image-hover" src="${escapeHtml(second)}" alt="" loading="lazy" width="600" height="800">`
+    : "";
   return `
     <a class="card${product.inStock ? "" : " is-soldout"}" href="product.html?id=${encodeURIComponent(product.id)}">
       <div class="card-image">
-        <img src="${escapeHtml(image)}" alt="${escapeHtml(product.name)}" loading="lazy" width="600" height="800">
+        <img src="${escapeHtml(first)}" alt="${escapeHtml(product.name)}" loading="lazy" width="600" height="800">
+        ${hoverImage}
         <div class="badges">${badges.join("")}</div>
       </div>
-      <div class="card-body">
-        <p class="card-category">${escapeHtml(categoryName(product.category))}</p>
-        <h3 class="card-title">${escapeHtml(product.name)}</h3>
-        <p class="card-price">${formatPrice(product.price)}</p>
-      </div>
+      <h3 class="card-title">${escapeHtml(product.name)}</h3>
+      <p class="card-price">${formatPrice(product.price)}</p>
     </a>`;
 }
 
@@ -69,45 +80,106 @@ function showLoadError(container) {
 }
 
 function renderHeader(page) {
+  const header = document.getElementById("site-header");
   const link = (href, label, name) =>
     `<a href="${href}"${page === name ? ' aria-current="page"' : ""}>${label}</a>`;
-  document.getElementById("site-header").innerHTML = `
+  const categoryLinks = CATEGORIES.map(
+    (c) => `<li><a href="shop.html?cat=${encodeURIComponent(c.id)}">${escapeHtml(c.name)}</a></li>`
+  ).join("");
+
+  header.insertAdjacentHTML(
+    "beforebegin",
+    `<div class="announcement">${escapeHtml(STORE.announcement)}</div>`
+  );
+  header.innerHTML = `
     <div class="container header-inner">
+      <div class="header-left">
+        <button type="button" class="icon-button menu-button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">${MENU_ICON}</button>
+        <nav class="nav" aria-label="Main">
+          ${link("shop.html", "Shop", "shop")}
+          ${link("info.html", "How to order", "info")}
+        </nav>
+      </div>
       <a class="logo" href="index.html">${escapeHtml(STORE.name)}</a>
-      <nav class="nav" aria-label="Main">
-        ${link("shop.html", "Shop", "shop")}
-        ${link("info.html", "Info", "info")}
-        <a class="nav-whatsapp" href="${whatsappLink()}" aria-label="Chat on WhatsApp">${WHATSAPP_ICON}</a>
-      </nav>
+      <div class="header-right">
+        <a class="icon-button" href="${whatsappLink()}" aria-label="Chat on WhatsApp">${WHATSAPP_ICON}</a>
+      </div>
     </div>`;
+
+  document.body.insertAdjacentHTML(
+    "beforeend",
+    `<div class="menu-overlay" hidden></div>
+    <aside class="menu" id="menu" aria-label="Menu" hidden>
+      <div class="menu-head">
+        <span class="logo">${escapeHtml(STORE.name)}</span>
+        <button type="button" class="icon-button menu-close" aria-label="Close menu">${CLOSE_ICON}</button>
+      </div>
+      <ul class="menu-links">
+        <li><a href="shop.html">Shop all</a></li>
+        ${categoryLinks}
+      </ul>
+      <ul class="menu-secondary">
+        <li><a href="info.html">How to order</a></li>
+        <li><a href="info.html#delivery">Delivery &amp; payment</a></li>
+        <li><a href="${whatsappLink()}">${WHATSAPP_ICON} ${escapeHtml(STORE.whatsappDisplay)}</a></li>
+      </ul>
+    </aside>`
+  );
+
+  const menu = document.getElementById("menu");
+  const overlay = document.querySelector(".menu-overlay");
+  const openButton = header.querySelector(".menu-button");
+  function setMenu(open) {
+    menu.hidden = !open;
+    overlay.hidden = !open;
+    document.body.classList.toggle("menu-open", open);
+    openButton.setAttribute("aria-expanded", String(open));
+    if (open) menu.querySelector(".menu-close").focus();
+    else openButton.focus();
+  }
+  openButton.addEventListener("click", () => setMenu(true));
+  menu.querySelector(".menu-close").addEventListener("click", () => setMenu(false));
+  overlay.addEventListener("click", () => setMenu(false));
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !menu.hidden) setMenu(false);
+  });
 }
 
 function renderFooter() {
   const categoryLinks = CATEGORIES.map(
     (c) => `<li><a href="shop.html?cat=${encodeURIComponent(c.id)}">${escapeHtml(c.name)}</a></li>`
   ).join("");
+  const highlights = STORE.highlights.map((h) => `<li>${escapeHtml(h)}</li>`).join("");
   document.getElementById("site-footer").innerHTML = `
-    <div class="container footer-inner">
-      <div>
-        <p class="logo">${escapeHtml(STORE.name)}</p>
-        <p class="footer-tagline">${escapeHtml(STORE.tagline)}</p>
-        <a class="footer-whatsapp" href="${whatsappLink()}">${WHATSAPP_ICON} ${escapeHtml(STORE.whatsappDisplay)}</a>
+    <ul class="highlights">${highlights}</ul>
+    <div class="footer-main">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <p class="logo">${escapeHtml(STORE.name)}</p>
+          <p class="footer-tagline">${escapeHtml(STORE.tagline)}</p>
+        </div>
+        <div>
+          <p class="footer-heading">Shop</p>
+          <ul>${categoryLinks}</ul>
+        </div>
+        <div>
+          <p class="footer-heading">Help</p>
+          <ul>
+            <li><a href="info.html#how-to-order">How to order</a></li>
+            <li><a href="info.html#delivery">Delivery</a></li>
+            <li><a href="info.html#payment">Payment</a></li>
+            <li><a href="info.html#returns">Returns</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Contact</p>
+          <ul>
+            <li><a class="footer-whatsapp" href="${whatsappLink()}">${WHATSAPP_ICON} ${escapeHtml(STORE.whatsappDisplay)}</a></li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <p class="footer-heading">Shop</p>
-        <ul>${categoryLinks}</ul>
-      </div>
-      <div>
-        <p class="footer-heading">Help</p>
-        <ul>
-          <li><a href="info.html#how-to-order">How to order</a></li>
-          <li><a href="info.html#delivery">Delivery</a></li>
-          <li><a href="info.html#payment">Payment</a></li>
-          <li><a href="info.html#returns">Returns</a></li>
-        </ul>
-      </div>
-    </div>
-    <p class="container copyright">© ${new Date().getFullYear()} ${escapeHtml(STORE.name)}</p>`;
+      <p class="container copyright">© ${new Date().getFullYear()} ${escapeHtml(STORE.name)}</p>
+    </div>`;
 }
 
 function renderFloatingWhatsapp() {

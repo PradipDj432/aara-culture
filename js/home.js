@@ -6,8 +6,10 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.getElementById("categories").innerHTML = CATEGORIES.map(
     (c) => `
       <a class="category" href="shop.html?cat=${encodeURIComponent(c.id)}">
-        <img src="${escapeHtml(c.image)}" alt="" loading="lazy" width="600" height="800">
-        <span>${escapeHtml(c.name)}</span>
+        <div class="category-image">
+          <img src="${escapeHtml(c.image)}" alt="" loading="lazy" width="600" height="800">
+        </div>
+        <span class="category-name">${escapeHtml(c.name)} ${ARROW_ICON}</span>
       </a>`
   ).join("");
 

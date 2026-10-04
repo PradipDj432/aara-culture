@@ -8,6 +8,12 @@ const STORE = {
   whatsappNumber: "916353425567",
   whatsappDisplay: "+91 63534 25567",
 
+  // Thin black bar at the very top of every page.
+  announcement: "Delivery all over India · Order on WhatsApp",
+
+  // Three short points shown above the footer.
+  highlights: ["Delivery all over India", "Easy UPI payment", "Order on WhatsApp"],
+
   // Shop rules, shown on the product page and the info page.
   policies: {
     delivery: "Delivery all over India. Flat ₹50 delivery charge per order.",

@@ -5,10 +5,10 @@ Where the project stands right now, and a dated log of what was done. Update thi
 ## Current status
 | | |
 |---|---|
-| **Phase** | First version built with sample products. Not live yet. |
-| **Live site** | Not live. Needs merging to `main` and GitHub Pages turned on. |
-| **Blocked on** | Real products from the owner (photos, names, prices, sizes). |
-| **Next step** | Owner reviews the site, then merge to `main` and turn on GitHub Pages. |
+| **Phase** | Live with sample products. "Minimal luxury" redesign done on the work branch. |
+| **Live site** | https://pradipdj432.github.io/aara-culture/ (first design until the redesign is merged) |
+| **Blocked on** | Real product photos from the owner (being uploaded to `images/products`). |
+| **Next step** | Merge the redesign, then put the owner's real photos in. |
 
 ## Log
 
@@ -21,3 +21,8 @@ Where the project stands right now, and a dated log of what was done. Update thi
 - Built the first version of the site: home, shop (category and size filters), product page (photos, size picker, WhatsApp order button), info page. Plain HTML/CSS/JS, no build step.
 - Added 6 sample products with drawn placeholder photos (D-013).
 - Tested in Chromium at phone (390px) and desktop (1280px) widths: no horizontal scrolling and no script errors. Checked that the filters, size selection, WhatsApp message, sold-out state, unknown-product page and photo dots all work.
+- Merged the first version to `main` ([PR #1](https://github.com/PradipDj432/aara-culture/pull/1)). The owner turned on GitHub Pages.
+- The owner found the first design looked bad and chose the "Minimal luxury" style (D-014). Redesigned every page: black announcement bar, centred spaced-out logo, slide-out menu on phones, split hero on desktop, category carousel on phones, product cards with a second photo on hover, stacked photos and sticky details on the desktop product page, fold-out Details / Delivery / Returns sections, and a dark footer.
+- Redrew the placeholder pictures as garments on hangers in muted tones.
+- Stock photo sites (Unsplash, Pexels) are blocked by this environment's network settings, so the owner is uploading their own photos instead.
+- Tested at 390px and 1440px: no horizontal scrolling and no script errors. The menu, filters, size picker, WhatsApp message, photo counter, sold-out state and unknown-product page all work.
