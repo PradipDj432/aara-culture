@@ -23,11 +23,12 @@ const STORE = {
 };
 
 // Product categories. "id" must match the "category" field in products.json.
+// A category with no products is hidden automatically.
 const CATEGORIES = [
   { id: "kurtis", name: "Kurtis", image: "images/categories/kurtis.svg" },
-  { id: "tops", name: "Tops", image: "images/categories/tops.svg" },
-  { id: "2-piece", name: "2-piece sets", image: "images/categories/2-piece.svg" },
-  { id: "3-piece", name: "3-piece sets", image: "images/categories/3-piece.svg" },
+  { id: "tops", name: "Tops", image: "images/products/ac-006-1.jpg" },
+  { id: "2-piece", name: "2-piece sets", image: "images/products/ac-008-1.jpg" },
+  { id: "3-piece", name: "3-piece sets", image: "images/products/ac-001-1.jpg" },
 ];
 
 // Order sizes are listed in on the shop filter.

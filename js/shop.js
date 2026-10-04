@@ -19,6 +19,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   const params = new URLSearchParams(location.search);
   const state = { cat: params.get("cat") || "", size: params.get("size") || "" };
   const allSizes = sortSizes([...new Set(products.flatMap((p) => p.sizes || []))]);
+  const categories = activeCategories(products);
+  // No product lists sizes yet: hide the size filter.
+  if (!allSizes.length) sizeFilter.closest(".size-filter-row").hidden = true;
 
   function chip(group, value, label, className) {
     const active = state[group] === value;
@@ -27,7 +30,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   function render() {
     categoryFilter.innerHTML =
-      chip("cat", "", "All", "tab") + CATEGORIES.map((c) => chip("cat", c.id, c.name, "tab")).join("");
+      chip("cat", "", "All", "tab") + categories.map((c) => chip("cat", c.id, c.name, "tab")).join("");
     sizeFilter.innerHTML =
       chip("size", "", "All", "size-option") + allSizes.map((s) => chip("size", s, s, "size-option")).join("");
 

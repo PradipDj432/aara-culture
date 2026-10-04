@@ -41,6 +41,10 @@ body.menu-open {
   overflow: hidden;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -983,6 +987,12 @@ p {
   gap: 8px;
 }
 
+.size-note {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 300;
+}
+
 .order-bar {
   position: sticky;
   bottom: 0;
@@ -1168,7 +1178,7 @@ p {
 
   .category-grid {
     grid-auto-flow: row;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(var(--count, 4), 1fr);
     gap: 20px;
     overflow: visible;
     margin: 0;

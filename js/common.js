@@ -46,10 +46,28 @@ function sortSizes(sizes) {
   return [...sizes].sort((a, b) => rank(a) - rank(b));
 }
 
-async function loadProducts() {
-  const response = await fetch("products.json", { cache: "no-cache" });
-  if (!response.ok) throw new Error("products.json returned " + response.status);
-  return response.json();
+let productsRequest;
+
+// Loads products.json once per page, however many scripts ask for it.
+function loadProducts() {
+  productsRequest ??= fetch("products.json", { cache: "no-cache" }).then((response) => {
+    if (!response.ok) throw new Error("products.json returned " + response.status);
+    return response.json();
+  });
+  return productsRequest;
+}
+
+// Categories that have at least one product, in the order of CATEGORIES.
+function activeCategories(products) {
+  return CATEGORIES.filter((c) => products.some((p) => p.category === c.id));
+}
+
+// Menu and footer are drawn before products load; drop links to empty categories afterwards.
+function hideEmptyCategoryLinks(products) {
+  const active = new Set(activeCategories(products).map((c) => c.id));
+  document.querySelectorAll("[data-category]").forEach((el) => {
+    if (!active.has(el.dataset.category)) el.remove();
+  });
 }
 
 function productCard(product) {
@@ -84,7 +102,7 @@ function renderHeader(page) {
   const link = (href, label, name) =>
     `<a href="${href}"${page === name ? ' aria-current="page"' : ""}>${label}</a>`;
   const categoryLinks = CATEGORIES.map(
-    (c) => `<li><a href="shop.html?cat=${encodeURIComponent(c.id)}">${escapeHtml(c.name)}</a></li>`
+    (c) => `<li data-category="${escapeHtml(c.id)}"><a href="shop.html?cat=${encodeURIComponent(c.id)}">${escapeHtml(c.name)}</a></li>`
   ).join("");
 
   header.insertAdjacentHTML(
@@ -147,7 +165,7 @@ function renderHeader(page) {
 
 function renderFooter() {
   const categoryLinks = CATEGORIES.map(
-    (c) => `<li><a href="shop.html?cat=${encodeURIComponent(c.id)}">${escapeHtml(c.name)}</a></li>`
+    (c) => `<li data-category="${escapeHtml(c.id)}"><a href="shop.html?cat=${encodeURIComponent(c.id)}">${escapeHtml(c.name)}</a></li>`
   ).join("");
   const highlights = STORE.highlights.map((h) => `<li>${escapeHtml(h)}</li>`).join("");
   document.getElementById("site-footer").innerHTML = `
@@ -204,4 +222,5 @@ document.addEventListener("DOMContentLoaded", () => {
   renderFooter();
   fillPolicies();
   if (page !== "product") renderFloatingWhatsapp();
+  loadProducts().then(hideEmptyCategoryLinks, () => {});
 });

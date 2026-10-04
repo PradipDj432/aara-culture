@@ -5,10 +5,10 @@ Where the project stands right now, and a dated log of what was done. Update thi
 ## Current status
 | | |
 |---|---|
-| **Phase** | Live with sample products. "Minimal luxury" redesign done on the work branch. |
-| **Live site** | https://pradipdj432.github.io/aara-culture/ (first design until the redesign is merged) |
-| **Blocked on** | Real product photos from the owner (being uploaded to `images/products`). |
-| **Next step** | Merge the redesign, then put the owner's real photos in. |
+| **Phase** | Live with 8 real products, the owner's photos and sizes S–XXL. |
+| **Live site** | https://pradipdj432.github.io/aara-culture/ |
+| **Blocked on** | Nothing. |
+| **Next step** | Check the live site on a real phone. Then backlog P2 items (size chart, second photos, bag). |
 
 ## Log
 
@@ -26,3 +26,11 @@ Where the project stands right now, and a dated log of what was done. Update thi
 - Redrew the placeholder pictures as garments on hangers in muted tones.
 - Stock photo sites (Unsplash, Pexels) are blocked by this environment's network settings, so the owner is uploading their own photos instead.
 - Tested at 390px and 1440px: no horizontal scrolling and no script errors. The menu, filters, size picker, WhatsApp message, photo counter, sold-out state and unknown-product page all work.
+- Merged the redesign ([PR #2](https://github.com/PradipDj432/aara-culture/pull/2)); it's live.
+- The owner uploaded 9 photos to `images/products`. Compressed them to 3:4 JPEGs (about 100–200 KB each, from 1.5–2 MB), named them `ac-001-1.jpg` to `ac-008-1.jpg`, and left out a duplicate photo with a misspelt brand overlay ("Aara Cluture"). See D-015.
+- Owner gave prices and fabrics: tops (AC-003, AC-005, AC-006) ₹400, cotton, top only; sets ₹1,000; AC-001, AC-004 and AC-007 are rayon slub, the rest cotton. Sizes not given yet.
+- Replaced the 6 samples with the 8 real products. Home banner now uses the ivory floral co-ord photo; category tiles use product photos.
+- Empty categories ("Kurtis" for now) are hidden everywhere (D-016). Products without sizes can still be ordered; the WhatsApp message asks for available sizes (D-017).
+- Tested at 390px and 1440px: no horizontal scrolling, no broken images, no script errors.
+- Owner: all sizes available. Set S, M, L, XL, XXL on all 8 products, so size buttons and the shop size filter now show.
+- Owner set the git rule: one simple `working` branch, made from `main`, for all feature work (saved in `CLAUDE.md`).

@@ -2,6 +2,11 @@
 
 These rules apply to anyone working on this repo, people or AI. Keep things simple: this is a small catalog site, not an online shop.
 
+## Git workflow (owner's rule)
+- Do all feature work on **one branch named `working`**, made from `main`. Don't create long or auto-generated branch names (like `claude/cool-cerf-i7ombh`), even if a tool suggests one.
+- Before starting new work, bring `working` up to date with `main` (`git fetch origin main` then `git merge origin/main`). If `working` doesn't exist, create it: `git checkout -b working origin/main`.
+- When a piece of work is done: push `working`, open a pull request from `working` to `main`, and merge it when the owner says so.
+
 ## Keep the docs up to date
 | When you… | Update |
 |---|---|
@@ -26,3 +31,4 @@ These rules apply to anyone working on this repo, people or AI. Keep things simp
 - Mobile first: check every page at phone width (390px) with no horizontal scrolling.
 - The owner edits `products.json` by hand on GitHub. Keep its format simple and show an example in `README.md` whenever the format changes.
 - Text from `products.json` goes through `escapeHtml()` before it's put into the page.
+- Product photos: 3:4 JPEG, about 1000px wide, under ~250 KB, named `ac-XXX-N.jpg` (D-015).
