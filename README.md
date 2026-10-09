@@ -31,15 +31,17 @@ aara-culture/
 ├── index.html          Home: photo slider, categories, new arrivals, how to order, Instagram
 ├── shop.html           All products, with category and size filters
 ├── product.html        One product (product.html?id=AC-001): photos, sizes, WhatsApp button, "You may also like"
+├── bag.html            The bag: items, quantities, total, one WhatsApp order for everything (D-029)
 ├── info.html           How to order, payment, delivery, returns, size help, contact
 ├── products.json       The product list (edit this to add products)
 ├── .nojekyll           Tells GitHub Pages to serve the files as they are
 ├── css/style.css       All styles (mobile first)
 ├── js/
 │   ├── config.js       Store settings: WhatsApp, Instagram, shop rules, categories, slider photos
-│   ├── common.js       Used on every page: header, menu, footer, "Chat with us" button, product cards
+│   ├── common.js       Used on every page: header, menu, footer, "Chat with us" button, product cards, bag storage
 │   ├── home.js         Home page: photo slider, categories, new arrivals, Instagram strip
 │   ├── shop.js         Shop page filters
+│   ├── bag.js          Bag page: quantities, total, WhatsApp message
 │   └── product.js      Product page, size picker, order button
 ├── images/
 │   ├── products/       Product photos (ac-001-1.jpg, ac-002-1.jpg, …)
@@ -115,6 +117,7 @@ Click **Commit changes**. The live site updates in about a minute.
 Edit `js/config.js`:
 - `whatsappNumber` / `whatsappDisplay`: the order number (country code + number, no `+` or spaces in `whatsappNumber`).
 - `instagram`: the Instagram username, without the `@` (now `aara_culture`).
+- `deliveryCharge`: the flat delivery charge in rupees (now `50`). It is added to the bag total. Keep it in step with `policies.delivery`.
 - `announcement`: the text in the thin maroon bar at the top of every page.
 - `highlights`: the three short points shown above the footer.
 - `policies.delivery`, `policies.payment`, `policies.returns`: the delivery, payment and return text. It shows on every product page and on the info page.
