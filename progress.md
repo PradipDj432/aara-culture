@@ -5,12 +5,12 @@ Where the project stands right now, what's done, what's next, and a dated log. U
 ## Where we are
 | | |
 |---|---|
-| **Phase** | Live. 8 real products, final brand (logo, colours, fonts, master image), new modern layout. |
+| **Phase** | Live. 8 real products, final brand, new modern layout. The Bag (several items in one WhatsApp order) is ready on `working`, waiting for the owner to look and merge. |
 | **Live site** | https://pradipdj432.github.io/aara-culture/ |
 | **Brand** | Bloom logo with **AARA** (D-023) · colours maroon, ivory, gold, rose, charcoal (D-020) · fonts Cormorant Garamond, Montserrat, Allura (D-024) · master image Olive Green Short Kurti (D-025) · Instagram @aara_culture (D-026). Guide: `branding.md` |
 | **Design** | Modern "minimal luxury" (D-014): logo left and menu right, full-screen photo slider, names on photos, "Chat with us" button (D-027) |
 | **Work branch** | `working` (made from `main`; see `CLAUDE.md` → Git workflow) |
-| **Blocked on** | Nothing. Next steps mostly need the owner (see below). |
+| **Blocked on** | The owner's OK to merge the Bag (draft pull request). Other next steps mostly need the owner (see below). |
 
 ## Done so far
 - **Business set-up:** catalog website with WhatsApp ordering, UPI payment, delivery all over India for ₹50, no returns (D-001, D-010 to D-012).
@@ -30,7 +30,6 @@ Where the project stands right now, what's done, what's next, and a dated log. U
 6. **Owner:** send size chart measurements, so "Size help" can show a real chart.
 7. **Owner:** a second photo per product (back or close-up), and a wider photo of AC-008.
 8. **Dev:** brand board with the final logo, colours and fonts (hang tag, packaging, social post mock-ups).
-9. **Dev:** "Bag" to order several items in one WhatsApp message.
 
 The full list, with priorities, is in `backlog.md`.
 
@@ -82,3 +81,7 @@ The full list, with priorities, is in `backlog.md`.
 - New layout on every page (D-027): logo left and menu right (menu opens from the right on phones); full-screen photo slider on the home page (1 photo per phone screen, 3 side by side on computers, moves every 5 seconds, swipe, dots and arrows) with a see-through header; brand line under the Bloom; categories with names on the photos; photo with the brand quote; how-to-order steps; Instagram strip; new footer with Instagram and WhatsApp; "You may also like" on product pages; maroon "Chat with us" button instead of the round WhatsApp icon; official WhatsApp and Instagram signs (Simple Icons, CC0).
 - Tested at 390px and 1440px with the brand fonts: no horizontal scrolling, no broken images, no script errors. Checked the slider (swipe, arrows, dots, moves by itself, pauses on hover), the see-through header, the menu, the chat button, shop filters, size picker, WhatsApp order message, Instagram links and the unknown-product page.
 - Merged the new layout, `branding.md` and Instagram ([PR #8](https://github.com/PradipDj432/aara-culture/pull/8)); live.
+
+### 2026-10-09
+- Built the Bag (D-029): "Add to bag" on the product page, a bag icon with the item count in the header, a new bag page (quantities, remove, items total, ₹50 delivery, total) and one "Order all on WhatsApp" message with every item. The bag is saved in the visitor's browser. Added `deliveryCharge` to `js/config.js`, and a line about the bag on the info page and in the README.
+- Tested at 390px and 1440px: no horizontal scrolling, no script errors. Checked adding the same item twice, two sizes of one product, changing quantity, removing items, the empty bag and the WhatsApp message text.
