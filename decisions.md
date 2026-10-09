@@ -235,3 +235,15 @@ A log of choices made for Aara Culture and why. Add new decisions at the bottom 
 - **Decision:** `branding.md` in the project root is the brand guide: name, logo files, colours, fonts and type styles, photos, website look, social media, words, do and don't. `brand/README.md` now only explains the `brand/` folder (files, reference boards, earlier options, redraw scripts).
 - **Alternatives considered:** Keep the guide in `brand/README.md`.
 - **Consequences:** Brand changes are recorded in `branding.md` (and a decision here).
+
+## D-029 — Bag: several items in one WhatsApp order
+- **Date:** 2026-10-09
+- **Status:** Accepted
+- **Context:** The owner wanted customers to order more than one item without sending a message per item (backlog "Bag").
+- **Decision:**
+  - **Add to bag:** the product page has an "Add to bag" button next to "Order on WhatsApp". It needs a size when the product has sizes.
+  - **Bag page (`bag.html`):** lists each item with its photo, size, quantity (1 to 10) and a remove link, then the items total, the flat delivery charge (`STORE.deliveryCharge`, from D-011) and the total. One "Order all on WhatsApp" button sends everything in one message.
+  - **Saving:** the bag is kept in the visitor's own browser (localStorage), with no login. Sold-out or removed products drop out of the bag by themselves, with a note.
+  - **Bag icon** with the item count in the header on every page, and a Bag link in the menu.
+- **Alternatives considered:** A slide-out bag panel instead of a page; a real checkout with online payment.
+- **Consequences:** The bag exists only on the customer's own phone and browser. We still confirm availability and share payment details on WhatsApp (D-003, D-010). "Order on WhatsApp" on the product page still orders that one item directly.

@@ -13,6 +13,9 @@ const STORE = {
   // Thin maroon bar at the very top of every page.
   announcement: "Delivery all over India · Order on WhatsApp",
 
+  // Flat delivery charge per order, in rupees (D-011). Used in the bag total.
+  deliveryCharge: 50,
+
   // Three short points shown above the footer.
   highlights: ["Delivery all over India", "Easy UPI payment", "Order on WhatsApp"],
 

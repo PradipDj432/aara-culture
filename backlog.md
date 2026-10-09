@@ -21,7 +21,6 @@ Everything still to do, newest ideas at the bottom of each section. When work st
 
 ## To do — build
 - [ ] **P2 · Dev** Size chart table on the info page (once the owner sends measurements).
-- [ ] **P2 · Dev** Bag: add several items, then send them all in one WhatsApp message (no login, saved in the browser).
 - [ ] **P2 · Dev** When the first single kurti is added, use its photo as the Kurtis category picture in `js/config.js` (it's a drawn placeholder now).
 - [ ] **P2 · Dev** Brand board with the final logo, colours and fonts (icon, pattern, hang tag, packaging, social post mock-ups), saved in `brand/`.
 - [ ] **P3 · Dev** Connect custom domain once bought.
@@ -36,6 +35,7 @@ Focus now is women's clothing only. Later, grow into a lifestyle brand with sub-
 - [ ] **P3 · Dev** Website structure for more than one sub-brand (for example a top menu: Women · Men · Accessories …).
 
 ## Done
+- [x] **Dev** Bag: add several items, then send them all in one WhatsApp message; no login, saved in the browser (D-029).
 - [x] **Owner** Delivery area: all of India (D-011).
 - [x] **Owner** Delivery charge: flat ₹50 per order (D-011).
 - [x] **Owner** Cash on delivery: not for now (D-010).
