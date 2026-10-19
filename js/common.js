@@ -23,6 +23,9 @@ const CLOSE_ICON =
 const ARROW_ICON =
   '<svg class="icon icon-arrow" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 12h16M14 6l6 6-6 6"/></svg>';
 
+const BAG_ICON =
+  '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 8h14l-1 12H6L5 8zM9 8V6a3 3 0 0 1 6 0v2"/></svg>';
+
 function escapeHtml(text) {
   return String(text ?? "")
     .replace(/&/g, "&amp;")
@@ -56,6 +59,55 @@ function sortSizes(sizes) {
     return i === -1 ? SIZE_ORDER.length : i;
   };
   return [...sizes].sort((a, b) => rank(a) - rank(b));
+}
+
+// ---------- Bag: items are kept in the visitor's browser, no login (D-029) ----------
+
+const BAG_KEY = "aara-bag";
+const BAG_MAX_QTY = 10;
+let memoryBag = []; // used only when the browser blocks storage
+
+// The bag is a list of { id, size, qty }. Anything that doesn't look right is dropped.
+function readBag() {
+  let items = memoryBag;
+  try {
+    const saved = JSON.parse(localStorage.getItem(BAG_KEY));
+    if (Array.isArray(saved)) items = saved;
+  } catch (error) {}
+  return items
+    .filter((i) => i && typeof i.id === "string" && Number.isInteger(i.qty) && i.qty > 0)
+    .map((i) => ({ id: i.id, size: String(i.size || ""), qty: Math.min(i.qty, BAG_MAX_QTY) }));
+}
+
+function writeBag(items) {
+  memoryBag = items;
+  try {
+    localStorage.setItem(BAG_KEY, JSON.stringify(items));
+  } catch (error) {}
+  updateBagCount();
+}
+
+function addToBag(id, size) {
+  const items = readBag();
+  const existing = items.find((i) => i.id === id && i.size === size);
+  if (existing) existing.qty = Math.min(existing.qty + 1, BAG_MAX_QTY);
+  else items.push({ id, size, qty: 1 });
+  writeBag(items);
+}
+
+function bagCount() {
+  return readBag().reduce((total, i) => total + i.qty, 0);
+}
+
+function updateBagCount() {
+  const count = bagCount();
+  document.querySelectorAll(".bag-count").forEach((el) => {
+    el.textContent = String(count);
+    el.hidden = count === 0;
+  });
+  document.querySelectorAll(".bag-link").forEach((el) => {
+    el.setAttribute("aria-label", count ? `Bag, ${count} ${count === 1 ? "item" : "items"}` : "Bag");
+  });
 }
 
 let productsRequest;
@@ -144,6 +196,7 @@ function renderHeader(page) {
             ${link("info.html", "How to order", "info")}
           </ul>
         </nav>
+        <a class="icon-button header-bag bag-link" href="bag.html" aria-label="Bag">${BAG_ICON}<span class="bag-count" hidden></span></a>
         <a class="icon-button header-instagram" href="${instagramLink()}" target="_blank" rel="noopener" aria-label="Instagram @${escapeHtml(STORE.instagram)}">${INSTAGRAM_ICON}</a>
         <button type="button" class="icon-button menu-button" aria-label="Open menu" aria-expanded="false" aria-controls="menu">${MENU_ICON}</button>
       </div>
@@ -162,6 +215,7 @@ function renderHeader(page) {
         ${categoryLinks()}
       </ul>
       <ul class="menu-secondary">
+        <li><a class="bag-link" href="bag.html">Bag <span class="bag-count" hidden></span></a></li>
         <li><a href="info.html#how-to-order">How to order</a></li>
         <li><a href="info.html#delivery">Delivery &amp; payment</a></li>
         <li><a href="info.html#size-chart">Size help</a></li>
@@ -274,6 +328,8 @@ document.addEventListener("DOMContentLoaded", () => {
   renderHeader(page);
   renderFooter();
   fillPolicies();
+  updateBagCount();
+  window.addEventListener("storage", updateBagCount); // the bag changed in another tab
   if (page !== "product") renderChatButton();
   loadProducts().then(hideEmptyCategoryLinks, () => {});
 });

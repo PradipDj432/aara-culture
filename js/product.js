@@ -72,8 +72,10 @@ document.addEventListener("DOMContentLoaded", async () => {
         </div>
 
         <div class="order-bar">
+          <button type="button" class="button button-outline button-block" id="bag-button"></button>
           <a class="button button-block" id="order-button" target="_blank" rel="noopener"></a>
         </div>
+        <p class="visually-hidden" id="bag-status" role="status"></p>
         <p class="order-note">We confirm availability on WhatsApp before you pay.</p>
 
         <div class="accordion">
@@ -126,19 +128,22 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const orderButton = document.getElementById("order-button");
 
+  const bagButton = document.getElementById("bag-button");
+  const bagStatus = document.getElementById("bag-status");
+  let addedTimer;
+
   function updateOrderButton() {
-    if (!product.inStock) {
-      orderButton.removeAttribute("href");
-      orderButton.setAttribute("aria-disabled", "true");
-      orderButton.textContent = "Sold out";
+    if (!product.inStock || (hasSizes && !selectedSize)) {
+      const label = product.inStock ? "Select a size" : "Sold out";
+      for (const button of [orderButton, bagButton]) {
+        button.removeAttribute("href");
+        button.setAttribute("aria-disabled", "true");
+        button.textContent = label;
+      }
       return;
     }
-    if (hasSizes && !selectedSize) {
-      orderButton.removeAttribute("href");
-      orderButton.setAttribute("aria-disabled", "true");
-      orderButton.textContent = "Select a size";
-      return;
-    }
+    bagButton.removeAttribute("aria-disabled");
+    if (!addedTimer) bagButton.textContent = "Add to bag";
     const message = [
       `Hi ${STORE.name}, I want to order:`,
       `${product.name} (${product.id})`,
@@ -150,6 +155,18 @@ document.addEventListener("DOMContentLoaded", async () => {
     orderButton.removeAttribute("aria-disabled");
     orderButton.innerHTML = WHATSAPP_ICON + " Order on WhatsApp";
   }
+
+  bagButton.addEventListener("click", () => {
+    if (bagButton.getAttribute("aria-disabled") === "true") return;
+    addToBag(product.id, selectedSize);
+    bagButton.textContent = "Added to bag \u2713";
+    bagStatus.textContent = product.name + " added to your bag. " + bagCount() + " in bag.";
+    clearTimeout(addedTimer);
+    addedTimer = setTimeout(() => {
+      addedTimer = 0;
+      updateOrderButton();
+    }, 2000);
+  });
 
   container.querySelector(".size-picker").addEventListener("click", (event) => {
     const button = event.target.closest(".size-option");
